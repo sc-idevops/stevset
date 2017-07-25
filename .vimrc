@@ -1,6 +1,10 @@
 " => General
+execute pathogen#infect()
 set history=500
 set number
+syntax enable
+set background=dark
+colorscheme solarized
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
@@ -49,5 +53,4 @@ set background=dark
 " Super useful! From an idea by Michael Naumann
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
-
 
