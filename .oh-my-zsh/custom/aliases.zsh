@@ -7,6 +7,7 @@ alias dirs="dirs -v"
 alias h='history'
 alias j='jobs -l'
 #shortcuts aliases
+alias please="sudo !!"
 alias ping='ping -c 5'
 alias ax="chmod a+x"
 alias wmip="curl icanhazip.com"
