@@ -1,2 +1,2 @@
 #!/bin/bash
-eval "$(ssh-agent -s)"
+eval ssh-agent
