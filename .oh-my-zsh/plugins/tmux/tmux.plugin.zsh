@@ -15,7 +15,12 @@ if which tmux &> /dev/null
 	# Configuration variables
 	#
 	# Automatically start tmux
+if [[ -n "$SSH_CLIENT" ]]
+then
+	[[ -n "$ZSH_TMUX_AUTOSTART" ]] || ZSH_TMUX_AUTOSTART=true
+else
 	[[ -n "$ZSH_TMUX_AUTOSTART" ]] || ZSH_TMUX_AUTOSTART=false
+fi
 	# Only autostart once. If set to false, tmux will attempt to
 	# autostart every time your zsh configs are reloaded.
 	[[ -n "$ZSH_TMUX_AUTOSTART_ONCE" ]] || ZSH_TMUX_AUTOSTART_ONCE=true
