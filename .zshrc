@@ -86,3 +86,4 @@ source $ZSH/oh-my-zsh.sh
 export VISUAL="/usr/bin/vim"
 export EDITOR="$VISUAL"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=3'
+alias tmux="tmux -2"
