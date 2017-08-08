@@ -39,3 +39,6 @@ set mat=2
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
+let g:airline_theme='solarized'
+let g:airline#extensions#tabline#enabled = 1
+
