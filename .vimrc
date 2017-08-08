@@ -3,6 +3,7 @@ execute pathogen#infect()
 set history=500
 set number
 syntax enable
+set t_Co=256
 set background=dark
 colorscheme solarized
 " Enable filetype plugins
@@ -31,22 +32,6 @@ set lazyredraw
 set showmatch 
 " How many tenths of a second to blink when matching brackets
 set mat=2
-" => Colors and Fonts
-" Enable syntax highlighting
-syntax enable 
-
-" Enable 256 colors palette in Gnome Terminal
-if $COLORTERM == 'gnome-terminal'
-    set t_Co=256
-endif
-
-try
-    colorscheme desert
-catch
-endtry
-
-set background=dark
-
 " => Visual mode related
 """"""""""""""""""""""""""""""
 " Visual mode pressing * or # searches for the current selection
