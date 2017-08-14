@@ -6,6 +6,13 @@ syntax enable
 set t_Co=256
 set background=dark
 colorscheme solarized
+" below is from https://bluz71.github.io/2017/05/15/vim-tips-tricks.html
+" see examples at https://github.com/bluz71/dotfiles/blob/master/vimrc
+set breakindent
+set showbreak=\\\\\
+set relativenumber
+set infercase
+set synmaxcol=200
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
@@ -19,6 +26,7 @@ let g:mapleader = ","
 " => VIM user interface
 " Turn on the WiLd menu
 set wildmenu
+set wildmode=full
 "Always show current position
 set ruler
 
