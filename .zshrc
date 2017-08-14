@@ -92,8 +92,7 @@ export EDITOR="$VISUAL"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=3'
 alias tmux="tmux -2"
 
-if [[ -n "$SSH_CLIENT" ]]
-then break
-else
+if [[ -z "$SSH_CLIENT" ]]
+then
 	. /usr/share/powerline/bindings/zsh/powerline.zsh
 fi
