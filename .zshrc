@@ -96,3 +96,10 @@ if [[ -z "$SSH_CLIENT" ]]
 then
 	. /usr/share/powerline/bindings/zsh/powerline.zsh
 fi
+
+#zsh options
+setopt  auto_cd
+setopt  complete_aliases
+setopt  extended_glob
+setopt  hist_ignore_all_dups
+setopt  share_history
