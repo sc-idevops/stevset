@@ -103,3 +103,6 @@ setopt  complete_aliases
 setopt  extended_glob
 setopt  hist_ignore_all_dups
 setopt  share_history
+setopt  list_types
+setopt  mark_dirs
+setopt  path_dirs
