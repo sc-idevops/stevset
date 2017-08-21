@@ -55,7 +55,7 @@ fi
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(colored-man-pages copydir cp dircycle dirhistory fasd git gitignore systemd tmux vi-mode zsh-autosuggestions)
+plugins=(colored-man-pages copydir cp fasd git gitignore jump systemd tmux vi-mode zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
