@@ -106,3 +106,8 @@ setopt  share_history
 setopt  list_types
 setopt  mark_dirs
 setopt  path_dirs
+
+#Set caps to escape when tapped and ctrl when held
+setxkbmap -option 'caps:ctrl_modifier'
+xcape -e 'Caps_Lock=Escape'
+
