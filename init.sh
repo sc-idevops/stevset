@@ -1,7 +1,7 @@
 #!/bin/bash
 #install pre-req.
 echo "installing required packages"
-sudo apt-get install tmux zsh vim powerline xcape
+./deps.sh
 #remove existing configs, if they exist
 rm -ri ~/.tmux.conf
 rm -ri ~/.zsh-custom
