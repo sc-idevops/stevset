@@ -1,2 +1,2 @@
 
-sudo apt-get install tmux zsh vim powerline xcape htop
+sudo apt-get install tmux zsh vim powerline xcape htop mc
