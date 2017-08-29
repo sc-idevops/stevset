@@ -108,6 +108,8 @@ setopt  mark_dirs
 setopt  path_dirs
 
 #Set caps to escape when tapped and ctrl when held
-setxkbmap -option 'caps:ctrl_modifier'
-xcape -e 'Caps_Lock=Escape'
-
+if [[ -n "$SSH_CLIENT" ]]
+	then
+		setxkbmap -option 'caps:ctrl_modifier'
+		xcape -e 'Caps_Lock=Escape'
+	fi
