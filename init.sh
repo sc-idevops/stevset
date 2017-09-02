@@ -7,16 +7,18 @@ rm -ri ~/.tmux.conf
 rm -ri ~/.zsh-custom
 rm -ri ~/.vimrc
 rm -ri ~/.vim
-rm -ri ~/.oh-my-zsh
 rm -ri ~/.zshrc
+rm -ri ~/.aliases.zsh
 #make links
-#ln -s /home/`whoami`/stevset/.bash_aliases /home/`whoami`/.bash_aliases
-#ln -s /home/`whoami`/stevset/.bashrc /home/`whoami`/.bashrc
 ln -s /home/`whoami`/stevset/.tmux.conf /home/`whoami`/.tmux.conf
 ln -s /home/`whoami`/stevset/.zshrc /home/`whoami`/.zshrc
-ln -s /home/`whoami`/stevset/.oh-my-zsh /home/`whoami`/.oh-my-zsh
 ln -s /home/`whoami`/stevset/.vim /home/`whoami`/.vim
 ln -s /home/`whoami`/stevset/.vimrc /home/`whoami`/.vimrc
+ln -s /home/`whoami`/stevset/.aliases.zsh /home/`whoami`/.aliases.zsh
+
+#Download Antigen
+curl -sL https://git.io/antibody | bash -s
+echo 'source <(antibody init)' >> ~/.zshrc
 
 #set new shell
 echo "set new shell to zsh"

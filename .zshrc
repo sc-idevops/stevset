@@ -1,18 +1,43 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export TERM="xterm-256color"
+#zsh options
+setopt  auto_cd
+setopt  complete_aliases
+setopt  extended_glob
+setopt  hist_ignore_all_dups
+setopt  share_history
+setopt  list_types
+setopt  mark_dirs
+setopt  path_dirs
 
-# Path to your oh-my-zsh installation.
-  export ZSH=/home/`whoami`/.oh-my-zsh
+#alias/prefs
+export VISUAL="/usr/bin/vim"
+export EDITOR="$VISUAL"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=3'
+alias tmux="tmux -2"
+source ~/.aliases.zsh
 
+#init powerline
+. /usr/share/powerline/bindings/zsh/powerline.zsh
+
+#Antibody Init
+source <(antibody init)
+#antibody bundles
+antibody bundle bhilburn/powerlevel9k
+antibody bundle chrissicool/zsh-256color
+antibody bundle zlsun/solarized-man
+
+
+antibody bundle zsh-users/zsh-autosuggestions
+antibody bundle zsh-users/zsh-syntax-highlighting
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-if [[ -n "$SSH_CLIENT" ]]
-then
-	ZSH_THEME="bureau"
-else
-	ZSH_THEME="agnoster"
-fi
+#if [[ -n "$SSH_CLIENT" ]]
+#then
+#	ZSH_THEME="bureau"
+#else
+#	ZSH_THEME="agnoster"
+#fi
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -55,61 +80,12 @@ fi
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(colored-man-pages copydir cp fasd git gitignore jump systemd tmux vi-mode zsh-autosuggestions)
+#plugins=(colored-man-pages copydir cp fasd git gitignore jump systemd tmux vi-mode zsh-autosuggestions)
 
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-export VISUAL="/usr/bin/vim"
-export EDITOR="$VISUAL"
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=3'
-alias tmux="tmux -2"
-
-if [[ -z "$SSH_CLIENT" ]]
-then
-	. /usr/share/powerline/bindings/zsh/powerline.zsh
-fi
-
-#zsh options
-setopt  auto_cd
-setopt  complete_aliases
-setopt  extended_glob
-setopt  hist_ignore_all_dups
-setopt  share_history
-setopt  list_types
-setopt  mark_dirs
-setopt  path_dirs
 
 #Set caps to escape when tapped and ctrl when held
-if [[ -n "$SSH_CLIENT" ]]
-	then
-		setxkbmap -option 'caps:ctrl_modifier'
-		xcape -e 'Caps_Lock=Escape'
-	fi
+#if [[ -n "$SSH_CLIENT" ]]
+#	then
+#		setxkbmap -option 'caps:ctrl_modifier'
+#		xcape -e 'Caps_Lock=Escape'
+#	fi
