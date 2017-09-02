@@ -1,2 +1,2 @@
 
-sudo apt-get install tmux zsh vim powerline xcape htop mc
+sudo apt-get install tmux zsh vim powerline autojump htop mc
