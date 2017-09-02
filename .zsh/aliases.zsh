@@ -27,10 +27,3 @@ alias ssh-agent="eval `ssh-agent -s`"
 
 #Command Replacement aliases
 alias less='less -imJMW'
-
-#Navigation aliases
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-
