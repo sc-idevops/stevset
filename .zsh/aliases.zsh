@@ -23,7 +23,7 @@ mcd() { mkdir -p "$1"; cd "$1";} #make a directory and cd into it
 cls() { cd "$1"; ls;} #cd into directory and list contents
 md5check() { md5sum "$1" | grep "$2";} #md5sum file, compare to md5sum as second parameter
 #ssh aliases
-alias ssh-agent="eval `ssh-agent -s`"
+alias sagent="eval `ssh-agent`"
 
 #Command Replacement aliases
 alias less='less -imJMW'

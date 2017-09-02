@@ -14,9 +14,9 @@ setopt  mark_dirs
 setopt  path_dirs
 
 #Load libraries
-source ~/.zsh/aliases.zsh
-source ~/.zsh/directories.zsh
-source ~/.zsh/history.zsh
+source ~/.zsh/*
+#source ~/.zsh/directories.zsh
+#source ~/.zsh/history.zsh
 
 #alias/prefs
 export VISUAL="/usr/bin/vim"
