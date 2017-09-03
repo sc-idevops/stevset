@@ -22,8 +22,10 @@ echo 'source <(antibody init)' >> ~/.zshrc
 
 #set new shell
 echo "set new shell to zsh"
-if [[ $SHELL != "/bin/zsh"]] then
+if [[ $SHELL != "/bin/zsh" ]] 
+then
 	chsh -s /bin/zsh
+fi
 
 echo -n "Would you like to configure your git name and email? (y/n) => "; read answer
 if [[ $answer = "Y" ]] || [[ $answer = "y" ]]; then
