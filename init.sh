@@ -3,11 +3,11 @@
 echo "installing required packages"
 ./deps.sh
 #remove existing configs, if they exist
-rm -ri ~/.tmux.conf
-rm -ri ~/.zsh-custom
-rm -ri ~/.vimrc
-rm -ri ~/.vim
-rm -ri ~/.zshrc
+#rm -ri ~/.tmux.conf
+#rm -ri ~/.zsh-custom
+#rm -ri ~/.vimrc
+#rm -ri ~/.vim
+#rm -ri ~/.zshrc
 
 #make links
 ln -s /home/`whoami`/stevset/.tmux.conf /home/`whoami`/.tmux.conf
@@ -22,7 +22,8 @@ echo 'source <(antibody init)' >> ~/.zshrc
 
 #set new shell
 echo "set new shell to zsh"
-chsh -s /bin/zsh
+if [[ $SHELL != "/bin/zsh"]] then
+	chsh -s /bin/zsh
 
 echo -n "Would you like to configure your git name and email? (y/n) => "; read answer
 if [[ $answer = "Y" ]] || [[ $answer = "y" ]]; then
