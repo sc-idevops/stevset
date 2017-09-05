@@ -1,13 +1,21 @@
-#!/bin/bash
+#!/bin/zsh
 #install pre-req.
 echo "installing required packages"
-./deps.sh
+sudo apt-get install tmux \
+	zsh \
+        vim \
+	powerline\
+       	autojump \
+	htop \
+	mc\
+	curl
+
 #remove existing configs, if they exist
-#rm -ri ~/.tmux.conf
-#rm -ri ~/.zsh-custom
-#rm -ri ~/.vimrc
-#rm -ri ~/.vim
-#rm -ri ~/.zshrc
+rm -ri ~/.tmux.conf
+rm -ri ~/.zsh
+rm -ri ~/.vimrc
+rm -ri ~/.vim
+rm -ri ~/.zshrc
 
 #make links
 ln -s /home/`whoami`/stevset/.tmux.conf /home/`whoami`/.tmux.conf
@@ -18,7 +26,7 @@ ln -s /home/`whoami`/stevset/.zsh /home/`whoami`/.zsh
 
 #Download Antigen
 curl -sL https://git.io/antibody | bash -s
-echo 'source <(antibody init)' >> ~/.zshrc
+#echo 'source <(antibody init)' >> ~/.zshrc
 
 #set new shell
 echo "set new shell to zsh"
