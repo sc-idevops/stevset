@@ -13,6 +13,11 @@ set showbreak=\\\\\
 set relativenumber
 set infercase
 set synmaxcol=200
+set nocompatible
+set autoindent
+set autoread
+set autowrite
+
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
