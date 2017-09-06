@@ -30,6 +30,15 @@ zstyle ':completion:*' menu select
 
 #init powerline
 . /usr/share/powerline/bindings/zsh/powerline.zsh
+POWERLEVEL9K_VI_MODE_INSERT_FOREGROUND='teal'
+#POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+#POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(root_indicator vi_mode status dir_writable background_jobs)
+POWERLEVEL9K_VI_INSERT_MODE_STRING="INS"
+POWERLEVEL9K_VI_MODE_INSERT_BACKGROUND='green'
+POWERLEVEL9K_VI_MODE_INSERT_FOREGROUND='white'
+POWERLEVEL9K_VI_NORMAL_MODE_STRING="CMD"
+POWERLEVEL9K_VI_MODE_NORMAL_BACKGROUND='red'
 
 #Antibody Init
 source <(antibody init)
@@ -45,6 +54,5 @@ antibody bundle zsh-users/zsh-syntax-highlighting
 
 #Plugin Settings
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=3'
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 eval "$(fasd --init auto)"
 
