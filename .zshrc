@@ -12,6 +12,9 @@ setopt  extended_glob
 setopt  list_types
 setopt  mark_dirs
 setopt  path_dirs
+setopt  prompt_subst
+setopt  nonomatch
+setopt  automenu
 
 #Load libraries
 for f in ~/.zsh/*.zsh; do
@@ -22,6 +25,9 @@ done
 export VISUAL="/usr/bin/vim"
 export EDITOR="$VISUAL"
 alias tmux="tmux -2"
+autoload -U compinit && compinit
+zstyle ':completion:*' menu select
+
 #source /usr/share/autojump/autojump.sh
 
 #init powerline
@@ -33,6 +39,8 @@ source <(antibody init)
 antibody bundle bhilburn/powerlevel9k
 antibody bundle chrissicool/zsh-256color
 antibody bundle zlsun/solarized-man
+antibody bundle zdharma/history-search-multi-word
+antibody bundle Vifon/deer
 
 antibody bundle zsh-users/zsh-autosuggestions
 antibody bundle zsh-users/zsh-syntax-highlighting
