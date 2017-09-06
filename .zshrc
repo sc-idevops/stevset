@@ -28,8 +28,6 @@ alias tmux="tmux -2"
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select
 
-#source /usr/share/autojump/autojump.sh
-
 #init powerline
 . /usr/share/powerline/bindings/zsh/powerline.zsh
 
@@ -40,7 +38,7 @@ antibody bundle bhilburn/powerlevel9k
 antibody bundle chrissicool/zsh-256color
 antibody bundle zlsun/solarized-man
 antibody bundle zdharma/history-search-multi-word
-antibody bundle Vifon/deer
+antibody bundle clvv/fasd
 
 antibody bundle zsh-users/zsh-autosuggestions
 antibody bundle zsh-users/zsh-syntax-highlighting
@@ -48,3 +46,5 @@ antibody bundle zsh-users/zsh-syntax-highlighting
 #Plugin Settings
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=3'
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+eval "$(fasd --init auto)"
+
