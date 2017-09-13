@@ -18,6 +18,7 @@ set autoindent
 set autoread
 set autowrite
 
+set mouse=a
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
@@ -55,3 +56,17 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled = 1
 
+" markdown also starts with .md
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+
+"paste from outside buffer
+nnoremap <leader>p :set paste<CR>"+p:set nopaste<CR>
+vnoremap <leader>p <Esc>:set paste<CR>gv"+p:set nopaste<CR>
+""copy to outside buffer
+vnoremap <leader>y "+y
+"select all
+nnoremap <leader>a ggVG
+""paste from 0 register
+"Useful because `d` overwrites the <quote> register
+nnoremap <leader>P "0p
+vnoremap <leader>P "0p
