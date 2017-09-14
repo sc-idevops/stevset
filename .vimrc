@@ -89,3 +89,4 @@ let g:airline#extensions#tabline#enabled = 1
 " markdown also starts with .md
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 
+set nrformats-=octal
