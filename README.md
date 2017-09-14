@@ -16,9 +16,8 @@ a modern terminal multiplexor which is actively maintained compared to screen. B
 I chose the Z shell for its extensive expansion and bonus features compared to the default bash shell.
 
 ## Plugin Managers
-
-### Pathogen
-This plugin manager automatically loads all of my vim plugins in the .vim/bundle directory. All I need to do is add one line to my .vimrc for this functionality.
+### Vundle
+An expansion of the original pathogen plugin manager, this will automatically update git repos for plugins based on what's in the vimrc file
 
 ### Antibody
 This plugin manager downloads zsh plugins directly from git based on a list of gituser/gitproject names in my .zshrc file. I chose it over antigen as it is more simple and quick.
