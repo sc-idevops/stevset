@@ -25,6 +25,8 @@ filetype plugin indent on    " required
 " => Appearance
 set t_Co=256
 set background=dark
+let g:solarized_contrast="high"    "default value is normal
+let g:solarized_visibility="high"    "default value is normal
 colorscheme solarized
 set number
 " below is from https://bluz71.github.io/2017/05/15/vim-tips-tricks.html

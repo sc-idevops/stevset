@@ -15,6 +15,7 @@ alias wmip="curl icanhazip.com"
 alias gitS='git status'
 alias gitL='git log'
 alias gitD='git diff'
+alias gitC='git commit -a'
 #Apt aliases
 alias aptup="sudo apt update && sudo apt upgrade"
 alias aptrm="sudo apt autoremove && sudo apt autoclean"
