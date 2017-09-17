@@ -34,6 +34,10 @@ then
 	chsh -s /bin/zsh
 fi
 
+#init vim and plugins
+vim +PluginInstall! +qall
+
+#init git
 echo -n "Would you like to configure your git name and email? (y/n) => "; read answer
 if [[ $answer = "Y" ]] || [[ $answer = "y" ]]; then
     echo -n "What is your git user name => "; read name
