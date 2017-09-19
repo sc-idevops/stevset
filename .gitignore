@@ -1,2 +1,9 @@
 cache/
 log/
+.vim/bundle/VimCompletesMe/
+.vim/bundle/ctrlp.vim/
+.vim/bundle/indentLine/
+.vim/bundle/vim-airline-themes/
+.vim/bundle/vim-airline/
+.vim/bundle/vim-colors-solarized/
+.vim/bundle/vim-sensible/
