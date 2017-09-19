@@ -23,7 +23,7 @@ ln -s /home/`whoami`/stevset/.vim /home/`whoami`/.vim
 ln -s /home/`whoami`/stevset/.vimrc /home/`whoami`/.vimrc
 ln -s /home/`whoami`/stevset/.zsh /home/`whoami`/.zsh
 
-#Download Antigen
+#Download Antibody
 curl -sL https://git.io/antibody | bash -s
 #echo 'source <(antibody init)' >> ~/.zshrc
 
