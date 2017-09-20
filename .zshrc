@@ -1,9 +1,3 @@
-# Set ZSH_CACHE_DIR to the path where cache files should be created
-# or else we will use the default cache/
- if [[ -z "$ZSH_CACHE_DIR" ]]; then
-   ZSH_CACHE_DIR="$ZSH/cache"
-   fi
-
 export TERM="xterm-256color"
 #zsh options
 setopt  auto_cd
@@ -33,12 +27,14 @@ zstyle ':completion:*' menu select
 POWERLEVEL9K_VI_MODE_INSERT_FOREGROUND='teal'
 #POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 #POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(root_indicator vi_mode status dir_writable background_jobs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs vi_mode)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time root_indicator dir_writable background_jobs context)
 POWERLEVEL9K_VI_INSERT_MODE_STRING="INS"
 POWERLEVEL9K_VI_MODE_INSERT_BACKGROUND='green'
 POWERLEVEL9K_VI_MODE_INSERT_FOREGROUND='white'
 POWERLEVEL9K_VI_NORMAL_MODE_STRING="CMD"
 POWERLEVEL9K_VI_MODE_NORMAL_BACKGROUND='red'
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
 
 #Antibody Init
 source <(antibody init)
