@@ -19,7 +19,7 @@ done
 #alias/prefs
 export VISUAL="/usr/bin/vim"
 export EDITOR="$VISUAL"
-alias tmux="tmux -2"
+#alias tmux="tmux -2"
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select
 
