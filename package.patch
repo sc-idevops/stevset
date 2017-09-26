@@ -1,0 +1,37 @@
+--- packages.el	2017-09-26 14:44:01.743525901 -0400
++++ packages_fixed.el	2017-09-26 14:37:53.824574000 -0400
+@@ -37,7 +37,7 @@
+     dracula-theme
+     espresso-theme
+     farmhouse-theme
+-    firebelly-theme
++    ;firebelly-theme
+     flatland-theme
+     flatui-theme
+     gandalf-theme
+@@ -64,14 +64,14 @@
+     monochrome-theme
+     mustang-theme
+     naquadah-theme
+-    niflheim-theme
++    ;niflheim-theme
+     noctilux-theme
+     obsidian-theme
+     occidental-theme
+     omtose-phellack-theme
+     oldlace-theme
+     organic-green-theme
+-    pastels-on-dark-theme
++    ;pastels-on-dark-theme
+     phoenix-dark-mono-theme
+     phoenix-dark-pink-theme
+     planet-theme
+@@ -98,7 +98,7 @@
+     ;; contains error
+     ; tommyh-theme
+     toxi-theme
+-    tronesque-theme
++    ;tronesque-theme
+     twilight-anti-bright-theme
+     twilight-bright-theme
+     twilight-theme
