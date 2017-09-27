@@ -7,7 +7,8 @@ sudo apt-get install tmux \
 	powerline\
 	htop \
 	mc\
-	curl
+	curl\
+	emacs
 
 #remove existing configs, if they exist
 rm -ri ~/.tmux.conf
