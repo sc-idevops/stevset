@@ -4,6 +4,7 @@ Including but not limited to:
 * zsh
 * tmux
 * vim
+* emacs
 Also included are any custom shell scripts I might find useful to carry around with me.
 
 # vim
@@ -14,6 +15,9 @@ a modern terminal multiplexor which is actively maintained compared to screen. B
 
 # ZSH
 I chose the Z shell for its extensive expansion and bonus features compared to the default bash shell.
+
+# Emacs
+My exploration of emacs begins with spacemacs, combining the power of both vim and emacs together! It's extensive set of plugins are self contained and updating to make life easy. Conveniently it has both a GUI and terminal version, but I'm still working on copy/paste!
 
 ## Plugin Managers
 ### Vundle
