@@ -18,6 +18,7 @@ ln -s /home/`whoami`/stevset/.zshrc /home/`whoami`/.zshrc
 ln -s /home/`whoami`/stevset/.vim /home/`whoami`/.vim
 ln -s /home/`whoami`/stevset/.vimrc /home/`whoami`/.vimrc
 ln -s /home/`whoami`/stevset/.zsh /home/`whoami`/.zsh
+ln -s /home/`whoami`/stevset/.spacemacs /home/`whoami`/.spacemacs
 
 #set new shell
 echo "set new shell to zsh"
