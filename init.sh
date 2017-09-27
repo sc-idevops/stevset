@@ -1,16 +1,10 @@
 #!/bin/zsh
 #install pre-req.
 echo "installing required packages"
-sudo apt-get install tmux \
-	zsh \
-        vim \
-	powerline\
-	htop \
-	mc\
-	curl\
-	emacs
+./deps.zsh
 
 #remove existing configs, if they exist
+echo "removing symlinks"
 rm -ri ~/.tmux.conf
 rm -ri ~/.zsh
 rm -ri ~/.vimrc
@@ -18,6 +12,7 @@ rm -ri ~/.vim
 rm -ri ~/.zshrc
 
 #make links
+echo "making new symlinks"
 ln -s /home/`whoami`/stevset/.tmux.conf /home/`whoami`/.tmux.conf
 ln -s /home/`whoami`/stevset/.zshrc /home/`whoami`/.zshrc
 ln -s /home/`whoami`/stevset/.vim /home/`whoami`/.vim
@@ -41,11 +36,17 @@ if [[ $answer = "Y" ]] || [[ $answer = "y" ]]; then
 fi
 
 #Download Antibody
+echo "downloading antibody"
 curl -sL https://git.io/antibody | bash -s
 #echo 'source <(antibody init)' >> ~/.zshrc
 
 #Install fonts
-./fonts.zsh
+if [[ -n "$SSH_CLIENT" ]]
+then
+	break
+else
+	./fonts.zsh
+fi
 
 #init vim and plugins
 ./vim.zsh
