@@ -61,8 +61,12 @@ command W w !sudo tee % > /dev/null
 nnoremap <leader>p :set paste<CR>"+p:set nopaste<CR>
 vnoremap <leader>p <Esc>:set paste<CR>gv"+p:set nopaste<CR>
 ""copy to outside buffer
+"" Allow paste to and from system clipboard with + register
+set clipboard=unnamedplus
+
 vnoremap <leader>y "+y
 "select all
+
 nnoremap <leader>a ggVG
 ""paste from 0 register
 "Useful because `d` overwrites the <quote> register
@@ -90,3 +94,13 @@ let g:airline#extensions#tabline#enabled = 1
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 
 set nrformats-=octal
+
+" Centralize backups, swapfiles and undo history
+set backupdir=~/.vim/backups
+set directory=~/.vim/swaps
+if exists("&undodir")
+	set undodir=~/.vim/undo
+endif
+
+" Don’t create backups when editing files in certain directories
+set backupskip=/tmp/*,/private/tmp/*
