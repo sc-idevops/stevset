@@ -29,6 +29,12 @@ let g:solarized_contrast="high"    "default value is normal
 let g:solarized_visibility="high"    "default value is normal
 colorscheme solarized
 set number
+" Only blink cursor in insert mode
+set guicursor+=n-v-c:blinkon0
+" Highlight current line
+set cursorline
+" Show the current mode
+set showmode
 " below is from https://bluz71.github.io/2017/05/15/vim-tips-tricks.html
 " see examples at https://github.com/bluz71/dotfiles/blob/master/vimrc
 "set breakindent
