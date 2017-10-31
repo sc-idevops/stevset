@@ -2,12 +2,13 @@
 #These are the base dependencies for any install
 
 echo "installing base dependencies"
-sudo apt-get install tmux \
+sudo apt-get install openssh \
+	tmux \
 	zsh \
         vim \
 	powerline\
 	htop \
-	mc\
+	mc \
 	curl
 #check if on a ssh connection, if you are, emacs doesnt need X
 echo "installing emacs, based on X support"
