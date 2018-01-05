@@ -1,5 +1,5 @@
-touch /etc/udev/rules.d/60-schedulers.rules  
-cat > /etc/udev/rules.d/60-schedulers.rules << EOF
+sudo touch /etc/udev/rules.d/60-schedulers.rules  
+sudo cat > /etc/udev/rules.d/60-schedulers.rules << EOF
 #set cfq scheduler for rotating disks
 ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="1", ATTR{queue/scheduler}="cfq"
 
