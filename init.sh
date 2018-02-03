@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 #install pre-req.
 echo "installing required packages"
 ./deps.zsh
