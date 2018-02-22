@@ -41,7 +41,7 @@ set showmode
 " see examples at https://github.com/bluz71/dotfiles/blob/master/vimrc
 "set breakindent
 "set showbreak=\\\\\
-set relativenumber
+"set relativenumber
 set infercase
 set synmaxcol=200
 
