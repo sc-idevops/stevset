@@ -27,9 +27,9 @@ filetype plugin indent on    " required
 " => Appearance
 set t_Co=256
 set background=dark
-let g:solarized_contrast="high"    "default value is normal
-let g:solarized_visibility="high"    "default value is normal
-colorscheme solarized
+"let g:solarized_contrast="high"    "default value is normal
+"let g:solarized_visibility="high"    "default value is normal
+colorscheme zenburn
 set number
 " Only blink cursor in insert mode
 set guicursor+=n-v-c:blinkon0
