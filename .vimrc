@@ -95,7 +95,7 @@ vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
 " => airline Config
-let g:airline_theme='solarized'
+"let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled = 1
 
 " markdown also starts with .md
