@@ -3,6 +3,7 @@
 
 echo "installing base dependencies"
 sudo apt-get -m install openssh-server \
+	stow \
 	tmux \
 	zsh \
         vim \
@@ -11,7 +12,7 @@ sudo apt-get -m install openssh-server \
 	mc \
 	curl \
 	byobu \
-	emacs
+	#emacs need to find a way to select cmd only or with GUI
 
 echo "enabling byobu"
 byobu-enable

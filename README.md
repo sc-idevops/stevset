@@ -1,10 +1,12 @@
 # Dotfile Repo
 This repo contains all of my personal settings for command line linux programs.
+They are conveniently stored in categorized folders, and automatically symlinked to the correct location in the home folder via a clever use of GNU Stow.
 Including but not limited to:
 * zsh
 * tmux
 * vim
 * emacs
+
 Also included are any custom shell scripts I might find useful to carry around with me.
 
 # vim
