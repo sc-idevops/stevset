@@ -4,21 +4,12 @@ echo "installing required packages"
 ./deps.zsh
 
 #remove existing configs, if they exist
-echo "removing symlinks"
-rm -ri ~/.tmux.conf
-rm -ri ~/.zsh
-rm -ri ~/.vimrc
-rm -ri ~/.vim
-rm -ri ~/.zshrc
-
-#make links
-echo "making new symlinks"
-ln -s /home/`whoami`/stevset/.tmux.conf /home/`whoami`/.tmux.conf
-ln -s /home/`whoami`/stevset/.zshrc /home/`whoami`/.zshrc
-ln -s /home/`whoami`/stevset/.vim /home/`whoami`/.vim
-ln -s /home/`whoami`/stevset/.vimrc /home/`whoami`/.vimrc
-ln -s /home/`whoami`/stevset/.zsh /home/`whoami`/.zsh
-ln -s /home/`whoami`/stevset/.spacemacs /home/`whoami`/.spacemacs
+echo "Stowing Configs"
+stow tmux
+stow vim
+stow zsh
+stow emacs
+stow bash
 
 #set new shell
 echo "set new shell to zsh"
