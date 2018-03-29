@@ -1,28 +1,28 @@
 " => Vundle
 set nocompatible              " be iMproved, required
-filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" Check if vim plug is already installed, if not clone it from github
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-Plugin 'tpope/vim-sensible'
-"Plugin 'altercation/vim-colors-solarized'
-Plugin 'vim-airline/vim-airline'
-"Plugin 'vim-airline/vim-airline-themes'
-Plugin 'Yggdroot/indentLine'
-Plugin 'ajh17/VimCompletesMe'
-"Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'mhinz/vim-startify'
-Plugin 'vim-syntastic/syntastic'
+" init VimPlug
+call plug#begin('~/.vim/plugged')
+
+Plug 'tpope/vim-sensible'
+"Plug 'altercation/vim-colors-solarized'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'Yggdroot/indentLine'
+Plug 'ajh17/VimCompletesMe'
+"Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mhinz/vim-startify'
+Plug 'vim-syntastic/syntastic'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
+call plug#end()
 
 " => Appearance
 set t_Co=256
