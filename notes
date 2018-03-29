@@ -1,4 +1,7 @@
 Origin: https://github.com/webpro/awesome-dotfiles
 Plugins:
 	https://github.com/nvbn/thefuck
+	https://github.com/jceb/vim-orgmode/blob/master/doc/orgguide.txt
+Misc:
+	Continue trying to learn i3
 
