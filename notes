@@ -4,4 +4,9 @@ Plugins:
 	https://github.com/jceb/vim-orgmode/blob/master/doc/orgguide.txt
 Misc:
 	Continue trying to learn i3
+Vim Plugins:
+	Plugin 'tomtom/tcomment_vim'
+	Plugin 'easymotion/vim-easymotion'
+	Plugin 'Valloric/YouCompleteMe'
+(also review how the leader key works)
 
