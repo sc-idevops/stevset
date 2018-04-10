@@ -9,7 +9,6 @@ setopt  path_dirs
 setopt  prompt_subst
 setopt  nonomatch
 setopt  automenu
-setopt  prompt_subst
 
 #Load libraries
 for f in ~/.zsh/*.zsh; do
