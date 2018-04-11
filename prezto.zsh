@@ -1,7 +1,6 @@
 #!/bin/zsh
 #Initializes Prezto
-#make link to stevset
-stow prezto
+
 # Clone Prezto
 git clone --recursive https://github.com/steveokard/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 #Make Environment Links, per github readme
