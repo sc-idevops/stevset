@@ -11,9 +11,9 @@ sudo apt-get -m install openssh-server \
 	htop \
 	mc \
 	curl \
-	byobu \
+#	byobu \
 	#emacs need to find a way to select cmd only or with GUI
 
-echo "enabling byobu"
-byobu-enable
+#echo "enabling byobu"
+#byobu-enable
 
