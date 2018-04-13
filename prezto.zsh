@@ -5,7 +5,7 @@
 git clone --recursive https://github.com/steveokard/prezto.git "${ZDOTDIR:-$HOME}/stevset/prezto/.zprezto"
 
 #Remove old stuff
-rm -rf ~/.zshrc ~/.zsh
+rm -rf ~/.zshrc ~/.zsh ~/.zprofile
 
 #Make Environment Links, per github readme
 setopt EXTENDED_GLOB
