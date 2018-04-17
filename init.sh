@@ -1,7 +1,7 @@
 #!/bin/bash
 #install pre-req.
 echo "installing required packages"
-./deps.zsh
+./deps.sh
 
 #setup prezto
 zsh prezto.zsh
