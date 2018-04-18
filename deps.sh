@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #These are the base dependencies for any install
 
 echo "installing base dependencies"
@@ -14,14 +14,15 @@ sudo apt-get -my install git \
 	curl \
 #	byobu \
 
-read -p "Does this system need ssh access?" -n 1 -r
-	if [[ ! $REPLY =~ ^[Yy]$ ]] 
-	then sudo apt-get install openssh-server
+read -n1 -p $'Does this system need ssh access?\n' REPLY
+	if [[ $REPLY == [Yy] ]]; then 
+		sudo apt-get install openssh-server
 	fi
-read -p "Does this system have a GUI?" -n 1 -r
-	if [[ ! $REPLY = [Yy]$ ]]
-	then sudo apt-get install emacs
-	else sudo apt-get install emacs-nox
+read -n1 -p $'\nDoes this system have a GUI?\n' REPLY
+	if [[ $REPLY == [Yy] ]]; then 
+		sudo apt-get install emacs
+	else 
+		sudo apt-get install emacs-nox
 	fi
 
 #echo "enabling byobu"
