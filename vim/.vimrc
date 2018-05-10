@@ -20,6 +20,11 @@ Plug 'ajh17/VimCompletesMe'
 "Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mhinz/vim-startify'
 Plug 'vim-syntastic/syntastic'
+Plug 'airblade/vim-gitgutter'
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
 
 " All of your Plugins must be added before the following line
 call plug#end()
