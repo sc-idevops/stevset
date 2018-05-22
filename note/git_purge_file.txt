@@ -1,0 +1,5 @@
+sometimes you need to get rid of a file from all past commits in git. to do that do the following:
+git filter-branch -f --index-filter 'git rm --cached --ignore-unmatch *.PATTERN'
+
+then force an update to the remote by 
+git push --force -u origin master
