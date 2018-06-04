@@ -1,3 +1,8 @@
+if [ 'whoami' != root ]
+then
+	echo "must be run as root"
+	exit
+fi
 sudo touch /etc/udev/rules.d/60-schedulers.rules  
 sudo cat > /etc/udev/rules.d/60-schedulers.rules << EOF
 #set cfq scheduler for rotating disks
