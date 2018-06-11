@@ -1,5 +1,5 @@
 #!/bin/bash
-#These are the base dependencies for any install
+#These are the programs I expect to find on any install
 
 echo "installing base dependencies"
 sudo apt-get -my install git \
@@ -12,7 +12,7 @@ sudo apt-get -my install git \
 	htop \
 	mc \
 	curl \
-#	byobu \
+	aptitude \
 
 read -n1 -p $'Does this system need ssh access?\n' REPLY
 	if [[ $REPLY == [Yy] ]]; then 
@@ -20,11 +20,8 @@ read -n1 -p $'Does this system need ssh access?\n' REPLY
 	fi
 read -n1 -p $'\nDoes this system have a GUI?\n' REPLY
 	if [[ $REPLY == [Yy] ]]; then 
-		sudo apt-get install emacs
+		sudo apt-get install emacs synaptic
 	else 
 		sudo apt-get install emacs-nox
 	fi
-
-#echo "enabling byobu"
-#byobu-enable
 
