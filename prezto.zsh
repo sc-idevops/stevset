@@ -2,7 +2,7 @@
 #Initializes Prezto
 
 # Clone Prezto
-git clone --recursive https://github.com/steveokard/prezto.git "${ZDOTDIR:-$HOME}/stevset/prezto/.zprezto"
+git clone --recursive https://Stefenauris@bitbucket.org/Stefenauris/prezto-fork.git "${ZDOTDIR:-$HOME}/stevset/prezto/.zprezto"
 
 #Remove old stuff
 rm -rf ~/.zshrc ~/.zsh ~/.zprofile
@@ -13,5 +13,5 @@ for rcfile in "${ZDOTDIR:-$HOME}"/stevset/prezto/.zprezto/runcoms/^README.md(.N)
 	  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
   done
 
-#Fix History
+#Fix History if it exists
 cat ~/.zsh_history > ~/.zhistory
