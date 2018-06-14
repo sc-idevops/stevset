@@ -14,6 +14,9 @@ stow emacs
 stow bash
 stow prezto
 
+ln -s .ssh/config ~/.ssh/config
+chmod -R 0600 ~/.ssh/*
+
 #set new shell
 echo "set new shell to zsh"
 if [[ $SHELL != "/bin/zsh" ]] 
@@ -24,13 +27,18 @@ fi
 #Install fonts
 if [[ -n "$SSH_CLIENT" ]]
 then
-	break
+	echo "no fonts to install over ssh"
 else
+	echo "Installing fonts for powerline"
 	./fonts.zsh
 fi
 
 #init spacemacs in the background
-./spacemacs.zsh
+if [ ! -d ~/.emacs.d ]
+then
+	echo "installing spacemacs"
+	./spacemacs.zsh
+fi
 
 echo "*******************************"
 echo "*    Restart your terminal    *"
