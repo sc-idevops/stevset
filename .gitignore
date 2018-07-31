@@ -3,3 +3,4 @@ log/
 vim/.vim/plugged/**
 vim/.vim/autoload/plug.vim
 prezto
+bash-it-fork
