@@ -12,12 +12,11 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-sensible'
-"Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 Plug 'ajh17/VimCompletesMe'
-"Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mhinz/vim-startify'
 Plug 'vim-syntastic/syntastic'
 Plug 'airblade/vim-gitgutter'
@@ -25,6 +24,9 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
+Plug 'nvie/vim-flake8'
+Plug 'jnurmine/Zenburn'
+Plug 'altercation/vim-colors-solarized'
 
 " All of your Plugins must be added before the following line
 call plug#end()
@@ -34,7 +36,13 @@ set t_Co=256
 set background=dark
 "let g:solarized_contrast="high"    "default value is normal
 "let g:solarized_visibility="high"    "default value is normal
-colorscheme zenburn
+if has('gui_running')
+  set background=dark
+  colorscheme solarized
+else
+  colorscheme zenburn
+endif
+
 set number
 " Only blink cursor in insert mode
 set guicursor+=n-v-c:blinkon0
@@ -118,3 +126,18 @@ endif
 
 " Don’t create backups when editing files in certain directories
 set backupskip=/tmp/*,/private/tmp/*
+
+" => Python Specific
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+    \ set encoding=utf-8
+let python_highlight_all=1
+syntax on
+
