@@ -13,7 +13,7 @@ stow vim
 stow emacs
 stow bash
 stow prezto
-
+ln -s /home/`whoami`/stevset/mc ~/.config/mc
 ln -s .ssh/config ~/.ssh/config
 chmod -R 0600 ~/.ssh/*
 
