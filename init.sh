@@ -28,6 +28,7 @@ fi
 mv "$HOME/.vim" "$HOME/.vimim_bk"
 mv "$HOME/.vimrc" "$HOME/.vimrc_bk"
 curl -sLf https://spacevim.org/install.sh | bash
+ln -sf ~/stevset/vim/init.toml ~/.SpaceVim.d/init.toml
 
 #Install fonts
 #if [[ -n "$SSH_CLIENT" ]]
