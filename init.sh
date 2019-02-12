@@ -9,7 +9,7 @@ zsh prezto.zsh
 #create symlinks using stow
 echo "Stowing Configs"
 stow tmux
-stow vim
+#stow vim
 stow emacs
 stow bash
 stow prezto
@@ -24,21 +24,26 @@ then
 	chsh -s /bin/zsh
 fi
 
+#install spacevim
+mv "$HOME/.vim" "$HOME/.vimim_bk"
+mv "$HOME/.vimrc" "$HOME/.vimrc_bk"
+curl -sLf https://spacevim.org/install.sh | bash
+
 #Install fonts
-if [[ -n "$SSH_CLIENT" ]]
-then
-	echo "no fonts to install over ssh"
-else
-	echo "Installing fonts for powerline"
-	./fonts.zsh
-fi
+#if [[ -n "$SSH_CLIENT" ]]
+#then
+#	echo "no fonts to install over ssh"
+#else
+#	echo "Installing fonts for powerline"
+#	./fonts.zsh
+#fi
 
 #init spacemacs in the background
-if [ ! -d ~/.emacs.d ]
-then
-	echo "installing spacemacs"
-	./spacemacs.zsh
-fi
+#if [ ! -d ~/.emacs.d ]
+#then
+#	echo "installing spacemacs"
+#	./spacemacs.zsh
+#fi
 
 echo "*******************************"
 echo "*    Restart your terminal    *"
