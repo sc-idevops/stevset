@@ -6,6 +6,7 @@ echo "installing required packages"
 #create symlinks using stow
 echo "Stowing Configs"
 stow tmux
+stow vim
 stow emacs
 stow prezto
 stow ssh
