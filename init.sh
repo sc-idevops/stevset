@@ -26,7 +26,7 @@ fi
 
 #install spacevim
 echo "Installing Space VIM!"
-mv "$HOME/.vim" "$HOME/.vimim_bk"
+mv "$HOME/.vim" "$HOME/.vim_bk"
 mv "$HOME/.vimrc" "$HOME/.vimrc_bk"
 bash <(curl -fsSL https://raw.githubusercontent.com/liuchengxu/space-vim/master/install.sh)
 
