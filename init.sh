@@ -25,19 +25,19 @@ then
 fi
 
 #install spacevim
+echo "Installing Space VIM!"
 mv "$HOME/.vim" "$HOME/.vimim_bk"
 mv "$HOME/.vimrc" "$HOME/.vimrc_bk"
-curl -sLf https://spacevim.org/install.sh | bash
-ln -sf ~/stevset/vim/init.toml ~/.SpaceVim.d/init.toml
+bash <(curl -fsSL https://raw.githubusercontent.com/liuchengxu/space-vim/master/install.sh)
 
-#Install fonts
-#if [[ -n "$SSH_CLIENT" ]]
-#then
-#	echo "no fonts to install over ssh"
-#else
-#	echo "Installing fonts for powerline"
-#	./fonts.zsh
-#fi
+Install fonts
+if [[ -n "$SSH_CLIENT" ]]
+then
+	echo "no fonts to install over ssh"
+else
+	echo "Installing fonts for powerline"
+	./fonts.zsh
+fi
 
 #init spacemacs in the background
 #if [ ! -d ~/.emacs.d ]

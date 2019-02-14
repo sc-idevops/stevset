@@ -2,7 +2,7 @@
 #Initializes Prezto
 
 # Clone Prezto
-git clone --recursive https://Stefenauris@bitbucket.org/Stefenauris/prezto-fork.git "${ZDOTDIR:-$HOME}/stevset/prezto/.zprezto"
+#git clone --recursive https://github.com/steveokard/prezto.git "${ZDOTDIR:-$HOME}/stevset/prezto/.zprezto"
 
 #Remove old stuff
 rm -rf ~/.zshrc ~/.zsh ~/.zprofile

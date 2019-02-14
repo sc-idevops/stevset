@@ -1,6 +1,6 @@
 cache/
 log/
-vim/.vim/plugged/**
-vim/.vim/autoload/plug.vim
-prezto
-bash-it-fork
+*.zwc
+*.zwc.old
+prezto/.zprezto/modules/*/cache.zsh
+prezto/.zprezto/contrib
