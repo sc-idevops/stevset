@@ -28,7 +28,7 @@ fi
 echo "Installing Space VIM!"
 mv "$HOME/.vim" "$HOME/.vim_bk"
 mv "$HOME/.vimrc" "$HOME/.vimrc_bk"
-curl -sLf https://spacevim.org/install.sh | zsh
+curl -sLf https://spacevim.org/install.sh | bash
 
 Install fonts
 if [[ -n "$SSH_CLIENT" ]]
