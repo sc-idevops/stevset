@@ -28,7 +28,7 @@ fi
 echo "Installing Space VIM!"
 mv "$HOME/.vim" "$HOME/.vim_bk"
 mv "$HOME/.vimrc" "$HOME/.vimrc_bk"
-zsh <(curl -fsSL https://raw.githubusercontent.com/liuchengxu/space-vim/master/install.sh)
+curl -sLf https://spacevim.org/install.sh | zsh
 
 Install fonts
 if [[ -n "$SSH_CLIENT" ]]
@@ -40,11 +40,11 @@ else
 fi
 
 #init spacemacs in the background
-#if [ ! -d ~/.emacs.d ]
-#then
-#	echo "installing spacemacs"
-#	./spacemacs.zsh
-#fi
+if [ ! -d ~/.emacs.d ]
+then
+	echo "installing spacemacs"
+	./spacemacs.zsh
+fi
 
 echo "*******************************"
 echo "*    Restart your terminal    *"
