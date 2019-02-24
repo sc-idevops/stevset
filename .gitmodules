@@ -40,3 +40,6 @@
 [submodule "modules/q/q"]
 	path = prezto/.zprezto/modules/q/q
 	url = https://github.com/cal2195/q
+[submodule "modules/prompt/external/async"]
+  path = prezto/.zprezto/modules/prompt/external/async
+  url = https://github.com/mafredri/zsh-async.git
