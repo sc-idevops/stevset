@@ -15,7 +15,20 @@ ln -s /home/`whoami`/stevset/mc ~/.config/mc
 
 #setup prezto
 echo "Initializing Prezto"
-zsh prezto.zsh
+
+#Remove old stuff
+rm -rf ~/.zshrc ~/.zsh ~/.zprofile
+
+#Make Environment Links, per github readme
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/stevset/prezto/.zprezto/runcoms/^README.md(.N); do
+	  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+  done
+
+#Fix History if it exists
+if [ -f ~/.zsh_history ]
+  cat ~/.zsh_history > ~/.zhistory
+fi
 
 #set new shell
 echo "set new shell to zsh"
