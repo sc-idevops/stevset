@@ -1,7 +1,7 @@
 #!/bin/bash
 #install pre-req.
 echo "installing required packages"
-./deps.sh
+bash deps.sh
 
 #create symlinks using stow
 echo "Stowing Configs"
@@ -30,14 +30,6 @@ mv "$HOME/.vim" "$HOME/.vim_bk"
 mv "$HOME/.vimrc" "$HOME/.vimrc_bk"
 curl -sLf https://spacevim.org/install.sh | bash
 
-Install fonts
-if [[ -n "$SSH_CLIENT" ]]
-then
-	echo "no fonts to install over ssh"
-else
-	echo "Installing fonts for powerline"
-	./fonts.zsh
-fi
 
 #init spacemacs in the background
 if [ ! -d ~/.emacs.d ]
