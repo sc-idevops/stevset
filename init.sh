@@ -38,6 +38,17 @@ then
 	./spacemacs.zsh
 fi
 
+echo -n "Would you like to configure your git name and email? (y/n) => "; read answer
+if [[ $answer = "Y" ]] || [[ $answer = "y" ]]; then
+    echo -n "What is your git user name => "; read name
+    git config --global user.name "$name"
+    echo -n "What is your git email => "; read email
+    git config --global user.email "$email"
+fi
+
+echo "Initializing Submodules"
+git submodule init && git submodule update
+
 echo "*******************************"
 echo "*    Restart your terminal    *"
 echo "*******************************"
