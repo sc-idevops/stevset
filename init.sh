@@ -11,7 +11,7 @@ stow emacs
 stow prezto
 stow ssh
 chmod -R 0600 ~/.ssh/*
-ln -s /home/`whoami`/stevset/mc ~/.config/mc
+ln -s "$HOME/stevset/mc" ~/.config/mc
 
 #setup prezto
 echo "Initializing Prezto"
@@ -37,7 +37,9 @@ fi
 echo "Installing Spacemacs!"
 if [ ! -d ~/.emacs.d ]
 then
-	./spacemacs.zsh
+ ln -s "$HOME/stevset/.spacemacs" "$HOME/.spacemacs"
+ git clone https://github.com/syl20bnr/spacemacs "$HOME/.emacs.d"
+
 fi
 
 echo -n "Would you like to configure your git name and email? (y/n) => "; read answer
