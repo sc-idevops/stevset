@@ -26,15 +26,17 @@ fi
 
 #install spacevim
 echo "Installing Space VIM!"
-mv "$HOME/.vim" "$HOME/.vim_bk"
-mv "$HOME/.vimrc" "$HOME/.vimrc_bk"
-curl -sLf https://spacevim.org/install.sh | bash
-
+if [ ! -d ~/.space-vim ]
+then
+	mv "$HOME/.vim" "$HOME/.vim_bk"
+	mv "$HOME/.vimrc" "$HOME/.vimrc_bk"
+	curl -sLf https://spacevim.org/install.sh | bash
+fi
 
 #init spacemacs in the background
+echo "Installing Spacemacs!"
 if [ ! -d ~/.emacs.d ]
 then
-	echo "installing spacemacs"
 	./spacemacs.zsh
 fi
 
