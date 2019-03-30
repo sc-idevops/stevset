@@ -4,16 +4,4 @@
 [submodule "vim/.vim/bundle/Vundle.vim"]
 	path = vim/.vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
-[submodule "modules/history-search-multi-word"]
-	path = prezto/.zprezto/contrib/history-search-multi-word
-	url = https://github.com/zdharma/history-search-multi-word
-[submodule "modules/should-use/external"]
-	path = prezto/.zprezto/contrib/should-use/external
-	url = https://github.com/MichaelAquilina/zsh-you-should-use.git
-[submodule "modules/z/external"]
-	path = prezto/.zprezto/contrib/z/external
-	url = https://github.com/sjl/z-zsh.git
-[submodule "modules/q/q"]
-	path = prezto/.zprezto/contrib/q/q
-	url = https://github.com/cal2195/q
-	
+
