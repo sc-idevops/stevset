@@ -2,5 +2,4 @@ cache/
 log/
 *.zwc
 *.zwc.old
-prezto/.zprezto/modules/*/cache.zsh
-prezto/.zprezto/contrib
+prezto/
