@@ -3,7 +3,6 @@
 #git cloning
 echo "initialize submodules and clone prezto"
 git clone --recursive https://github.com/steveokard/prezto.git "$HOME/stevset/prezto/.zprezto"
-git submodule init && git submodule update
 
 #install pre-req.
 echo "installing required packages"
