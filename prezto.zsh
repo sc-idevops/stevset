@@ -12,3 +12,6 @@ for rcfile in "${ZDOTDIR:-$HOME}"/stevset/prezto/.zprezto/runcoms/^README.md(.N)
 
 #Fix History if it exists
 cat ~/.zsh_history > ~/.zhistory
+
+#extra setup for powerlevel10k theme
+ln -s ~/.zprezto/modules/prompt/{external/powerlevel10k/powerlevel10k.zsh-theme,functions/prompt_powerlevel10k_setup}
