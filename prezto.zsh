@@ -14,4 +14,5 @@ for rcfile in "${ZDOTDIR:-$HOME}"/stevset/prezto/.zprezto/runcoms/^README.md(.N)
 cat ~/.zsh_history > ~/.zhistory
 
 #extra setup for powerlevel10k theme
+cd && curl -fsSLO https://raw.githubusercontent.com/romkatv/dotfiles-public/master/.purepower
 ln -s ~/.zprezto/modules/prompt/{external/powerlevel10k/powerlevel10k.zsh-theme,functions/prompt_powerlevel10k_setup}
