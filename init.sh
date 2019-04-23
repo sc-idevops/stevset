@@ -14,6 +14,10 @@ stow tmux
 stow vim
 stow emacs
 stow prezto
+if [ ! "~/.ssh" ]
+then
+  mkdir ~/.ssh
+fi
 stow ssh
 chmod -R 0600 ~/.ssh/*
 ln -s "$HOME/stevset/mc" ~/.config/mc
