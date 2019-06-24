@@ -1,9 +1,4 @@
 #!/bin/bash
-
-#git cloning
-echo "initialize submodules and clone prezto"
-git clone --recursive https://github.com/steveokard/prezto.git "$HOME/stevset/prezto/.zprezto"
-
 #install pre-req.
 echo "installing required packages"
 bash deps.sh
@@ -27,7 +22,7 @@ echo "Initializing Prezto"
 zsh prezto.zsh
 
 #set new shell
-echo "set new shell to zsh"
+echo "Set new shell to zsh"
 if [[ $SHELL != "/bin/zsh" ]] 
 then
 	chsh -s /bin/zsh
