@@ -41,7 +41,7 @@ fi
 echo "Installing Spacemacs!"
 if [ ! -d ~/.emacs.d ]
 then
- ln -s "$HOME/stevset/.spacemacs" "$HOME/.spacemacs"
+ ln -s "$HOME/stevset/emacs/.spacemacs" "$HOME/.spacemacs"
  git clone https://github.com/syl20bnr/spacemacs "$HOME/.emacs.d"
 
 fi
