@@ -3,10 +3,9 @@
 echo "initialize submodules and clone prezto"
 git clone --recursive https://github.com/steveokard/prezto.git "$HOME/stevset/prezto/.zprezto"
 #fix submodules once and for all
-cd $HOME/stevset/prezto/.zprezto && git submodule update --remote
+cd $HOME/stevset/prezto/.zprezto && git submodule update --remote && git submodule update
 
 #Remove old stuff
-#zlogin  zlogout  zpreztorc  zprofile  zshenv  zshrc
 echo "....Creating symlinks"
 rm -rf ~/.zshrc ~/.zsh ~/.zprofile ~/.zlogin ~/.zlogout ~/.zpreztorc ~/.zshenv
 
@@ -23,8 +22,7 @@ fi
 
 #extra setup for powerlevel10k theme
 echo "....configuring theme"
-rm ~/.purepower
 cd && curl -fsSLO https://raw.githubusercontent.com/romkatv/dotfiles-public/master/.purepower
+
 rm $HOME/.zprezto/modules/prompt/functions/prompt_powerlevel10k_setup
 ln -s $HOME/.zprezto/modules/prompt/external/powerlevel10k/prompt_powerlevel10k_setup $HOME/.zprezto/modules/prompt/functions/prompt_powerlevel10k_setup
-

@@ -3,6 +3,10 @@
 echo "installing required packages"
 bash deps.sh
 
+#setup prezto
+echo "Initializing Prezto"
+zsh prezto.zsh
+
 #create symlinks using stow
 echo "Stowing Configs"
 stow tmux
@@ -13,13 +17,9 @@ if [ ! "~/.ssh" ]
 then
   mkdir ~/.ssh
 fi
-stow ssh
+ln -s "$HOME/stevset/ssh/config" "$HOME/.ssh/config"
 chmod -R 0600 ~/.ssh/*
-ln -s "$HOME/stevset/mc" ~/.config/mc
-
-#setup prezto
-echo "Initializing Prezto"
-zsh prezto.zsh
+ln -s "$HOME/stevset/mc" "$HOME/.config/mc"
 
 #set new shell
 echo "Set new shell to zsh"
@@ -53,9 +53,6 @@ if [[ $answer = "Y" ]] || [[ $answer = "y" ]]; then
     echo -n "What is your git email => "; read email
     git config --global user.email "$email"
 fi
-
-echo "Initializing Submodules"
-git submodule init && git submodule update
 
 echo "*******************************"
 echo "*    Restart your terminal    *"
