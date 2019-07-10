@@ -12,10 +12,11 @@ stow prezto
 if [ ! "~/.ssh" ]
 then
   mkdir ~/.ssh
+  stow ssh
 fi
-stow ssh
+chmod 0700 ~/.ssh
 chmod -R 0600 ~/.ssh/*
-ln -s "$HOME/stevset/mc" ~/.config/mc
+cp "$HOME/stevset/mc" ~/.config/mc
 
 #setup prezto
 echo "Initializing Prezto"
@@ -53,9 +54,6 @@ if [[ $answer = "Y" ]] || [[ $answer = "y" ]]; then
     echo -n "What is your git email => "; read email
     git config --global user.email "$email"
 fi
-
-echo "Initializing Submodules"
-git submodule init && git submodule update
 
 echo "*******************************"
 echo "*    Restart your terminal    *"
