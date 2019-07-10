@@ -4,6 +4,7 @@ echo "initialize submodules and clone prezto"
 git clone --recursive https://github.com/steveokard/prezto.git "$HOME/stevset/prezto/.zprezto"
 #fix submodules once and for all
 cd $HOME/stevset/prezto/.zprezto && git submodule update --remote && git submodule update
+cd ~/.zprezto/modules/prompt/external/powerlevel10k && git checkout master && git pull
 
 #Remove old stuff
 echo "....Creating symlinks"
