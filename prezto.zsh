@@ -1,9 +1,9 @@
 #!/bin/zsh
 #Initializes Prezto
 echo "initialize submodules and clone prezto"
-git clone --recursive https://github.com/steveokard/prezto.git "$HOME/stevset/prezto/.zprezto"
+git clone --recursive -j 4 https://github.com/steveokard/prezto.git "$HOME/stevset/prezto/.zprezto"
 #fix submodules once and for all
-cd $HOME/stevset/prezto/.zprezto && git submodule update --remote && git submodule update
+cd $HOME/stevset/prezto/.zprezto && git submodule update -j 4 --init --remote && git submodule update -j 4
 cd ~/.zprezto/modules/prompt/external/powerlevel10k && git checkout master && git pull
 
 #Remove old stuff
