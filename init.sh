@@ -3,6 +3,10 @@
 echo "installing required packages"
 bash deps.sh
 
+#setup prezto
+echo "Initializing Prezto"
+zsh prezto.zsh
+
 #create symlinks using stow
 echo "Stowing Configs"
 stow tmux
@@ -16,7 +20,7 @@ then
 fi
 chmod 0700 ~/.ssh
 chmod -R 0600 ~/.ssh/*
-cp "$HOME/stevset/mc" ~/.config/mc
+cp "$HOME/stevset/mc" "$HOME/.config/mc"
 
 #setup prezto
 echo "Initializing Prezto"
