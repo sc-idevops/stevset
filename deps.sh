@@ -2,7 +2,7 @@
 #These are the programs I expect to find on any install
 
 echo "installing base dependencies"
-sudo zypper install git \
+sudo apt-get -my install git \
 	stow \
 	etckeeper \
 	tmux \
@@ -12,15 +12,16 @@ sudo zypper install git \
 	htop \
 	mc \
 	curl \
+	aptitude \
 
 read -n1 -p $'Does this system need ssh access?\n' REPLY
 	if [[ $REPLY == [Yy] ]]; then 
-		sudo zypper install openssh-server
+		sudo apt-get install openssh-server
 	fi
 read -n1 -p $'\nDoes this system have a GUI?\n' REPLY
 	if [[ $REPLY == [Yy] ]]; then 
-		sudo zypper install emacs 
+		sudo apt-get install emacs synaptic
 	else 
-		sudo zypper install emacs-nox
+		sudo apt-get install emacs-nox
 	fi
 
