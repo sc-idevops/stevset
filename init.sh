@@ -1,7 +1,14 @@
 #!/bin/bash
 #install pre-req.
-echo "installing required packages"
-bash deps.sh
+echo -n "Which Linux flavor will we be installing programs for? (u/o)"; read answer
+if [[ $answer = "U" ]] || [[ $answer = "u" ]]; then
+	bash udeps.sh
+elif [[ $answer = "O" ]] || [[ $answer = "o" ]]; then
+	bash odeps.sh
+else 
+	echo "Aborting!"	
+	exit 1
+fi
 
 #setup prezto
 echo "Initializing Prezto"
