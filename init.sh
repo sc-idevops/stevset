@@ -32,6 +32,8 @@ cp "$HOME/stevset/mc" "$HOME/.config/mc"
 #setup prezto
 echo "Initializing Prezto"
 zsh prezto.zsh
+#fix permissions to avoid compaudit flag
+chmod -R go-w ~/.zprezto 
 
 #set new shell
 echo "Set new shell to zsh"
