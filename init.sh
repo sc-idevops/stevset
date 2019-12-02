@@ -17,6 +17,8 @@ zsh prezto.zsh
 chmod -R go-w ~/.zprezto 
 
 #create symlinks using stow
+mkdir ~/.ssh
+mkdir ~/.config/systemd/user/
 echo "Stowing Configs"
 stow tmux
 stow vim
