@@ -13,6 +13,8 @@ fi
 #setup prezto
 echo "Initializing Prezto"
 zsh prezto.zsh
+#fix permissions to avoid compaudit flag
+chmod -R go-w ~/.zprezto 
 
 #create symlinks using stow
 echo "Stowing Configs"
@@ -20,20 +22,10 @@ stow tmux
 stow vim
 stow emacs
 stow prezto
-if [ ! "~/.ssh" ]
-then
-  mkdir ~/.ssh
-  stow ssh
-fi
+stow config
 chmod 0700 ~/.ssh
 chmod -R 0600 ~/.ssh/*
 cp "$HOME/stevset/mc" "$HOME/.config/mc"
-
-#setup prezto
-echo "Initializing Prezto"
-zsh prezto.zsh
-#fix permissions to avoid compaudit flag
-chmod -R go-w ~/.zprezto 
 
 #set new shell
 echo "Set new shell to zsh"
@@ -57,7 +49,6 @@ if [ ! -d ~/.emacs.d ]
 then
  ln -s "$HOME/stevset/emacs/.spacemacs" "$HOME/.spacemacs"
  git clone https://github.com/syl20bnr/spacemacs "$HOME/.emacs.d"
-
 fi
 
 echo -n "Would you like to configure your git name and email? (y/n) => "; read answer
