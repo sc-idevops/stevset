@@ -7,12 +7,14 @@ sudo apt-get -my install git \
 	etckeeper \
 	tmux \
 	zsh \
-        vim \
+  vim \
 	powerline\
 	htop \
 	mc \
 	curl \
 	aptitude \
+  nnn \
+  ack 
 
 read -n1 -p $'Does this system need ssh access?\n' REPLY
 	if [[ $REPLY == [Yy] ]]; then 
