@@ -13,12 +13,9 @@ fi
 #setup prezto
 echo "Initializing Prezto"
 (zsh prezto.zsh)
-#fix permissions to avoid compaudit flag
-chmod -R go-w ~/.zprezto 
 
 #create symlinks using stow
 mkdir ~/.ssh
-mkdir ~/.config/systemd/user/
 echo "Stowing Configs"
 stow tmux
 stow vim
@@ -41,7 +38,7 @@ if [ ! -e ~/.space-vim ]
 then
 	mv "$HOME/.vim" "$HOME/vim_bk"
 	mv "$HOME/.vimrc" "$HOME/vimrc_bk"
-	curl -sLf https://spacevim.org/install.sh | bash
+	(curl -sLf https://spacevim.org/install.sh | bash)
 fi
 
 #install Emacs Doom

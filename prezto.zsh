@@ -24,8 +24,10 @@ fi
 
 #extra setup for powerlevel10k theme
 echo "....configuring theme"
-#cd && curl -fsSLO https://raw.githubusercontent.com/romkatv/dotfiles-public/master/.purepower
 ln -s $HOME/stevset/.p10k.zsh $HOME/
 
-rm $HOME/.zprezto/modules/prompt/functions/prompt_powerlevel10k_setup
-ln -s $HOME/.zprezto/modules/prompt/external/powerlevel10k/prompt_powerlevel10k_setup $HOME/.zprezto/modules/prompt/functions/prompt_powerlevel10k_setup
+#rm $HOME/.zprezto/modules/prompt/functions/prompt_powerlevel10k_setup
+#ln -s $HOME/.zprezto/modules/prompt/external/powerlevel10k/prompt_powerlevel10k_setup $HOME/.zprezto/modules/prompt/functions/prompt_powerlevel10k_setup
+
+#finally, fix permissions to avoid compaudit flag
+chmod -R go-w ~/.zprezto 
