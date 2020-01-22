@@ -19,7 +19,9 @@ mkdir ~/.ssh
 echo "Stowing Configs"
 stow tmux
 stow vim
+#Defer until prezto.zsh completes?
 stow prezto
+#
 stow config
 chmod 0700 ~/.ssh
 chmod -R 0600 ~/.ssh/*
