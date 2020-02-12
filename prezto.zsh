@@ -3,7 +3,7 @@
 echo "initialize submodules and clone prezto"
 git clone --recursive -j 4 https://github.com/steveokard/prezto.git "$HOME/stevset/prezto/.zprezto"
 #fix submodules once and for all
-cd $HOME/stevset/prezto/.zprezto && git submodule update -j 4 --init --remote 
+#cd $HOME/stevset/prezto/.zprezto && git submodule update -j 4 --init --remote 
 #&& git submodule update -j 4
 #cd ~/.zprezto/modules/prompt/external/powerlevel10k && git checkout master && git pull
 
@@ -27,5 +27,5 @@ echo "....configuring theme"
 #cd && curl -fsSLO https://raw.githubusercontent.com/romkatv/dotfiles-public/master/.purepower
 ln -s $HOME/stevset/.p10k.zsh $HOME/
 
-rm $HOME/.zprezto/modules/prompt/functions/prompt_powerlevel10k_setup
-ln -s $HOME/.zprezto/modules/prompt/external/powerlevel10k/prompt_powerlevel10k_setup $HOME/.zprezto/modules/prompt/functions/prompt_powerlevel10k_setup
+#rm $HOME/.zprezto/modules/prompt/functions/prompt_powerlevel10k_setup
+#ln -s $HOME/.zprezto/modules/prompt/external/powerlevel10k/prompt_powerlevel10k_setup $HOME/.zprezto/modules/prompt/functions/prompt_powerlevel10k_setup
