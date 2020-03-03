@@ -19,9 +19,7 @@ mkdir ~/.ssh
 echo "Stowing Configs"
 stow tmux
 stow vim
-#Defer until prezto.zsh completes?
 stow prezto
-#
 stow config
 chmod 0700 ~/.ssh
 chmod -R 0600 ~/.ssh/*
@@ -43,10 +41,6 @@ then
 	(curl -sLf https://spacevim.org/install.sh | bash)
 fi
 
-#install Emacs Doom
-echo "Installing Emacs DOOM! (might take awhile)"
-(zsh emacs_doom.zsh)
-
 echo -n "Would you like to configure your git name and email? (y/n) => "; read answer
 if [[ $answer = "Y" ]] || [[ $answer = "y" ]]; then
     echo -n "What is your git user name => "; read name
@@ -54,6 +48,10 @@ if [[ $answer = "Y" ]] || [[ $answer = "y" ]]; then
     echo -n "What is your git email => "; read email
     git config --global user.email "$email"
 fi
+
+#install Emacs Doom
+echo "Installing Emacs DOOM! (might take awhile)"
+(zsh emacs_doom.zsh)
 
 echo "*******************************"
 echo "*    Restart your terminal    *"
