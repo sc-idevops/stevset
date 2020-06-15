@@ -14,8 +14,7 @@ sudo apt-get -my install git \
 	curl \
 	aptitude \
   nnn \
-  ack \
-  ripgrep
+  ack 
 
 read -n1 -p $'Does this system need ssh access?\n' REPLY
 	if [[ $REPLY == [Yy] ]]; then 

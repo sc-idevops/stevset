@@ -9,13 +9,7 @@ fi
 
 git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
 
-#Test for ripgrep
-if [ -e /usr/bin/rg ]
-then
-    ~/.emacs.d/bin/doom install
-else 
-    echo "Ripgrep not detected, attempting to install!"
-    sudo apt install ripgrep
-    echo "if successful, install emacs doom via script ~/.emacs.d/bin/doom install"
-fi
+#Install Dependencies
+sudo apt install ripgrep markdown shellcheck fd-find
 
+~/.emacs.d/bin/doom install
