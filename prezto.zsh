@@ -18,8 +18,8 @@ if test -f "~/.zsh_history"; then
 fi
 
 #extra setup for powerlevel10k theme
-echo "....configuring theme"
-ln -s $HOME/stevset/.p10k.zsh $HOME/
+echo "remember to run p10k configure to configure the theme!"
+#ln -s $HOME/stevset/.p10k.zsh $HOME/
 
 #rm $HOME/.zprezto/modules/prompt/functions/prompt_powerlevel10k_setup
 ln -s $HOME/.zprezto/modules/prompt/external/powerlevel10k/prompt_powerlevel10k_setup $HOME/.zprezto/modules/prompt/functions/prompt_powerlevel10k_setup
