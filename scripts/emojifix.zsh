@@ -6,3 +6,5 @@ cd emoji.conf
 cd ..
 rm -rf emoji.conf
 #test by going to https://www.fileformat.info/info/emoji/browsertest.htm
+echo "regenerating font cache"
+fc-cache -f -v
