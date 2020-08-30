@@ -7,11 +7,11 @@ sudo zypper install git \
 	etckeeper \
 	tmux \
 	zsh \
-        vim \
+  vim \
 	powerline\
 	htop \
 	mc \
-	curl \
+	curl 
 
 read -n1 -p $'Does this system need ssh access?\n' REPLY
 	if [[ $REPLY == [Yy] ]]; then 
