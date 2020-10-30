@@ -23,7 +23,7 @@ stow prezto
 stow config
 chmod 0700 ~/.ssh
 chmod -R 0600 ~/.ssh/*
-cp "$HOME/stevset/mc" "$HOME/.config/mc"
+#cp "$HOME/stevset/mc" "$HOME/.config/mc"
 
 #set new shell
 echo "Set new shell to zsh"
