@@ -11,8 +11,18 @@ else
 fi
 
 #setup prezto
-echo "Initializing Prezto"
-(zsh prezto.zsh)
+echo "Select which shell to configure and use:"; read answer
+if [[ $answer = "zsh" ]] || [[ $answer = "z" ]]; then
+  echo "Initializing Prezto"
+  zsh prezto.zsh
+  chsh -s /bin/zsh 
+elif [[ $answer = "fish" ]] || [[ $answer = "f" ]]; then
+  echo "Installing Oh-My-Fish"
+  bash fish.sh
+  chsh -s /bin/fish
+else 
+  echo "Guess we're sticking with default bash then..."
+fi
 
 #create symlinks using stow
 mkdir ~/.ssh
@@ -24,13 +34,6 @@ stow config
 chmod 0700 ~/.ssh
 chmod -R 0600 ~/.ssh/*
 cp "$HOME/stevset/mc" "$HOME/.config/mc"
-
-#set new shell
-echo "Set new shell to zsh"
-if [[ $SHELL != "/bin/zsh" ]] 
-then
-	chsh -s /bin/zsh
-fi
 
 #install spacevim
 echo "Installing Space VIM!"
@@ -50,8 +53,10 @@ if [[ $answer = "Y" ]] || [[ $answer = "y" ]]; then
 fi
 
 #install Emacs Doom
-echo "Installing Emacs DOOM! (might take awhile)"
-(zsh emacs_doom.zsh)
+echo "Install Emacs Doom now? y/n"; read answer
+if [[ $answer = "Y" ]] || [[ $answer = "y" ]]; then 
+  zsh emacs_doom.zsh 
+fi
 
 echo "*******************************"
 echo "*    Restart your terminal    *"
