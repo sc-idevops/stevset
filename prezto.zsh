@@ -21,7 +21,7 @@ fi
 echo "remember to run p10k configure to configure the theme!"
 #ln -s $HOME/stevset/.p10k.zsh $HOME/
 
-#rm $HOME/.zprezto/modules/prompt/functions/prompt_powerlevel10k_setup
+rm $HOME/.zprezto/modules/prompt/functions/prompt_powerlevel10k_setup
 ln -s $HOME/.zprezto/modules/prompt/external/powerlevel10k/prompt_powerlevel10k_setup $HOME/.zprezto/modules/prompt/functions/prompt_powerlevel10k_setup
 
 #finally, fix permissions to avoid compaudit flag
