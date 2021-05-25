@@ -55,12 +55,12 @@ then
     fi
 fi
 
-#install Emacs Doom
-echo "Install Emacs Doom now? y/n"; read -r answer
-if [[ $answer = "Y" ]] || [[ $answer = "y" ]]; then 
-  ./emacs_doom.sh 
-fi
-
+# #install Emacs Doom
+# echo "Install Emacs Doom now? y/n"; read -r answer
+# if [[ $answer = "Y" ]] || [[ $answer = "y" ]]; then
+#   ./emacs_doom.sh
+# fi
+###Doom's requirements are outside the scope of Ubuntu 20.04LTS
 echo "*******************************"
 echo "*    Restart your terminal    *"
 echo "*******************************"
