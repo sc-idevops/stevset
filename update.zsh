@@ -1,10 +1,4 @@
 #!/bin/zsh
-echo "Configuring Emoji Fonts"
-git clone https://gitlab.com/es20490446e/emoji.conf.git
-cd emoji.conf/
-./install-uninstall.sh
-#regenerate font cache
-fc-cache -f -v
-#cleanup
-cd ..
-rm -r emoji.conf
+echo "Remove Emacs"
+sudo apt autoremove emacs emacs-nox ripgrep markdown shellcheck fd-find
+rm -r  --interactive=never $HOME/.emacs.d $HOME/.doom.d
