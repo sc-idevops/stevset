@@ -191,9 +191,9 @@ export VISUAL=$EDITOR
 export PAGER='less'
 export SHELL='/bin/zsh'
 
-#if [[ ! $(tmux ls) ]] 2> /dev/null; then
-#  tmux new -s λ
-#fi
+if [[ ! $(tmux ls) ]] 2> /dev/null; then
+  tmux new -s λ
+fi
 #####################
 # COLORING          #
 #####################
