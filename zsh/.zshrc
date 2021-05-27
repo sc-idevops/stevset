@@ -1,4 +1,6 @@
 #Original Concept located from https://github.com/crivotz/dot_files/blob/master/linux/zplugin/zshrc
+# Skip the not really helping Ubuntu global compinit
+skip_global_compinit=1
 #####################
 # FIRST PROMPT LINE #
 #####################
@@ -110,8 +112,8 @@ zinit load 'wfxr/forgit'
 zinit ice lucid wait"0" as"program" from"gh-r" mv"lazygit* -> lazygit" atload"alias lg='lazygit'"
 zinit light 'jesseduffield/lazygit'
 # RANGER
-zinit ice depth'1' as"program" pick"ranger.py"
-zinit light ranger/ranger
+# zinit ice depth'1' as"program" pick"ranger.py"
+# zinit light ranger/ranger
 # FD
 zinit ice as"command" from"gh-r" mv"fd* -> fd" pick"fd/fd"
 zinit light sharkdp/fd
@@ -180,8 +182,12 @@ setopt listpacked
 setopt automenu
 unsetopt BEEP
 setopt vi
+# From Prezto/Environment
+unsetopt BG_NICE          # Don't run all background jobs at a lower priority.
+unsetopt HUP              # Don't kill jobs on shell exit.
+unsetopt CHECK_JOBS       # Don't report on jobs when shell exit.
 
-#chpwd() exa --git --icons --classify --group-directories-first --time-style=long-iso --group --color-scale
+# chpwd() exa --git --icons --classify --group-directories-first --time-style=long-iso --group --color-scale
 #####################
 # ENV VARIABLE      #
 #####################
@@ -203,6 +209,10 @@ autoload colors && colors
 # ALIASES           #
 #####################
 source $HOME/.zsh_aliases
+zinit wait lucid for \
+        OMZ::plugins/common-aliases \
+        if"[[ $+commands[systemd] ]]" OMZ::plugins/systemd
+        PZT::modules/directory/init.zsh
 
 #####################
 # FANCY-CTRL-Z      #

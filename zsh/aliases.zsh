@@ -35,3 +35,6 @@ alias sagent="eval `ssh-agent`"
 #Command Replacement aliases
 alias less='less -imJMW'
 
+##History Aliases
+alias h='history'
+alias hs='history | grep -i'
