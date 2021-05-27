@@ -13,7 +13,7 @@ sudo apt-get -my install git \
 	mc \
 	curl \
 	aptitude \
-  nnn \
+  tree \
   ack 
 
 read -n1 -p $'Does this system need ssh access?\n' REPLY
