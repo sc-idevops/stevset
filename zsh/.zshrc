@@ -119,8 +119,8 @@ zinit light sharkdp/fd
 zinit ice lucid wait"0" as"program" from"gh-r" pick"usr/bin/gh"
 zinit light "cli/cli"
 # TMUX
-zinit ice from"gh-r" as"program" mv"tmux* -> tmux" pick"tmux" atload"alias tmux=tmux"
-zinit light tmux/tmux
+#zinit ice from"gh-r" as"program" mv"tmux* -> tmux" pick"tmux" atload"alias tmux=tmux"
+#zinit light tmux/tmux
 # TMUXINATOR
 #zinit ice as"completion"; zinit snippet ~/.nubem_dot_files/extras/tmuxinator/tmuxinator.zsh
 # ZSH MANYDOTS MAGIC
