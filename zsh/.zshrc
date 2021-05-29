@@ -126,7 +126,7 @@ zinit light "cli/cli"
 # TMUXINATOR
 #zinit ice as"completion"; zinit snippet ~/.nubem_dot_files/extras/tmuxinator/tmuxinator.zsh
 # ZSH MANYDOTS MAGIC
-zinit autoload'#manydots-magic' for knu/zsh-manydots-magic
+#zinit autoload'#manydots-magic' for knu/zsh-manydots-magic
 # TREE-SITTER
 zinit ice as"program" from"gh-r" mv"tree* -> tree-sitter" pick"tree-sitter"
 zinit light tree-sitter/tree-sitter
@@ -181,7 +181,7 @@ setopt nolisttypes
 setopt listpacked
 setopt automenu
 unsetopt BEEP
-setopt vi
+setopt emacs
 # From Prezto/Environment
 unsetopt BG_NICE          # Don't run all background jobs at a lower priority.
 unsetopt HUP              # Don't kill jobs on shell exit.
