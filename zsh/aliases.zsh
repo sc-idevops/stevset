@@ -7,6 +7,7 @@ alias df='df -H -x squashfs -x tmpfs -x devtmpfs'
 alias dirs="dirs -v"
 alias h='history'
 alias j='jobs -l'
+alias reload=". ~/.zshrc"
 
 #shortcuts aliases
 alias please="sudo !!"
