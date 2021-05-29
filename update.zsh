@@ -1,6 +1,5 @@
 #!/bin/zsh
-echo "Remove Emacs"
-sudo apt autoremove emacs emacs-nox ripgrep markdown shellcheck fd-find
+echo "Remove Doom"
 rm -r  --interactive=never $HOME/.emacs.d $HOME/.doom.d
 
 echo "Install zinit"
