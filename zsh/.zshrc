@@ -48,6 +48,7 @@ zinit ice zinit snippet PZT::modules/terminal
 zinit ice zinit snippet PZT::modules/editor
 zinit ice silent; zinit snippet PZT::modules/gpg
 zinit ice silent pick"init.zsh" lucid; zinit snippet PZT::modules/utility
+zstyle :omz:plugins:ssh-agent identities id_rsa github_rsa pete_rsa stevserver_rsa ymca_rsa
 # }}}
 ##Set VI MODE
 bindkey -v
@@ -163,23 +164,6 @@ zinit light tree-sitter/tree-sitter
 # PRETTYPING
 zinit ice lucid wait'' as"program" pick"prettyping" atload'alias ping=prettyping'
 zinit load "denilsonsa/prettyping"
-# GLOW
-#zinit ice lucid wait"0" as"program" from"gh-r" bpick='*linux_amd64.deb' pick"usr/bin/glow"
-#zinit light charmbracelet/glow
-# CODE-MINIMAP
-#zinit ice lucid wait"0" as"program" from"gh-r" bpick='*amd64.deb' pick"usr/bin/code-minimap"
-#zinit light wfxr/code-minimap
-# ZSH DIFF SO FANCY
-# zinit ice wait"2" lucid as"program" pick"bin/git-dsf"
-# zinit light zdharma/zsh-diff-so-fancy
-# GIT-FLOW
-# zinit light petervanderdoes/git-flow-completion
-# RCLONE
-# zinit ice lucid wait"0" as"program" from"gh-r" bpick='*-linux-amd64.deb' pick"usr/bin/rclone"
-# zinit light 'rclone/rclone'
-# WHATSAPP CLI
-# zinit ice lucid wait"0" as"program" from"gh-r" pick"whatscli"
-# zinit light "normen/whatscli"
 #####################
 # HISTORY           #
 #####################
@@ -239,7 +223,8 @@ zinit wait lucid for \
         OMZ::plugins/common-aliases \
         if"[[ $+commands[systemd] ]]" OMZ::plugins/systemd \
         PZT::modules/directory/init.zsh \
-        PZT::modules/tmux
+        PZT::modules/tmux \
+        hkupty/ssh-agent
 #####################
 # FANCY-CTRL-Z      #
 #####################
