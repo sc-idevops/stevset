@@ -27,10 +27,27 @@ autoload -Uz _zinit
 # THEME             #
 #####################
 zinit ice depth=1; zinit light romkatv/powerlevel10k
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+export COMPLETION_WAITING_DOTS="true"
 
 #####################
 # PLUGINS           #
 #####################
+# tmux {{
+zstyle ':prezto:module:tmux:session' name 'λ'
+# [[ -n $DISPLAY ]] && zstyle ':prezto:module:tmux:auto-start' local 'yes'
+zinit ice zinit snippet PZT::modules/tmux
+# }}}
+# prezto {{{
+zstyle ':prezto:*:*' case-sensitive 'no'
+zstyle ':prezto:*:*' color 'yes'
+zinit ice zinit snippet PZT::modules/helper
+zinit ice zinit snippet PZT::modules/environment
+zinit ice zinit snippet PZT::modules/terminal
+zinit ice zinit snippet PZT::modules/editor
+zinit ice silent; zinit snippet PZT::modules/gpg
+zinit ice silent pick"init.zsh" lucid; zinit snippet PZT::modules/utility
+# }}}
 # SSH-AGENT
 zinit light bobsoppe/zsh-ssh-agent
 # AUTOSUGGESTIONS, TRIGGER PRECMD HOOK UPON LOAD
@@ -197,9 +214,9 @@ export VISUAL=$EDITOR
 export PAGER='less'
 #export SHELL='/bin/zsh'
 
-if [[ ! $(tmux ls) ]] 2> /dev/null; then
-  tmux new -s λ
-fi
+# if [[ ! $(tmux ls) ]] 2> /dev/null; then
+  # tmux new -s λ
+# fi
 #####################
 # COLORING          #
 #####################
@@ -213,7 +230,6 @@ zinit wait lucid for \
         OMZ::plugins/common-aliases \
         if"[[ $+commands[systemd] ]]" OMZ::plugins/systemd \
         PZT::modules/directory/init.zsh
-
 #####################
 # FANCY-CTRL-Z      #
 #####################
