@@ -48,6 +48,15 @@ zinit ice zinit snippet PZT::modules/editor
 zinit ice silent; zinit snippet PZT::modules/gpg
 zinit ice silent pick"init.zsh" lucid; zinit snippet PZT::modules/utility
 # }}}
+##Set VI MODE
+bindkey -v
+bindkey '^r' history-incremental-search-backward
+bindkey '^a' beginning-of-line
+bindkey '^e' end-of-line
+# Also fix annoying vi backspace
+bindkey '^?' backward-delete-char
+bindkey '^[b' vi-backward-blank-word
+bindkey '^[w' vi-forward-blank-word
 # SSH-AGENT
 zinit light bobsoppe/zsh-ssh-agent
 # AUTOSUGGESTIONS, TRIGGER PRECMD HOOK UPON LOAD
@@ -198,7 +207,6 @@ setopt nolisttypes
 setopt listpacked
 setopt automenu
 unsetopt BEEP
-setopt emacs
 # From Prezto/Environment
 unsetopt BG_NICE          # Don't run all background jobs at a lower priority.
 unsetopt HUP              # Don't kill jobs on shell exit.
