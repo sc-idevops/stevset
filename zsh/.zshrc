@@ -36,6 +36,7 @@ export COMPLETION_WAITING_DOTS="true"
 # tmux {{
 zstyle ':prezto:module:tmux:session' name 'λ'
 [[ -n $DISPLAY ]] && zstyle ':prezto:module:tmux:auto-start' local 'yes'
+zstyle ':prezto:module:tmux:auto-start' remote 'yes'
 zinit ice zinit snippet PZT::modules/tmux
 # }}}
 # prezto {{{
