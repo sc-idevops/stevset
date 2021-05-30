@@ -238,7 +238,8 @@ source $HOME/.zsh_aliases
 zinit wait lucid for \
         OMZ::plugins/common-aliases \
         if"[[ $+commands[systemd] ]]" OMZ::plugins/systemd \
-        PZT::modules/directory/init.zsh
+        PZT::modules/directory/init.zsh \
+        PZT::modules/tmux
 #####################
 # FANCY-CTRL-Z      #
 #####################
