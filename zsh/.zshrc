@@ -90,13 +90,14 @@ zstyle ':fzf-tab:complete:kill:argument-rest' extra-opts --preview=$extract'ps -
 zstyle ":completion:*:git-checkout:*" sort false
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # Magic Generate Completions
-# GENCOMPL_FPATH=$HOME/.cache/zsh-completion-generator
-# if [ ! -d "$GENCOMPL_FPATH" ]; then
-    # mkdir -p $GENCOMPL_FPATH
-# fi
-# fpath=($GENCOMPL_FPATH $fpath)
-# zstyle :plugin:zsh-completion-generator programs fzf
-# zinit wait'3' lucid for RobSis/zsh-completion-generator
+GENCOMPL_FPATH=$HOME/.cache/zsh-completion-generator
+GENCOMPL_PY=python3
+if [ ! -d "$GENCOMPL_FPATH" ]; then
+    mkdir -p $GENCOMPL_FPATH
+fi
+fpath=($GENCOMPL_FPATH $fpath)
+zstyle :plugin:zsh-completion-generator programs fzf
+zinit wait'3' lucid for RobSis/zsh-completion-generator
 # FZF
 zinit ice from"gh-r" as"command"
 zinit light junegunn/fzf
