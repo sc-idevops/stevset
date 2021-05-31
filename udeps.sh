@@ -25,5 +25,4 @@ read -n1 -p $'\nDoes this system have a GUI?\n' REPLY
 		sudo apt-get install synaptic
 	# else
 	#   sudo apt-get install emacs-nox
-	# fi
-
+	fi
