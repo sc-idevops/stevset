@@ -42,10 +42,8 @@ zinit ice zinit snippet PZT::modules/tmux
 # prezto {{{
 zstyle ':prezto:*:*' case-sensitive 'no'
 zstyle ':prezto:*:*' color 'yes'
-zinit ice zinit snippet PZT::modules/helper
-zinit ice zinit snippet PZT::modules/environment
-zinit ice zinit snippet PZT::modules/terminal
 zinit ice zinit snippet PZT::modules/editor
+
 zinit ice silent; zinit snippet PZT::modules/gpg
 zinit ice silent pick"init.zsh" lucid; zinit snippet PZT::modules/utility
 zstyle :omz:plugins:ssh-agent identities id_rsa github_rsa pete_rsa stevserver_rsa ymca_rsa
@@ -174,13 +172,9 @@ SAVEHIST=$HISTSIZE
 #####################
 # SETOPT            #
 #####################
-setopt extended_history       # record timestamp of command in HISTFILE
-setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
-setopt hist_ignore_all_dups   # ignore duplicated commands history list
 setopt hist_ignore_space      # ignore commands that start with space
 setopt hist_verify            # show command with history expansion to user before running it
 setopt inc_append_history     # add commands to HISTFILE in order of execution
-setopt share_history          # share command history data
 setopt always_to_end          # cursor moved to the end in full completion
 setopt hash_list_all          # hash everything before completion
 # setopt completealiases        # complete alisases
@@ -224,7 +218,13 @@ zinit wait lucid for \
         if"[[ $+commands[systemd] ]]" OMZ::plugins/systemd \
         PZT::modules/directory/init.zsh \
         PZT::modules/tmux \
-        hkupty/ssh-agent
+        hkupty/ssh-agent \
+  PZT::modules/helper \
+  PZT::modules/environment \
+  PZT::modules/terminal \
+  PZT::modules/spectrum \
+  PZT::modules/history \
+  PZT::modules/directory \
 #####################
 # FANCY-CTRL-Z      #
 #####################
