@@ -22,7 +22,7 @@ source "$HOME/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 ### End of Zinit installer's chunk
-
+zinit light willghatch/zsh-saneopt
 #####################
 # THEME             #
 #####################
@@ -89,6 +89,14 @@ zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm,cmd
 zstyle ':fzf-tab:complete:kill:argument-rest' extra-opts --preview=$extract'ps --pid=$in[(w)1] -o cmd --no-headers -w -w' --preview-window=down:3:wrap
 zstyle ":completion:*:git-checkout:*" sort false
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# Magic Generate Completions
+# GENCOMPL_FPATH=$HOME/.cache/zsh-completion-generator
+# if [ ! -d "$GENCOMPL_FPATH" ]; then
+    # mkdir -p $GENCOMPL_FPATH
+# fi
+# fpath=($GENCOMPL_FPATH $fpath)
+# zstyle :plugin:zsh-completion-generator programs fzf
+# zinit wait'3' lucid for RobSis/zsh-completion-generator
 # FZF
 zinit ice from"gh-r" as"command"
 zinit light junegunn/fzf
@@ -104,10 +112,6 @@ zinit light Aloxaf/fzf-tab
 # SYNTAX HIGHLIGHTING
 zinit ice wait"0c" lucid atinit"zpcompinit;zpcdreplay"
 zinit light zdharma/fast-syntax-highlighting
-# NVM
-#export NVM_AUTO_USE=true
-#zinit ice wait"1" lucid
-#zinit light lukechilds/zsh-nvm
 # EXA
 zinit ice wait"2" lucid from"gh-r" as"program" mv"bin/exa* -> exa"
 zinit light ogham/exa
@@ -146,16 +150,14 @@ zinit light sharkdp/fd
 # GH-CLI
 zinit ice lucid wait"0" as"program" from"gh-r" pick"usr/bin/gh"
 zinit light "cli/cli"
-# TMUX
-#zinit ice from"gh-r" as"program" mv"tmux* -> tmux" pick"tmux" atload"alias tmux=tmux"
-#zinit light tmux/tmux
-# TMUXINATOR
-#zinit ice as"completion"; zinit snippet ~/.nubem_dot_files/extras/tmuxinator/tmuxinator.zsh
-# ZSH MANYDOTS MAGIC
-#zinit autoload'#manydots-magic' for knu/zsh-manydots-magic
 # TREE-SITTER
 zinit ice as"program" from"gh-r" mv"tree* -> tree-sitter" pick"tree-sitter"
 zinit light tree-sitter/tree-sitter
+# Zsh AutoSuggestions
+zstyle -s ':prezto:module:autosuggestions:color' found \
+    'ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE' || ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
+zinit ice wait lucid atload'_zsh_autosuggest_start'
+zinit light zsh-users/zsh-autosuggestions
 # XURLS
 #zinit ice as"program" from"gh-r" mv"xurls* -> xurls" pick"xurls"
 #zinit light mvdan/xurls
