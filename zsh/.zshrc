@@ -31,6 +31,30 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 export COMPLETION_WAITING_DOTS="true"
 
 #####################
+# PREZTO
+#####################
+
+zstyle ':prezto:*:*' case-sensitive 'no'
+zstyle ':prezto:*:*' color 'yes'
+
+zinit ice silent; zinit snippet PZT::modules/gpg
+zstyle :omz:plugins:ssh-agent identities id_rsa github_rsa pete_rsa stevserver_rsa ymca_rsa
+# Auto convert .... to ../..
+zstyle ':prezto:module:editor' dot-expansion 'yes'
+
+zinit wait lucid for \
+  OMZ::plugins/common-aliases \
+  if"[[ $+commands[systemd] ]]" OMZ::plugins/systemd \
+  hkupty/ssh-agent \
+  PZT::modules/helper/init.zsh \
+  PZT::modules/environment/init.zsh  \
+  PZT::modules/terminal/init.zsh  \
+  PZT::modules/editor/init.zsh \
+  PZT::modules/history/init.zsh \
+  PZT::modules/directory/init.zsh \
+  PZT::modules/spectrum/init.zsh 
+  # PZT::modules/utility/init.zsh
+#####################
 # PLUGINS           #
 #####################
 # tmux {{
@@ -38,15 +62,6 @@ zstyle ':prezto:module:tmux:session' name 'λ'
 [[ -n $DISPLAY ]] && zstyle ':prezto:module:tmux:auto-start' local 'yes'
 zstyle ':prezto:module:tmux:auto-start' remote 'yes'
 zinit ice zinit snippet PZT::modules/tmux
-# }}}
-# prezto {{{
-zstyle ':prezto:*:*' case-sensitive 'no'
-zstyle ':prezto:*:*' color 'yes'
-zinit ice zinit snippet PZT::modules/editor
-
-zinit ice silent; zinit snippet PZT::modules/gpg
-zinit ice silent pick"init.zsh" lucid; zinit snippet PZT::modules/utility
-zstyle :omz:plugins:ssh-agent identities id_rsa github_rsa pete_rsa stevserver_rsa ymca_rsa
 # }}}
 ##Set VI MODE
 bindkey -v
@@ -198,15 +213,10 @@ unsetopt CHECK_JOBS       # Don't report on jobs when shell exit.
 #####################
 # ENV VARIABLE      #
 #####################
-#export EDITOR='nvim'
 export EDITOR='vim'
 export VISUAL=$EDITOR
 export PAGER='less'
-#export SHELL='/bin/zsh'
 
-# if [[ ! $(tmux ls) ]] 2> /dev/null; then
-  # tmux new -s λ
-# fi
 #####################
 # COLORING          #
 #####################
@@ -216,18 +226,7 @@ autoload colors && colors
 # ALIASES           #
 #####################
 source $HOME/.zsh_aliases
-zinit wait lucid for \
-        OMZ::plugins/common-aliases \
-        if"[[ $+commands[systemd] ]]" OMZ::plugins/systemd \
-        PZT::modules/directory/init.zsh \
-        PZT::modules/tmux \
-        hkupty/ssh-agent \
-  PZT::modules/helper \
-  PZT::modules/environment \
-  PZT::modules/terminal \
-  PZT::modules/spectrum \
-  PZT::modules/history \
-  PZT::modules/directory \
+
 #####################
 # FANCY-CTRL-Z      #
 #####################
