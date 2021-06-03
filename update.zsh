@@ -1,5 +1,5 @@
 #!/bin/zsh
 #delete current zsh config
-rm ~/.zshrc ~/.zpreztorc ~/.zlogin ~/.zlogout ~/.zprofile ~/.zshenv 
+ln -s ~/stevset/prezto/.zprezto ~/.zprezto
 ./udeps.sh
 ./prezto.zsh
