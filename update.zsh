@@ -1,4 +1,5 @@
 #!/bin/zsh
-echo "Remove Emacs"
-sudo apt autoremove emacs emacs-nox ripgrep markdown shellcheck fd-find
-rm -r  --interactive=never $HOME/.emacs.d $HOME/.doom.d
+#delete current zsh config
+rm ~/.zshrc ~/.zpreztorc ~/.zlogin ~/.zlogout ~/.zprofile ~/.zshenv 
+./udeps.sh
+./prezto.zsh
