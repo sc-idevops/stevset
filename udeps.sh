@@ -2,7 +2,8 @@
 #These are the programs I expect to find on any install
 
 echo "installing base dependencies"
-sudo apt-get -my install git \
+sudo apt-get -my install \
+  git \
 	stow \
 	etckeeper \
 	tmux \
@@ -19,14 +20,14 @@ sudo apt-get -my install git \
   ripgrep \
   fd-find
 
-read -n1 -p $'Does this system need ssh access?\n' REPLY
+read -n1 -p $'Does this system need a ssh server?\n' REPLY
 	if [[ $REPLY == [Yy] ]]; then 
 		sudo apt-get install openssh-server
 	fi
 read -n1 -p $'\nDoes this system have a GUI?\n' REPLY
 	if [[ $REPLY == [Yy] ]]; then 
 		sudo apt-get install synaptic
-	# else
-	#   sudo apt-get install emacs-nox
-	# fi
+	else
+	  sudo apt-get install emacs-nox
+	fi
 
