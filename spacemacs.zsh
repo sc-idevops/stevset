@@ -7,8 +7,7 @@ if [ -d "$HOME/.emacs.d" ]; then
 fi
 
 #Select Stable or Develop
-read -n1 -p $"Should we use the development version of emacs? \n" dist
-if [[ $dist = y ]] then
+if read -q "REPLY?Should we use the development version of emacs? \n"; then
   git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
 else 
   git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
