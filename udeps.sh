@@ -26,7 +26,7 @@ read -n1 -p $'Does this system need a ssh server?\n' REPLY
 	fi
 read -n1 -p $'\nDoes this system have a GUI?\n' REPLY
 	if [[ $REPLY == [Yy] ]]; then 
-		sudo apt-get install synaptic
+		sudo apt-get install synaptic emacs
 	else
 	  sudo apt-get install emacs-nox
 	fi
