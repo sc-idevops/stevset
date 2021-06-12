@@ -3,3 +3,4 @@ log/
 *.zwc
 *.zwc.old
 prezto/
+tmux/t-theme/
