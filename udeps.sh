@@ -18,6 +18,7 @@ sudo apt-get -my install \
   ack \
   fzf \
   ripgrep \
+  grc \
   fd-find
 
 read -n1 -p $'Does this system need a ssh server?\n' REPLY
