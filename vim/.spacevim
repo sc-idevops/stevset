@@ -11,11 +11,11 @@ let g:spacevim_plug_home = '~/.vim/plugged'
 " Enable the existing layers in space-vim.
 " Refer to https://github.com/liuchengxu/space-vim/blob/master/layers/LAYERS.md for all available layers.
 let g:spacevim_layers = [
-      \ 'fzf', 'better-defaults', 'which-key',
+      \ 'fzf', 'better-defaults', 'which-key', 'better-motion', 'airline', 'ctrlp', 'git',
       \ ]
 
 " Uncomment the following line if your terminal(-emulator) supports true colors.
-" let g:spacevim_enable_true_color = 1
+let g:spacevim_enable_true_color = 1
 
 " If you want to have more control over the layer, try using Layer command.
 " if g:spacevim.gui
@@ -41,6 +41,6 @@ function! UserConfig()
   " Adding extras.
   " Uncomment the following line If you have installed the powerline fonts.
   " It is good for airline layer.
-  " let g:airline_powerline_fonts = 1
+  let g:airline_powerline_fonts = 1
 
 endfunction
