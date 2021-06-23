@@ -35,7 +35,7 @@ sudo apt-get -my install \
 
 read -n1 -p $'Does this system need a ssh server?\n' REPLY
 	if [[ $REPLY == [Yy] ]]; then 
-		sudo apt-get install openssh-server
+		sudo apt-get install openssh-server fail2ban
 	fi
 read -n1 -p $'\nDoes this system have a GUI?\n' REPLY
 	if [[ $REPLY == [Yy] ]]; then 
