@@ -11,7 +11,7 @@ function dpkg_url() {
   { rm -f $tmp_deb; false; }   # commands above failed, remove tmp file anyway
 }
 
-echo "installing base dependencies"
+# installing base dependencies
 sudo apt-get -my install \
   git \
 	stow \
@@ -30,8 +30,7 @@ sudo apt-get -my install \
   ripgrep \
   grc \
   fd-find \
-  bat \
-  ncdu \
+  ncdu 
 
 read -n1 -p $'Does this system need a ssh server?\n' REPLY
 	if [[ $REPLY == [Yy] ]]; then 
@@ -43,6 +42,13 @@ read -n1 -p $'\nDoes this system have a GUI?\n' REPLY
 	else
 	  sudo apt-get install emacs-nox
 	fi
+#Fix stupid Rust issue
+sudo sed -i '/crates2/d' /var/lib/dpkg/info/ripgrep.list
+sudo rm -f /usr/.crates2.json
+sudo apt install bat
+sudo sed -i '/crates2/d' /var/lib/dpkg/info/bat.list
+sudo rm -f /usr/.crates2.json
+
 
 #This section installs software outside apt
 
