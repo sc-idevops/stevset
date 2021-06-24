@@ -43,12 +43,13 @@ read -n1 -p $'\nDoes this system have a GUI?\n' REPLY
 	  sudo apt-get install emacs-nox
 	fi
 #Fix stupid Rust issue
-sudo sed -i '/crates2/d' /var/lib/dpkg/info/ripgrep.list
-sudo rm -f /usr/.crates2.json
-sudo apt install bat
-sudo sed -i '/crates2/d' /var/lib/dpkg/info/bat.list
-sudo rm -f /usr/.crates2.json
-
+if [ -f "/usr/.crates2.json" ]
+  sudo sed -i '/crates2/d' /var/lib/dpkg/info/ripgrep.list
+  sudo rm -f /usr/.crates2.json
+  sudo apt install bat
+  sudo sed -i '/crates2/d' /var/lib/dpkg/info/bat.list
+  sudo rm -f /usr/.crates2.json
+fi
 
 #This section installs software outside apt
 
