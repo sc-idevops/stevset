@@ -44,7 +44,6 @@ read -n1 -p $'\nDoes this system have a GUI?\n' REPLY
 	fi
 #Fix stupid Rust issue
 if [ -f "/usr/.crates2.json" ]; then
-  echo "crates"
   sudo sed -i '/crates2/d' /var/lib/dpkg/info/ripgrep.list
   sudo rm -f /usr/.crates2.json
   sudo apt-get -my install bat
