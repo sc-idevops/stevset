@@ -10,16 +10,17 @@ else
 	exit 1
 fi
 
-#setup prezto
+#setup shell
+bash bash.sh
 echo "Select which shell to configure and use: zsh/fish/bash"; read -r answer
 if [[ $answer = "zsh" ]] || [[ $answer = "z" ]]; then
   echo "Initializing Prezto"
   zsh prezto.zsh
-  chsh -s /bin/zsh 
+  chsh -s /usr/bin/zsh 
 elif [[ $answer = "fish" ]] || [[ $answer = "f" ]]; then
   echo "Installing Oh-My-Fish"
   bash fish.sh
-  chsh -s /bin/fish
+  chsh -s /usr/bin/fish
 else 
   echo "Guess we're sticking with default bash then..."
 fi
@@ -27,10 +28,10 @@ fi
 #create symlinks using stow
 mkdir ~/.ssh
 echo "Stowing Configs"
+stow bash
 stow tmux
-#Add Tmux themes
+#init TMP
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-  git clone https://github.com/wfxr/tmux-power.git "$HOME/stevset/tmux/t-theme"
 stow vim
 stow prezto
 stow config
