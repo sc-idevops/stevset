@@ -6,23 +6,20 @@ if [[ $answer = "U" ]] || [[ $answer = "u" ]]; then
 elif [[ $answer = "O" ]] || [[ $answer = "o" ]]; then
 	bash odeps.sh
 else 
-	echo "Aborting!"	
-	exit 1
+	echo "Skipping!"	
 fi
 
-#setup prezto
+#setup shell
+bash bash.sh
 echo "Select which shell to configure and use: zsh/fish/bash"; read -r answer
 if [[ $answer = "zsh" ]] || [[ $answer = "z" ]]; then
-  echo "Initializing ZSH"
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
-#This will install Zinit in ~/.zinit/bin. .zshrc will be updated with three lines of code that will be added to the bottom. The lines will be sourcing zinit.zsh and setting up completion for command zinit. After installing and reloading the shell compile Zinit with zinit self-update.
-    zinit self-update
-    zinit update
-    chsh -s /bin/zsh
+  echo "Initializing Prezto"
+  zsh prezto.zsh
+  chsh -s /usr/bin/zsh 
 elif [[ $answer = "fish" ]] || [[ $answer = "f" ]]; then
   echo "Installing Oh-My-Fish"
   bash fish.sh
-  chsh -s /bin/fish
+  chsh -s /usr/bin/fish
 else 
   echo "Guess we're sticking with default bash then..."
 fi
@@ -30,13 +27,15 @@ fi
 #create symlinks using stow
 mkdir ~/.ssh
 echo "Stowing Configs"
+stow bash
 stow tmux
+#init TMP
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 stow vim
 stow zsh
 stow config
 chmod 0700 ~/.ssh
 chmod -R 0600 ~/.ssh/*
-#cp "$HOME/stevset/mc" "$HOME/.config/mc"
 
 #Configure git user
 echo -n "Would you like to configure your git name and email? (y/n) => "; read -r answer
@@ -48,22 +47,15 @@ if [[ $answer = "Y" ]] || [[ $answer = "y" ]]; then
 fi
 
 #install spacevim
-if [ ! -e ~/.space-vim ]
-then
-	mv "$HOME/.vim" "$HOME/vim_bk"
-	mv "$HOME/.vimrc" "$HOME/vimrc_bk"
+if [ ! -e ~/.space-vim ]; then
     echo "Install SpaceVim now? y/n"; read -r answer
     if [[ $answer = "Y" ]] || [[ $answer = "y" ]]; then 
+	    mv "$HOME/.vim" "$HOME/vim_bk"
+	    mv "$HOME/.vimrc" "$HOME/vimrc_bk"
 	    (curl -sLf https://spacevim.org/install.sh | bash)
     fi
 fi
 
-# #install Emacs Doom
-# echo "Install Emacs Doom now? y/n"; read -r answer
-# if [[ $answer = "Y" ]] || [[ $answer = "y" ]]; then
-#   ./emacs_doom.sh
-# fi
-###Doom's requirements are outside the scope of Ubuntu 20.04LTS
 echo "*******************************"
 echo "*    Restart your terminal    *"
 echo "*******************************"
