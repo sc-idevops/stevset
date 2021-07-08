@@ -29,6 +29,7 @@ mkdir ~/.ssh
 echo "Stowing Configs"
 stow tmux
 #Add Tmux themes
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   git clone https://github.com/wfxr/tmux-power.git "$HOME/stevset/tmux/t-theme"
 stow vim
 stow prezto
