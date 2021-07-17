@@ -52,12 +52,7 @@ if [ -f "/usr/.crates2.json" ]; then
 fi
 
 #This section installs software outside apt
-
-#select exa or lsd
-if [[ ! "which exa > /dev/null" ]]; then
 dpkg_url http://mirrors.kernel.org/ubuntu/pool/universe/r/rust-exa/exa_0.9.0-4_amd64.deb
-# wget https://github.com/Peltoche/lsd/releases/download/0.20.1/lsd_0.20.1_amd64.deb; sudo dpkg -i ./lsd_0.20.1_amd64.deb; rm lsd_0.20.1_amd64.deb
 dpkg_url https://github.com/muesli/duf/releases/download/v0.6.2/duf_0.6.2_linux_amd64.deb
 dpkg_url https://github.com/ClementTsang/bottom/releases/download/0.6.1/bottom_0.6.1_amd64.deb
 #https://github.com/dandavison/delta/releases/download/0.8.0/delta-0.8.0-x86_64-unknown-linux-gnu.tar.gz
-fi
