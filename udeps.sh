@@ -13,24 +13,24 @@ function dpkg_url() {
 
 # installing base dependencies
 sudo apt-get -my install \
-  git \
+    git \
 	stow \
 	etckeeper \
 	tmux \
 	zsh \
-  vim \
+    vim \
 	powerline\
 	htop \
 	mc \
 	curl \
 	aptitude \
-  nnn \
-  ack \
-  fzf \
-  ripgrep \
-  grc \
-  fd-find \
-  ncdu 
+    nnn \
+    ack \
+    fzf \
+    ripgrep \
+    grc \
+    fd-find \
+    ncdu 
 
 read -n1 -p $'Does this system need a ssh server?\n' REPLY
 	if [[ $REPLY == [Yy] ]]; then 

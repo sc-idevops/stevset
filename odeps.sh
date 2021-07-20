@@ -2,17 +2,27 @@
 #These are the programs I expect to find on any install
 
 echo "installing base dependencies"
-sudo zypper install git \
+sudo zypper install \
+    git \
 	stow \
 	etckeeper \
 	tmux \
 	zsh \
-  vim \
+    vim \
 	powerline\
 	htop \
 	mc \
-	curl 
-
+	curl \
+    nnn \
+    ack \
+    fzf \
+    ripgrep \
+    grc \
+    ncdu \
+    bat \
+    duf \
+    bottom
+#need an exa alternative
 read -n1 -p $'Does this system need ssh access?\n' REPLY
 	if [[ $REPLY == [Yy] ]]; then 
 		sudo zypper install openssh-server
