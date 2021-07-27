@@ -1,33 +1,51 @@
 #!/bin/bash
 #install pre-req.
 echo -n "Which Linux flavor will we be installing programs for? (u/o)"; read -r answer
-if [[ $answer = "U" ]] || [[ $answer = "u" ]]; then
-	bash udeps.sh
-elif [[ $answer = "O" ]] || [[ $answer = "o" ]]; then
-	bash odeps.sh
-else 
-	echo "Skipping!"	
-fi
+case $answer in
+  u) 
+	  bash udeps.sh
+    ;;
+  o)
+	  bash odeps.sh
+    ;;
+  a)
+    bash adeps.sh
+    ;;
+  *)
+    echo "Skipping installation of dependencies!"	
+    ;;
+esac
 
 #setup shell
-bash bash.sh
+stow bash
 echo "Select which shell to configure and use: zsh/fish/bash"; read -r answer
-if [[ $answer = "zsh" ]] || [[ $answer = "z" ]]; then
-  echo "Initializing Prezto"
-  zsh prezto.zsh
-  chsh -s /usr/bin/zsh 
-elif [[ $answer = "fish" ]] || [[ $answer = "f" ]]; then
-  echo "Installing Oh-My-Fish"
-  bash fish.sh
-  chsh -s /usr/bin/fish
-else 
-  echo "Guess we're sticking with default bash then..."
-fi
+case $answer in
+  z | zsh)
+    echo "Initializing Prezto"
+    zsh prezto.zsh
+    chsh -s /usr/bin/zsh 
+    ;;
+  f | fish)
+    echo "Installing Oh-My-Fish"
+    bash fish.sh
+    chsh -s /usr/bin/fish
+    ;;
+  b | bash)
+    echo "Installing Bash-It"
+    git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
+    ;;
+  *)
+    echo "Guess we're sticking with vanilla bash then..."
+    #inject source line into bashrc
+    if ! grep -q ".sensible.bash" "$HOME/.bashrc"; then
+       echo "source \"\$HOME/.sensible.bash\"" >> "$HOME/.bashrc"
+    fi
+    ;;
+esac
 
 #create symlinks using stow
 mkdir ~/.ssh
 echo "Stowing Configs"
-stow bash
 stow tmux
 #init TMP
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
