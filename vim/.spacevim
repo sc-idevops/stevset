@@ -37,6 +37,11 @@ function! UserConfig()
   " Override the default settings.
   " Uncomment the following line to disable relative number.
   " set norelativenumber
+"File for Local Overrides
+let $LOCALFILE=expand("~/.vimrc_local")
+if filereadable($LOCALFILE)
+  source $LOCALFILE
+endif
 
   " Adding extras.
   " Uncomment the following line If you have installed the powerline fonts.
