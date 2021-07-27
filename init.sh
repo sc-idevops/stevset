@@ -1,6 +1,6 @@
 #!/bin/bash
 #install pre-req.
-echo -n "Which Linux flavor will we be installing programs for? (u/o)"; read -r answer
+echo -n "Which Linux flavor will we be installing programs for? (u/o/a)"; read -r answer
 case $answer in
   u) 
 	  bash udeps.sh
