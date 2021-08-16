@@ -4,4 +4,6 @@ if [ -n "$1" ]
 then
   git remote set-url origin git@github.com:$USER/$1.git
   git remote -v
+else
+  echo "the first parameter is the name of the github repo"
 fi
