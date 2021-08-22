@@ -5,7 +5,7 @@ function dpkg_url() {
   local src_url=$1
   local args=${@:2}
 
-  wget -O $tmp_deb $src_url &&
+  wget -q --show-progress -O $tmp_deb $src_url &&
   sudo dpkg -i $tmp_deb $args &&
   { rm -f $tmp_deb; true; } || # commands above succeeded, remove tmp file
   { rm -f $tmp_deb; false; }   # commands above failed, remove tmp file anyway
