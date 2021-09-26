@@ -19,7 +19,7 @@ sudo apt-get -my install \
 	etckeeper \
 	tmux \
 	zsh \
-  vim \
+  neovim \
 	powerline\
 	htop \
 	mc \
@@ -32,7 +32,8 @@ sudo apt-get -my install \
   grc \
   fd-find \
   ncdu \
-  exa
+  exa \
+  bottom
 
 read -n1 -p $'Does this system need a ssh server?\n' REPLY
 	if [[ $REPLY == [Yy] ]]; then 
@@ -55,5 +56,3 @@ fi
 
 #This section installs software outside apt
 dpkg_url https://github.com/muesli/duf/releases/download/v0.6.2/duf_0.6.2_linux_amd64.deb
-dpkg_url https://github.com/dandavison/delta/releases/download/0.8.3/git-delta_0.8.3_amd64.deb
-dpkg_url https://github.com/ClementTsang/bottom/releases/download/0.6.4/bottom_0.6.4_amd64.deb

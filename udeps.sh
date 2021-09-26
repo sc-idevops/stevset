@@ -18,7 +18,7 @@ sudo apt-get -my install \
 	etckeeper \
 	tmux \
 	zsh \
-  vim \
+  neovim \
 	powerline\
 	htop \
 	mc \
