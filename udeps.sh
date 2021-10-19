@@ -30,7 +30,8 @@ sudo apt-get -my install \
   ripgrep \
   grc \
   fd-find \
-  ncdu 
+  ncdu \
+  tree
 
 read -n1 -p $'Does this system need a ssh server?\n' REPLY
 	if [[ $REPLY == [Yy] ]]; then 
