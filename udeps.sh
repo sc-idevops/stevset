@@ -31,7 +31,8 @@ sudo apt-get -my install \
   grc \
   fd-find \
   ncdu \
-  tree
+  tree \
+  neofetch
 
 read -n1 -p $'Does this system need a ssh server?\n' REPLY
 	if [[ $REPLY == [Yy] ]]; then 
