@@ -74,6 +74,12 @@ if [ ! -e ~/.space-vim ]; then
     fi
 fi
 
+#install fonts for terminal
+echo "installing fonts"
+mkdir ~/.fonts
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/SourceCodePro.zip
+unzip SourceCodePro.zip -x '*Compatible.ttf' -d '~/.fonts'
+
 echo "*******************************"
 echo "*    Restart your terminal    *"
 echo "*******************************"
