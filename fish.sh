@@ -6,7 +6,7 @@ sudo apt install git fish
 ln -s "$HOME/stevset/fish/omf" "$HOME/.config/"
 
 #download script
-curl -L https://get.oh-my.fish | fish
+curl -L https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/init.fish | fish
 
 #setup theme
 omf install bobthefish 
