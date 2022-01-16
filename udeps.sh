@@ -53,7 +53,6 @@ if [ -f "/usr/.crates2.json" ]; then
 fi
 
 #This section installs software outside apt
-dpkg_url http://mirrors.kernel.org/ubuntu/pool/universe/r/rust-exa/exa_0.9.0-4_amd64.deb
-dpkg_url https://github.com/muesli/duf/releases/download/v0.6.2/duf_0.6.2_linux_amd64.deb
-dpkg_url https://github.com/ClementTsang/bottom/releases/download/0.6.3/bottom_0.6.3_amd64.deb
-dpkg_url https://github.com/dandavison/delta/releases/download/0.8.3/git-delta_0.8.3_amd64.deb
+dpkg_url https://github.com/muesli/duf/releases/download/v0.7.0/duf_0.7.0_linux_amd64.deb
+dpkg_url https://github.com/ClementTsang/bottom/releases/download/0.6.6/bottom_0.6.6_amd64.deb
+dpkg_url https://github.com/dandavison/delta/releases/download/0.11.3/git-delta_0.11.3_amd64.deb
