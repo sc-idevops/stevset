@@ -47,6 +47,7 @@ esac
 #create symlinks using stow
 mkdir ~/.ssh
 echo "Stowing Configs"
+cd ~/stevset
 stow tmux
 #init TMP
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -79,7 +80,8 @@ fi
 echo "installing fonts"
 mkdir ~/.fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/SourceCodePro.zip
-unzip SourceCodePro.zip -x '*Compatible.ttf' -d '~/.fonts'
+unzip SourceCodePro.zip -x '*Compatible.ttf' -d "$HOME/.fonts"
+rm SourceCodePro.zip
 
 echo "*******************************"
 echo "*    Restart your terminal    *"
