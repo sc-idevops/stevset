@@ -11,6 +11,9 @@ case $answer in
   a)
     bash adeps.sh
     ;;
+  f)
+    bash fdeps.sh
+    ;;
   *)
     echo "Skipping installation of dependencies!"	
     ;;
