@@ -11,6 +11,9 @@ case $answer in
   a)
     bash adeps.sh
     ;;
+  f)
+    bash fdeps.sh
+    ;;
   *)
     echo "Skipping installation of dependencies!"	
     ;;
@@ -58,30 +61,39 @@ chmod 0700 ~/.ssh
 chmod -R 0600 ~/.ssh/*
 
 #Configure git user
-echo -n "Would you like to configure your git name and email? (y/n) => "; read -r answer
-if [[ $answer = "Y" ]] || [[ $answer = "y" ]]; then
-    echo -n "What is your git user name => "; read -r name
-    git config --global user.name "$name"
-    echo -n "What is your git email => "; read -r email
-    git config --global user.email "$email"
-fi
+git_user () {
+  echo -n "Would you like to configure your git name and email? (y/n) => "; read -r answer
+  if [[ $answer = "Y" ]] || [[ $answer = "y" ]]; then
+      echo -n "What is your git user name => "; read -r name
+      git config --global user.name "$name"
+      echo -n "What is your git email => "; read -r email
+      git config --global user.email "$email"
+  fi
+}
 
 #install spacevim
-if [ ! -e ~/.space-vim ]; then
-    echo "Install SpaceVim now? y/n"; read -r answer
-    if [[ $answer = "Y" ]] || [[ $answer = "y" ]]; then 
-	    mv "$HOME/.vim" "$HOME/vim_bk"
-	    mv "$HOME/.vimrc" "$HOME/vimrc_bk"
-	    (curl -sLf https://spacevim.org/install.sh | bash)
-    fi
-fi
-
+spacevim () {
+  if [ ! -e ~/.space-vim ]; then
+      echo "Install SpaceVim now? y/n"; read -r answer
+      if [[ $answer = "Y" ]] || [[ $answer = "y" ]]; then 
+        mv "$HOME/.vim" "$HOME/vim_bk"
+        mv "$HOME/.vimrc" "$HOME/vimrc_bk"
+        (curl -sLf https://spacevim.org/install.sh | bash)
+      fi
+  fi
+}
 #install fonts for terminal
-echo "installing fonts"
-mkdir ~/.fonts
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/SourceCodePro.zip
-unzip SourceCodePro.zip -x '*Compatible.ttf' -d "$HOME/.fonts"
-rm SourceCodePro.zip
+fonts () {
+  echo "installing fonts"
+  mkdir ~/.fonts
+  wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/SourceCodePro.zip
+  unzip -q SourceCodePro.zip -x '*Compatible.ttf' -d "$HOME/.fonts"
+  rm SourceCodePro.zip
+}
+
+git_user
+spacevim
+fonts
 
 echo "*******************************"
 echo "*    Restart your terminal    *"
