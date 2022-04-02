@@ -11,6 +11,7 @@ function dpkg_url() {
   { rm -f $tmp_deb; false; }   # commands above failed, remove tmp file anyway
 }
 
-wget https://telegram.org/dl/desktop/linux
+wget https://telegram.org/dl/desktop/linux -O ~/Downloads/tsetup.tar.xz
+  extract tsetup.tar.xz
 dpkg_url https://discord.com/api/download?platform=linux&format=deb
-dpkg_url https://www.guilded.gg/downloads/Guilded-Linux.deb
+#dpkg_url https://www.guilded.gg/downloads/Guilded-Linux.deb
