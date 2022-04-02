@@ -1,3 +1,4 @@
+#!/bin/bash
 #Installs programs I use on a personal desktop that aren't part of the usual repositories
 #Telegram, Discord, Guilded
 function dpkg_url() {
@@ -12,6 +13,8 @@ function dpkg_url() {
 }
 
 wget https://telegram.org/dl/desktop/linux -O ~/Downloads/tsetup.tar.xz
-  extract tsetup.tar.xz
+  mkdir ~/bin
+  tar -xf ~/Downloads/tsetup.tar.xz -C ~/bin/
 dpkg_url https://discord.com/api/download?platform=linux&format=deb
+dpkg_url https://downloads.vivaldi.com/stable/vivaldi-stable_5.1.2567.73-1_amd64.deb
 #dpkg_url https://www.guilded.gg/downloads/Guilded-Linux.deb
