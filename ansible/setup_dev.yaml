@@ -1,0 +1,19 @@
+-name: Install Packages for iDevOps Development
+apt:
+  update_cache: yes
+  pkg:
+    - git
+    - python3
+    - python3-pip
+    - ansible
+    - docker.io
+    - awscli 
+    - 
+-name: install alien packages
+  apt:
+    deb: https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
+    deb: http://http.us.debian.org/debian/pool/main/k/kubernetes/kubernetes-client_1.20.5+really1.20.2-1.1_amd64.deb
+-name: Cleanup
+  apt:
+    autoremove: yes 
+    autoclean: yes 

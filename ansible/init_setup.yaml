@@ -1,0 +1,29 @@
+-name: Install Default Apps for Ubuntu
+apt:
+  update_cache: yes
+  pkg:
+    - git
+    -	stow 
+    -	etckeeper 
+    - tmux 
+    -	zsh 
+    -	powerline
+    -	htop 
+    -	mc 
+    -	curl 
+    -	aptitude 
+    - nnn 
+    - ack 
+    - fzf 
+    - ripgrep 
+    - grc 
+    - fd-find 
+    - ncdu 
+    - tree 
+    - neofetch
+    - ansible
+
+-name: Cleanup
+  apt:
+    autoremove: yes 
+    autoclean: yes 
