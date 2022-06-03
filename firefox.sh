@@ -3,6 +3,7 @@ add_ppa() {
   sudo add-apt-repository ppa:mozillateam/ppa
   sudo apt update
   sudo apt remove firefox
+  sudo snap remove firefox
   echo 'Unattended-Upgrade::Allowed-Origins:: "LP-PPA-mozillateam:${distro_codename}";' | sudo tee /etc/apt/apt.conf.d/51unattended-upgrades-firefox
 }
 
@@ -12,7 +13,6 @@ while getopts 'efrp:h' opt; do
     e)
       echo "Installing Firefox ESR"
       add_ppa
-      sudo snap remove firefox
       sudo apt install firefox-esr
       ;;
 
@@ -27,7 +27,6 @@ while getopts 'efrp:h' opt; do
     r)
       echo "Installing Regular Firefox"
       add_ppa
-      sudo snap remove firefox
       sudo apt install -t 'o=LP-PPA-mozillateam' firefox
       #Pin Priority
       echo 'Package: *
