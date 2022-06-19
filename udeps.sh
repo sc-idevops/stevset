@@ -64,4 +64,4 @@ fi
 
 #This section installs software outside apt
 dpkg_url https://github.com/ClementTsang/bottom/releases/download/0.6.8/bottom_0.6.8_amd64.deb
-dpkg_url https://github.com/dandavison/delta/releases/download/0.12.1/git-delta_0.12.1_amd64.deb
+dpkg_url https://github.com/dandavison/delta/releases/download/0.13.0/git-delta_0.13.0_amd64.deb
