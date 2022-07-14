@@ -31,6 +31,7 @@ sudo apt-get -my install \
 	fd-find \
 	ncdu \
 	tree \
+  btop \
 	neofetch
 
 read -n1 -p $'Does this system need a ssh server?\n' REPLY
