@@ -31,7 +31,6 @@ sudo apt-get -my install \
 	fd-find \
 	ncdu \
 	tree \
-  btop \
 	neofetch
 
 read -n1 -p $'Does this system need a ssh server?\n' REPLY
@@ -49,7 +48,8 @@ release=`lsb_release -cs`
 if [[ $release == jammy ]]; then
   sudo apt install \
     bat \
-    duf
+    duf \
+    btop
   else
     dpkg_url https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.deb
     dpkg_url https://github.com/sharkdp/bat/releases/download/v0.20.0/bat_0.20.0_amd64.deb
