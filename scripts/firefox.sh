@@ -1,4 +1,12 @@
 #!/bin/bash
+help() {
+      echo "Usage: $(basename $0) 
+      [-e] Installs Firefox ESR 
+      [-f] Installs Flatpak Firefox
+      [-r] Installs regular Firefox and Pins It's Priority
+      [-p] Purges the Snapd daemon from the system. Use if you don't want snaps anymore period."
+      exit 1
+}
 add_ppa() {
   sudo add-apt-repository ppa:mozillateam/ppa
   sudo apt update
@@ -6,6 +14,8 @@ add_ppa() {
   sudo snap remove firefox
   echo 'Unattended-Upgrade::Allowed-Origins:: "LP-PPA-mozillateam:${distro_codename}";' | sudo tee /etc/apt/apt.conf.d/51unattended-upgrades-firefox
 }
+
+if [ -z "$*" ]; then help; fi
 
 #process flags
 while getopts 'efrp:h' opt; do
@@ -40,13 +50,8 @@ Pin-Priority: 1001
       sudo apt autoremove snapd
       ;;
 
-    ?|h)
-      echo "Usage: $(basename $0) 
-      [-e] Installs Firefox ESR 
-      [-f] Installs Flatpak Firefox
-      [-r] Installs regular Firefox and Pins It's Priority
-      [-p] Purges the Snapd daemon from the system. Use if you don't want snaps anymore period."
-      exit 1
+    *)
+      help
       ;;
   esac
 done
