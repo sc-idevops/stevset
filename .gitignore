@@ -4,3 +4,4 @@ log/
 *.zwc.old
 prezto/
 tmux/t-theme/
+.directory
