@@ -1,5 +1,6 @@
 #!/bin/bash
-N=4
+N=3
+rm ~/twit_error.txt
 cd $HOME/gallery-dl/twitter
 for i in */; do
   echo ">> $i"
