@@ -18,3 +18,4 @@ wget https://telegram.org/dl/desktop/linux -O ~/Downloads/tsetup.tar.xz
 dpkg_url https://discord.com/api/download?platform=linux&format=deb
 dpkg_url https://downloads.vivaldi.com/stable/vivaldi-stable_5.1.2567.73-1_amd64.deb
 #dpkg_url https://www.guilded.gg/downloads/Guilded-Linux.deb
+sudo apt install yt-dlp

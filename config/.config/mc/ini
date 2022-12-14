@@ -83,11 +83,11 @@ editor_backup_extension=~
 editor_filesize_threshold=64M
 editor_stop_format_chars=-+*\\,.;:&>
 mcview_eof=
-skin=yadt256
+skin=dracula256
 
 [Layout]
 output_lines=0
-left_panel_size=48
+left_panel_size=52
 top_panel_size=0
 message_visible=true
 keybar_visible=true

@@ -19,8 +19,15 @@ case $answer in
     ;;
 esac
 
+#create symlinks using stow
+mkdir ~/.ssh
+echo "Stowing Configs"
+stow config
+chmod 0700 ~/.ssh
+chmod -R 0600 ~/.ssh/*
+
 #setup shell
-stow bash
+stow home
 echo "Select which shell to configure and use: zsh/fish/bash"; read -r answer
 case $answer in
   z | zsh)
@@ -47,40 +54,28 @@ case $answer in
     ;;
 esac
 
-#create symlinks using stow
-mkdir ~/.ssh
-echo "Stowing Configs"
-cd ~/stevset
-stow tmux
 #init TMP
-  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-stow vim
-stow zsh
-stow config
-chmod 0700 ~/.ssh
-chmod -R 0600 ~/.ssh/*
+echo "set up Tmux Plugins"
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 
 #Configure git user
 git_user () {
   echo -n "Would you like to configure your git name and email? (y/n) => "; read -r answer
   if [[ $answer = "Y" ]] || [[ $answer = "y" ]]; then
-      echo -n "What is your git user name => "; read -r name
-      git config --global user.name "$name"
-      echo -n "What is your git email => "; read -r email
-      git config --global user.email "$email"
+    echo -n "What is your git user name => "; read -r name
+    git config --global user.name "$name"
+    echo -n "What is your git email => "; read -r email
+    git config --global user.email "$email"
   fi
 }
 
 #install spacevim
 spacevim () {
-  if [ ! -e ~/.space-vim ]; then
-      echo "Install SpaceVim now? y/n"; read -r answer
-      if [[ $answer = "Y" ]] || [[ $answer = "y" ]]; then 
-        mv "$HOME/.vim" "$HOME/vim_bk"
-        mv "$HOME/.vimrc" "$HOME/vimrc_bk"
-        (curl -sLf https://spacevim.org/install.sh | bash)
-      fi
-  fi
+  echo "Installing Spacevim!"
+  [ -d $HOME/.vim ] && mv "$HOME/.vim" "$HOME/vim_bk"
+  [ -f $HOME/.vimrc ] && mv "$HOME/.vimrc" "$HOME/vimrc_bk"
+  curl -sLf https://spacevim.org/install.sh | bash
 }
 #install fonts for terminal
 fonts () {

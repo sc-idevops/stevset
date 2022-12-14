@@ -1,15 +1,9 @@
-#!/bin/zsh
-#This will install Spacemacs (again)
-#cleanup 
-if [ -d "$HOME/.emacs.d" ]; then
-  echo "Moved Doom Config"
-  mv ~/.emacs.d ~/doom.d
-fi
+#!/bin/bash
+#This will install Spacemacs
+#backup existing files 
+echo "backing up existing emacs config"
+[ -d $HOME/.emacs.d ] && mv $HOME/.emacs.d $HOME/.emacs.d.bak
+[ -f $HOME/.emacs.el ] && mv $HOME/.emacs.el .emacs.el.bak
+[ -f $HOME/.emacs ] && mv $HOME/.emacs $HOME/.emacs.bak
 
-#Select Stable or Develop
-if read -q "REPLY?Should we use the development version of emacs? \n"; then
-  git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
-else 
-  git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-fi 
-
+git clone https://github.com/syl20bnr/spacemacs $HOME/.emacs.d
