@@ -22,7 +22,7 @@ esac
 #create symlinks using stow
 mkdir ~/.ssh
 echo "Stowing Configs"
-stow config
+stow config --dotfiles
 chmod 0700 ~/.ssh
 chmod -R 0600 ~/.ssh/*
 
