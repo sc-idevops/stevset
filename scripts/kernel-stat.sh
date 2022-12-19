@@ -1,1 +1,0 @@
-sudo canonical-livepatch status --verbose
