@@ -9,8 +9,8 @@ help() {
 }
 add_ppa() {
   sudo add-apt-repository ppa:mozillateam/ppa
-  sudo apt update
-  sudo apt remove firefox
+  sudo apt-get update
+  sudo apt-get -y remove firefox
   sudo snap remove firefox
   echo 'Unattended-Upgrade::Allowed-Origins:: "LP-PPA-mozillateam:${distro_codename}";' | sudo tee /etc/apt/apt.conf.d/51unattended-upgrades-firefox
 }
@@ -23,13 +23,13 @@ while getopts 'efrp:h' opt; do
     e)
       echo "Installing Firefox ESR"
       add_ppa
-      sudo apt install firefox-esr
+      sudo apt-get -y install firefox-esr
       ;;
 
     f)
       echo "Installing Flatpak Firefox"
       sudo snap remove firefox
-      sudo apt install flatpak
+      sudo apt-get -y install flatpak
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
       flatpak install flathub org.mozilla.firefox
       ;;
@@ -37,7 +37,7 @@ while getopts 'efrp:h' opt; do
     r)
       echo "Installing Regular Firefox"
       add_ppa
-      sudo apt install -t 'o=LP-PPA-mozillateam' firefox
+      sudo apt-get -y install -t 'o=LP-PPA-mozillateam' firefox
       #Pin Priority
       echo 'Package: *
 Pin: release o=LP-PPA-mozillateam
@@ -47,7 +47,7 @@ Pin-Priority: 1001
 
     p)
       echo "Purging snapd..."
-      sudo apt autoremove snapd
+      sudo apt-get autoremove snapd
       ;;
 
     *)
