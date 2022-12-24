@@ -62,7 +62,6 @@ editor_group_undo=true
 editor_state_full_filename=true
 editor_ask_filename_before_edit=false
 nice_rotating_dash=true
-shadows=true
 mcview_remember_file_position=false
 auto_fill_mkdir_name=true
 copymove_persistent_attr=true
@@ -85,9 +84,11 @@ editor_stop_format_chars=-+*\\,.;:&>
 mcview_eof=
 skin=modarin256
 
+shadows=true
+
 [Layout]
 output_lines=0
-left_panel_size=92
+left_panel_size=55
 top_panel_size=0
 message_visible=true
 keybar_visible=true
@@ -113,10 +114,12 @@ clipboard_paste=
 
 [Colors]
 base_color=
-screen-256color=
+xterm-256color=
 color_terminals=
 
-xterm-256color=
+screen-256color=
+
+screen=
 
 [Panels]
 show_mini_info=true
