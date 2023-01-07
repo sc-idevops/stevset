@@ -31,7 +31,8 @@ sudo apt-get -my install \
 	fd-find \
 	ncdu \
 	tree \
-	neofetch
+	neofetch \
+  nala
 
 read -n1 -p $'Does this system need a ssh server?\n' REPLY
 	if [[ $REPLY == [Yy] ]]; then 
