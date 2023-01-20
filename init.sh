@@ -81,7 +81,7 @@ spacevim () {
 fonts () {
   echo "installing fonts"
   mkdir ~/.fonts
-  wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/SourceCodePro.zip
+  wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.1/SourceCodePro.zip
   unzip -q SourceCodePro.zip -x '*Compatible.ttf' -d "$HOME/.fonts"
   rm SourceCodePro.zip
 }
