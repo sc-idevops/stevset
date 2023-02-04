@@ -12,7 +12,7 @@ do
   esac
 done
 
-cd /home/stev/Videos/Twitch/$username
+cd /home/stev/Videos/Twitch/$username || mkdir -v ~/Videos/Twitch/$username
 yt-dlp -q -f $format "https://www.twitch.tv/$username/videos?filter=archives&sort=time"
 
 
