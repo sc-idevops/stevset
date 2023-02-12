@@ -8,7 +8,7 @@ do
   case "${flag}" in
     u) username=${OPTARG};;
     f) format=${OPTARG};;
-    h) help(); exit;;
+    h) help exit;;
   esac
 done
 
