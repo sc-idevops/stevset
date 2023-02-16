@@ -76,6 +76,8 @@ spacevim () {
   [ -d $HOME/.vim ] && mv "$HOME/.vim" "$HOME/vim_bk"
   [ -f $HOME/.vimrc ] && mv "$HOME/.vimrc" "$HOME/vimrc_bk"
   curl -sLf https://spacevim.org/install.sh | bash
+  echo "Install nvchad"
+  git clone https://github.com/NvChad/NvChad ~/.config/nvim
 }
 #install fonts for terminal
 fonts () {
