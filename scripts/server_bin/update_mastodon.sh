@@ -1,5 +1,5 @@
 #!/bin/bash
-gallery-dl --sleep 12-16 --abort 2 "mastodon:https://yiff.life/@kokirimuscle@mastodon.lol"
+gallery-dl --sleep 12-16 --abort 2 "mastodon:https://yiff.life/@Kokirimuscle@woof.group"
 sleep 60
 gallery-dl --sleep 12-16 --abort 2 "mastodon:https://yiff.life/@PupShadowNH@woof.group"
 sleep 60
@@ -10,5 +10,5 @@ sleep 60
 gallery-dl --sleep 12-16 --abort 2 "mastodon:https://yiff.life/@ARRRBEEEE@woof.group"
 sleep 60
 gallery-dl --sleep 12-16 --abort 2 "mastodon:https://yiff.life/@PupTrash@woof.group"
-
-echo "done!"
+sleep 60
+gallery-dl --sleep 12-16 --abort 2 "mastodon:https://yiff.life/@Saix@woof.group"
