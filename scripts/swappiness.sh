@@ -1,14 +1,10 @@
-#!/bin/sh
-if [ $(id -u) -ne 0 ]
- then echo "Please run as root"
- exit 1
-fi
-
+#!/bin/bash
 if [ -z "$1" ]
 then 
-	echo "Please provide a number to set swappiness value!" && exit 2
+  read -p 'swappiness value: ' sw
 else 
-	sudo echo "vm.swappiness="$1 >> /etc/sysctl.conf
-  sudo sysctl -p
-fi
+  sw=$1
+fi 
+echo "vm.swappiness="$sw | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p
 
