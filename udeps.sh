@@ -32,7 +32,8 @@ sudo apt-get -my install \
 	fd-find \
 	ncdu \
 	tree \
-	neofetch 
+	neofetch \
+  trash-cli \
   nala
 
 read -n1 -p $'Does this system need a ssh server?\n' REPLY
@@ -41,7 +42,7 @@ read -n1 -p $'Does this system need a ssh server?\n' REPLY
 	fi
 read -n1 -p $'\nDoes this system have a GUI?\n' REPLY
 	if [[ $REPLY == [Yy] ]]; then 
-		sudo apt-get install synaptic emacs vim-gtk3
+		sudo apt-get install synaptic emacs vim-gtk3 neovim-qt
 	else
 	  sudo apt-get install emacs-nox
 	fi
