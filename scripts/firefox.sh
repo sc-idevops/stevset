@@ -3,7 +3,7 @@ help() {
       echo "Usage: $(basename $0) 
       [-e] Installs Firefox ESR 
       [-f] Installs Flatpak Firefox
-      [-r] Installs regular Firefox and Pins It's Priority
+      [-d] Installs Firefox from the PPA and Pins it's Priority in apt
       [-p] Purges the Snapd daemon from the system. Use if you don't want snaps anymore period."
       exit 1
 }
@@ -34,7 +34,7 @@ while getopts 'efrp:h' opt; do
       flatpak install flathub org.mozilla.firefox
       ;;
 
-    r)
+    d)
       echo "Installing Regular Firefox"
       add_ppa
       sudo apt-get -y install -t 'o=LP-PPA-mozillateam' firefox

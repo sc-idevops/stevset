@@ -5,7 +5,7 @@
 fdfind -e mp4 | while read i; do
   length=$(mediainfo --Inform="Video;%Duration%" "$i")
   if [[ $length -le 4500 ]]; then
-    rm "$i"
+    trash "$i"
     #kioclient move $i "trash:/"
   fi
 done
