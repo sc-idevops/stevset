@@ -1,9 +1,10 @@
 #!/bin/bash
 N=6
-df > ~/before_df.txt
+before=$(df | grep -i picture)
 cd $HOME/gallery-dl/twitter
 for i in */; do
   echo ">> $i"
+  (find -L "$i" -type l -delete) &
   (jdupes -LN $i) &
   if [[ $(jobs -r -p | wc -l) -ge $N ]]; then
     wait -n
@@ -11,6 +12,7 @@ for i in */; do
 done
 wait
 echo "======COMPLETE======="
-echo "Before:"
-cat ~/before_df.txt
-df
+echo "Before:" 
+echo $before
+echo "After:"
+df | grep -i picture
