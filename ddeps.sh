@@ -15,15 +15,15 @@ function dpkg_url() {
 sudo apt-get -my install \
   git \
   wget \
-	stow \
-	etckeeper \
-	tmux \
-	zsh \
-	powerline\
-	htop \
-	mc \
-	curl \
-	aptitude \
+  stow \
+  etckeeper \
+  tmux \
+  zsh \
+  powerline\
+  htop \
+  mc \
+  curl \
+  aptitude \
   nnn \
   ack \
   fzf \
@@ -37,6 +37,7 @@ sudo apt-get -my install \
   trash-cli \
   bat \
   neovim
+  nala
 
 read -n1 -p $'Does this system need a ssh server?\n' REPLY
 	if [[ $REPLY == [Yy] ]]; then 
