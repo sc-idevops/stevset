@@ -8,4 +8,5 @@ for i in */; do
     wait -n
   fi 
 done
+gallery-dl --abort 3 --sleep 0-1 "https://www.furaffinity.net/favorites/stevo/"
 wait
