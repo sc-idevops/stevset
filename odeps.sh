@@ -31,4 +31,4 @@ read -n1 -p $'\nDoes this system have a GUI?\n' REPLY
 	else 
 		sudo zypper install emacs-nox
 	fi
-sudo zypper install "https://github.com/muesli/duf/releases/download/v0.6.2/duf_0.6.2_linux_amd64.rpm"
+sudo zypper install "https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.rpm"
