@@ -32,7 +32,6 @@ sudo apt-get -my install \
   fd-find \
   ncdu \
   exa \
-  bottom \
   neofetch \
   trash-cli \
   bat \
