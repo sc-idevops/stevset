@@ -3,16 +3,19 @@
 echo -n "Which Linux flavor will we be installing programs for? (u/o/a)"; read -r answer
 case $answer in
   u) 
-	  bash udeps.sh
+    bash udeps.sh
     ;;
   o)
-	  bash odeps.sh
+    bash odeps.sh
     ;;
   a)
     bash adeps.sh
     ;;
   f)
     bash fdeps.sh
+    ;;
+  d)
+    bash ddeps.sh
     ;;
   *)
     echo "Skipping installation of dependencies!"	
