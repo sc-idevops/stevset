@@ -1,4 +1,7 @@
 #!/bin/bash
+echo ">>> Updating Retweets"
+gallery-dl --abort 3 --sleep 4 -o retweets=true "https://twitter.com/stefenauris"
+gallery-dl --abort 3 --sleep 4 -o retweets=true "https://twitter.com/DaybreakHero"
 echo ">>> Downloading Special Pics in no particular order..."
 gallery-dl --sleep 4 --abort 3 https://twitter.com/TheBaddestRam
 gallery-dl --sleep 4 --abort 3 https://twitter.com/Metal_AnimalMan
@@ -22,7 +25,6 @@ gallery-dl --sleep 4 --abort 3 https://twitter.com/ZigZaggyZagg
 gallery-dl --sleep 4 --abort 3 https://twitter.com/Wolfy_WolFang
 gallery-dl --sleep 4 --abort 3 https://twitter.com/WolfSandman
 gallery-dl --sleep 4 --abort 3 https://twitter.com/Wolf_ODaddy
-gallery-dl --sleep 4 --abort 3 https://twitter.com/WolfByTheStream
 gallery-dl --sleep 4 --abort 3 https://twitter.com/WeaselZERO
 gallery-dl --sleep 4 --abort 3 https://twitter.com/WeaselAfterDark
 gallery-dl --sleep 4 --abort 3 https://twitter.com/VectorShen
@@ -32,6 +34,3 @@ gallery-dl --sleep 4 --abort 3 https://twitter.com/theonlyinleb
 gallery-dl --sleep 4 --abort 3 https://twitter.com/The_Huggernaut
 gallery-dl --sleep 4 --abort 3 https://twitter.com/TehBasco
 gallery-dl --sleep 4 --abort 3 https://twitter.com/SwiftLPRD
-echo ">>> Updating Retweets"
-gallery-dl --abort 3 --sleep 4 -o retweets=true "https://twitter.com/stefenauris"
-gallery-dl --abort 3 --sleep 4 -o retweets=true "https://twitter.com/DaybreakHero"
