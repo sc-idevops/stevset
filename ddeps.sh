@@ -39,16 +39,16 @@ sudo apt-get -my install \
   nala \
   duf
 
-read -n1 -p $'Does this system need a ssh server?\n' REPLY
+read -n1 -p $'\nDoes this system need a ssh server?\n' REPLY
 	if [[ $REPLY == [Yy] ]]; then 
 		sudo apt-get install openssh-server fail2ban
 	fi
 read -n1 -p $'\nDoes this system have a GUI?\n' REPLY
-	if [[ $REPLY == [Yy] ]]; then 
-		sudo apt-get install synaptic emacs vim-gtk3 neovim-qt
+	if [[ $REPLY == [Yy] ]]; then
+    sudo apt-get install synaptic emacs vim-gtk3 neovim-qt
 	else
 	  sudo apt-get install emacs-nox
 	fi
 
 #This section installs software outside apt
-dpkg_url https://github.com/dandavison/delta/releases/download/0.15.1/git-delta_0.16.5_amd64.deb || dpkg_url https://github.com/dandavison/delta/releases/download/0.16.5/git-delta-musl_0.15.1_amd64.deb
+dpkg_url https://github.com/dandavison/delta/releases/download/0.15.1/git-delta-musl_0.15.1_amd64.deb || dpkg_url https://github.com/dandavison/delta/releases/download/0.16.5/git-delta_0.16.5_amd64.deb
