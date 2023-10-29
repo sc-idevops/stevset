@@ -80,7 +80,8 @@ spacevim () {
   [ -f $HOME/.vimrc ] && mv "$HOME/.vimrc" "$HOME/vimrc_bk"
   curl -sLf https://spacevim.org/install.sh | bash
   echo "Install nvchad"
-  git clone https://github.com/NvChad/NvChad ~/.config/nvim
+  mv ~/.nvim ~/.nvim_bak #removes spacevim's symlink
+  git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 }
 #install fonts for terminal
 fonts () {
@@ -89,9 +90,18 @@ fonts () {
   wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/SourceCodePro.tar.xz -O - | tar -xJf - -C ~/.fonts
 }
 
+flat_timer () {
+  #this copies and activates a systemd service to enable automatic flatpak updates
+  mkdir -pv $HOME/.config/systemd/user/
+  ln ./scripts/systemd/ $HOME/.config/systemd/user/
+  systemctl daemon-reload #not sure if this is necessary or not
+  systemctl --user enable --now flatpak-update.timer
+}
+
 git_user
 spacevim
 fonts
+flat_timer
 
 echo "*******************************"
 echo "*    Restart your terminal    *"
