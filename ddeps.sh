@@ -32,10 +32,8 @@ sudo apt-get -my install \
   fd-find \
   ncdu \
   exa \
-  neofetch \
   trash-cli \
   bat \
-  neovim \
   nala \
   duf
 
@@ -45,10 +43,15 @@ read -n1 -p $'\nDoes this system need a ssh server?\n' REPLY
 	fi
 read -n1 -p $'\nDoes this system have a GUI?\n' REPLY
 	if [[ $REPLY == [Yy] ]]; then
-    sudo apt-get install synaptic emacs vim-gtk3 neovim-qt
+    sudo apt-get install synaptic emacs vim-gtk3 
 	else
 	  sudo apt-get install emacs-nox
 	fi
 
 #This section installs software outside apt
-dpkg_url https://github.com/dandavison/delta/releases/download/0.15.1/git-delta-musl_0.15.1_amd64.deb || dpkg_url https://github.com/dandavison/delta/releases/download/0.16.5/git-delta_0.16.5_amd64.deb
+dpkg_url https://github.com/dandavison/delta/releases/download/0.16.5/git-delta_0.16.5_amd64.deb
+
+#install neovim
+mkdir -v ~/bin
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage -o ~/bin/nvim
+chmod u+x ~/bin/nvim
