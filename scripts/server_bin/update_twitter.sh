@@ -7,7 +7,7 @@ gallery-dl --abort 3 -o retweets=true "https://twitter.com/DaybreakHero"
 for i in */; do
   echo ">> $i"
   date
-  gallery-dl --sleep 3 --abort 3 "https://twitter.com/$i" || echo "$i" >> ~/twit_error.txt
+  gallery-dl --sleep 6 --abort 3 "https://twitter.com/$i" || echo "$i" >> ~/twit_error.txt
   echo "    << waiting"
   sleep 60
 done
