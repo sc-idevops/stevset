@@ -16,3 +16,5 @@ sleep 60
 gallery-dl --sleep 12-16 --abort 2 "mastodon:https://yiff.life/@andrew@montagne.uk"
 sleep 60
 gallery-dl --sleep 12-16 --abort 2 "mastodon:https://yiff.life/@DeeDungeon@rubber.social"
+sleep 60
+gallery-dl --sleep 12-16 --abort 2 "mastodon:https://yiff.life/@Ryu@furry.engineer"
