@@ -52,7 +52,8 @@ read -n1 -p $'\nDoes this system have a GUI?\n' REPLY
 #This section installs software outside apt
 dpkg_url https://github.com/dandavison/delta/releases/download/0.16.5/git-delta_0.16.5_amd64.deb
 
-#install neovim
+#install/upgrade neovim
 mkdir -v ~/bin
+trash ~/bin/nvim
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage -o ~/bin/nvim
 chmod u+x ~/bin/nvim

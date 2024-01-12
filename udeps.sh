@@ -62,7 +62,8 @@ fi
 dpkg_url https://github.com/ClementTsang/bottom/releases/download/0.9.6/bottom_0.9.6_amd64.deb
 dpkg_url https://github.com/dandavison/delta/releases/download/0.16.5/git-delta_0.16.5_amd64.deb || dpkg_url https://github.com/dandavison/delta/releases/download/0.16.5/git-delta-musl_0.16.5_amd64.deb
 
-#install neovim
+#install/upgrade neovim
 mkdir -v ~/bin
+trash ~/bin/nvim
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage -o ~/bin/nvim
 chmod u+x ~/bin/nvim
