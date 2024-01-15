@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#step 1, get the drive
+
+sudo mkdir /mnt/chroot
+
+sudo mount $drive /mnt/chroot
+
+#test if BTRFS, if it is, might need @ dir
+for f in proc sys dev ; do sudo mount --bind /$f /mnt/chroot/@/$f ; done
