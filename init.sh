@@ -93,15 +93,16 @@ fonts () {
 flat_timer () {
   #this copies and activates a systemd service to enable automatic flatpak updates
   mkdir -pv $HOME/.config/systemd/user/
-  ln ./scripts/systemd/ $HOME/.config/systemd/user/
-  systemctl daemon-reload #not sure if this is necessary or not
+  ln -s ./scripts/systemd/flatpak* $HOME/.config/systemd/user/
   systemctl --user enable --now flatpak-update.timer
 }
 
 git_user
 spacevim
 fonts
-flat_timer
+if command -v flatpak &> /dev/null; then
+  flat_timer
+fi
 
 echo "*******************************"
 echo "*    Restart your terminal    *"
