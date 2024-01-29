@@ -1,5 +1,6 @@
 #!/bin/bash
 N=2
+trash ~/fa_error.log
 cd $HOME/gallery-dl/furaffinity
 gallery-dl --abort 3 --sleep 0-1 "https://www.furaffinity.net/favorites/stevo/"
 for i in */; do
