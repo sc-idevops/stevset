@@ -87,7 +87,7 @@ spacevim () {
 fonts () {
   echo "installing fonts"
   mkdir ~/.fonts
-  wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/SourceCodePro.tar.xz -O - | tar -xJf - -C ~/.fonts
+  wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/SourceCodePro.tar.xz -O - | tar -xJf - -C ~/.fonts
 }
 
 flat_timer () {
@@ -103,6 +103,10 @@ fonts
 if command -v flatpak &> /dev/null; then
   flat_timer
 fi
+
+#script to link to stevserver over LAN. Note: the username in the filename and file have to match yours. 
+sudo cp scripts/systemd/home-stev-server.mount /etc/systemd/system
+sudo systemctl daemon-reload
 
 echo "*******************************"
 echo "*    Restart your terminal    *"
