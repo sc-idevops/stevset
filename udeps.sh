@@ -42,9 +42,7 @@ read -n1 -p $'Does this system need a ssh server?\n' REPLY
   fi
 read -n1 -p $'\nDoes this system have a GUI?\n' REPLY
   if [[ $REPLY == [Yy] ]]; then
-    sudo apt-get install synaptic emacs vim-gtk3
-  else
-    sudo apt-get install emacs-nox
+    sudo apt-get install synaptic vim-gtk3
   fi
 
 release=`lsb_release -cs`
@@ -62,8 +60,3 @@ fi
 dpkg_url https://github.com/ClementTsang/bottom/releases/download/0.9.6/bottom_0.9.6_amd64.deb
 dpkg_url https://github.com/dandavison/delta/releases/download/0.16.5/git-delta_0.16.5_amd64.deb || dpkg_url https://github.com/dandavison/delta/releases/download/0.16.5/git-delta-musl_0.16.5_amd64.deb
 
-#install/upgrade neovim
-mkdir -v ~/bin
-trash ~/bin/nvim
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage -o ~/bin/nvim
-chmod u+x ~/bin/nvim
