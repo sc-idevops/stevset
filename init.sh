@@ -73,15 +73,22 @@ git_user () {
   fi
 }
 
-#install spacevim
+#install spacevim & neovim
 spacevim () {
   echo "Installing Spacevim!"
   [ -d $HOME/.vim ] && mv "$HOME/.vim" "$HOME/vim_bk"
   [ -f $HOME/.vimrc ] && mv "$HOME/.vimrc" "$HOME/vimrc_bk"
   curl -sLf https://spacevim.org/install.sh | bash
-  echo "Install nvchad"
+  echo "Install Neovim"
+  mkdir -v ~/bin
+  trash ~/bin/nvim ~/.config/nvim
+  curl -L https://github.com/neovim/neovim/releases/latest/download/nvim.appimage -o ~/bin/nvim
+  chmod u+x ~/bin/nvim
   mv ~/.nvim ~/.nvim_bak #removes spacevim's symlink
+  echo "Install NvChad"
   git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+  echo "Install Lunar Vim"
+  LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
 }
 #install fonts for terminal
 fonts () {
@@ -105,8 +112,11 @@ if command -v flatpak &> /dev/null; then
 fi
 
 #script to link to stevserver over LAN. Note: the username in the filename and file have to match yours. 
-sudo cp scripts/systemd/home-stev-server.mount /etc/systemd/system
-sudo systemctl daemon-reload
+echo -n "Will you need to connect to stev-server?"; read -r answer
+if [[ $answer == [Yy] ]]
+  sudo cp scripts/systemd/home-stev-server.mount /etc/systemd/system
+  sudo systemctl daemon-reload
+fi
 
 echo "*******************************"
 echo "*    Restart your terminal    *"
