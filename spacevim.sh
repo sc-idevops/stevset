@@ -8,7 +8,7 @@ mkdir -v ~/bin
 trash ~/bin/nvim 
 curl -L https://github.com/neovim/neovim/releases/latest/download/nvim.appimage -o ~/bin/nvim
 chmod u+x ~/bin/nvim
-trash ~/.local/share/nvim #removes spacevim's symlink
+trash ~/.local/share/nvim ~/.config/nvim #removes spacevim's symlink
 echo "Install NvChad"
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 echo "Install Lunar Vim"

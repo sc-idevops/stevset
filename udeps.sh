@@ -35,7 +35,8 @@ sudo apt-get -my install \
   neofetch \
   trash-cli \
   nala \
-  libfuse2
+  libfuse2 \
+  make
 
 read -n1 -p $'Does this system need a ssh server?\n' REPLY
   if [[ $REPLY == [Yy] ]]; then

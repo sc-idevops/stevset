@@ -37,7 +37,8 @@ sudo apt-get -my install \
   nala \
   duf \
   tree \
-  vim
+  vim \
+  make
 
 read -n1 -p $'\nDoes this system need a ssh server?\n' REPLY
   if [[ $REPLY == [Yy] ]]; then
