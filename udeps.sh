@@ -48,7 +48,7 @@ read -n1 -p $'\nDoes this system have a GUI?\n' REPLY
   fi
 
 release=`lsb_release -cs`
-if [[ $release == jammy ]]; then
+if [[ $release == jammy || $release == noble ]]; then
   sudo apt install \
     bat \
     duf \
@@ -60,5 +60,4 @@ dpkg_url https://github.com/dandavison/delta/releases/download/0.16.5/git-delta_
 dpkg_url https://github.com/bootandy/dust/releases/download/v0.9.0/du-dust_0.9.0-1_amd64.deb
 dpkg_url https://github.com/charmbracelet/glow/releases/download/v1.5.1/glow_1.5.1_amd64.deb
 dpkg_url https://github.com/ClementTsang/bottom/releases/download/0.9.6/bottom_0.9.6_amd64.deb
-dpkg_url https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.deb
 
