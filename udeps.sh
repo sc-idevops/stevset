@@ -34,7 +34,8 @@ sudo apt-get -my install \
   tree \
   neofetch \
   trash-cli \
-  nala
+  nala \
+  libfuse2
 
 read -n1 -p $'Does this system need a ssh server?\n' REPLY
   if [[ $REPLY == [Yy] ]]; then
@@ -42,7 +43,7 @@ read -n1 -p $'Does this system need a ssh server?\n' REPLY
   fi
 read -n1 -p $'\nDoes this system have a GUI?\n' REPLY
   if [[ $REPLY == [Yy] ]]; then
-    sudo apt-get install synaptic vim-gtk3
+    sudo apt-get install synaptic 
   fi
 
 release=`lsb_release -cs`
@@ -51,12 +52,12 @@ if [[ $release == jammy ]]; then
     bat \
     duf \
     btop
-  else
-    dpkg_url https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.deb
-    dpkg_url https://github.com/sharkdp/bat/releases/download/v0.24.0/bat_0.24.0_amd64.deb
 fi
 
 #This section installs software outside apt
+dpkg_url https://github.com/dandavison/delta/releases/download/0.16.5/git-delta_0.16.5_amd64.deb
+dpkg_url https://github.com/bootandy/dust/releases/download/v0.9.0/du-dust_0.9.0-1_amd64.deb
+dpkg_url https://github.com/charmbracelet/glow/releases/download/v1.5.1/glow_1.5.1_amd64.deb
 dpkg_url https://github.com/ClementTsang/bottom/releases/download/0.9.6/bottom_0.9.6_amd64.deb
-dpkg_url https://github.com/dandavison/delta/releases/download/0.16.5/git-delta_0.16.5_amd64.deb || dpkg_url https://github.com/dandavison/delta/releases/download/0.16.5/git-delta-musl_0.16.5_amd64.deb
+dpkg_url https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.deb
 
