@@ -1,0 +1,7 @@
+For using zram I would use:
+apt install zram-tools zstd
+
+and configure:
+/etc/default/zramswap
+
+with zstd algorithm and whatever percent of RAM to use
