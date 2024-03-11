@@ -7,7 +7,7 @@ gallery-dl --sleep 4 --abort 3 https://twitter.com/TheBaddestRam
 gallery-dl --sleep 4 --abort 3 https://twitter.com/Metal_AnimalMan
 gallery-dl --sleep 4 --abort 3 https://twitter.com/wolf_ezo
 gallery-dl --sleep 4 --abort 3 https://twitter.com/_maxsmall
-gallery-dl --sleep 4 --abort 3 https://twitter.com/RonnoYeenie
+gallery-dl --sleep 4 --abort 3 https://twitter.com/ronnoyeen
 gallery-dl --sleep 4 --abort 3 https://twitter.com/ShootingStargel
 gallery-dl --sleep 4 --abort 3 https://twitter.com/Calilum_
 gallery-dl --sleep 4 --abort 3 https://twitter.com/sciopup
@@ -34,6 +34,6 @@ gallery-dl --sleep 4 --abort 3 https://twitter.com/theonlyinleb
 gallery-dl --sleep 4 --abort 3 https://twitter.com/The_Huggernaut
 gallery-dl --sleep 4 --abort 3 https://twitter.com/TehBasco
 gallery-dl --sleep 4 --abort 3 https://twitter.com/SwiftLPRD
-gallery-dl --sleep 4 --abort 3 https://twitter.com/ronnogoodboyo
+gallery-dl --sleep 4 --abort 3 https://twitter.com/Golden_Yeen
 gallery-dl --sleep 4 --abort 3 https://twitter.com/Duke_Doberman
 gallery-dl --sleep 4 --abort 3 https://twitter.com/rubberbeefcake
