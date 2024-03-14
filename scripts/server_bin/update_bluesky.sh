@@ -7,7 +7,7 @@ echo ">>>> Begin Downloads"
 for i in */; do
   echo ">> $i"
   date
-  gallery-dl --sleep 1-3 --abort 3 "https://bsky.app/profile/$i" || echo "$i" >> ~/bsky_error.txt
+  gallery-dl -u steveokard@gmail.com -p `cat ~/.gallery-dl/bsky-secret.txt` --sleep 1-3 --abort 3 "https://bsky.app/profile/${i/\/}" || echo "$i" >> ~/bsky_error.txt
   echo "    << waiting"
   sleep 6
 done
