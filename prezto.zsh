@@ -1,7 +1,7 @@
 #!/bin/zsh
 CPU_CORES=$(nproc --all)
 #Initializes Prezto
-git clone --recursive -j $CPU_CORES https://github.com/steveokard/prezto.git "$HOME/.zprezto"
+git clone --recursive -j $CPU_CORES https://github.com/sc-idevops/prezto.git "$HOME/.zprezto"
 
 #Remove old stuff
 echo "....Creating symlinks"
