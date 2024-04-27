@@ -1,6 +1,7 @@
 #!/bin/bash
+set -euo pipefail
 #install pre-req.
-echo -n "Which Linux flavor will we be installing programs for? (u/o/a)"; read -r answer
+echo -n "Which Linux flavor will we be installing programs for? (u/o/a/f/d)"; read -r answer
 case $answer in
   u) 
     bash udeps.sh
@@ -81,13 +82,14 @@ bash spacevim.sh
 fonts () {
   echo "installing fonts"
   mkdir ~/.fonts
-  wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/SourceCodePro.tar.xz -O - | tar -xJf - -C ~/.fonts
+  wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/SourceCodePro.tar.xz -O - | tar -xJf - -C ~/.fonts
+  wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/UbuntuMono.tar.xz -O - | tar -xJf - -C ~/.fonts
 }
 
 flat_timer () {
   #this copies and activates a systemd service to enable automatic flatpak updates
   mkdir -pv $HOME/.config/systemd/user/
-  ln -s ./scripts/systemd/flatpak* $HOME/.config/systemd/user/
+  cp ./scripts/systemd/flatpak* $HOME/.config/systemd/user/
   systemctl --user enable --now flatpak-update.timer
 }
 
@@ -101,6 +103,7 @@ fi
 #script to link to stevserver over LAN. Note: the username in the filename and file have to match yours. 
 echo -n "Will you need to connect to stev-server?"; read -r answer
 if [[ $answer == [Yy] ]]; then
+  sudo apt install nfs-common
   sudo cp scripts/systemd/home-stev-server.mount /etc/systemd/system
   sudo systemctl daemon-reload
 fi
