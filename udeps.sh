@@ -37,7 +37,8 @@ sudo apt-get -my install \
   nala \
   libfuse2 \
   make \
-  neovim
+  neovim \
+  shellcheck
 
 read -n1 -p $'Does this system need a ssh server?\n' REPLY
   if [[ $REPLY == [Yy] ]]; then
