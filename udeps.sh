@@ -36,7 +36,8 @@ sudo apt-get -my install \
   trash-cli \
   nala \
   libfuse2 \
-  make
+  make \
+  neovim
 
 read -n1 -p $'Does this system need a ssh server?\n' REPLY
   if [[ $REPLY == [Yy] ]]; then
