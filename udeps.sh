@@ -32,7 +32,6 @@ sudo apt-get -my install \
   fd-find \
   ncdu \
   tree \
-  neofetch \
   trash-cli \
   nala \
   libfuse2 \
