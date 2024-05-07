@@ -46,7 +46,8 @@ read -n1 -p $'\nDoes this system need a ssh server?\n' REPLY
   fi
 read -n1 -p $'\nDoes this system have a GUI?\n' REPLY
   if [[ $REPLY == [Yy] ]]; then
-    sudo apt-get install synaptic vim-gtk3 
+    sudo apt-get install synaptic flatpak
+    flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
   fi
 
 #This section installs software outside apt
