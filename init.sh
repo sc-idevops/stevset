@@ -1,5 +1,4 @@
 #!/bin/bash
-set -euo pipefail
 #install pre-req.
 echo -n "Which Linux flavor will we be installing programs for? (u/o/a/f/d)"; read -r answer
 case $answer in
@@ -37,11 +36,13 @@ case $answer in
   z | zsh)
     echo "Initializing Prezto"
     zsh prezto.zsh
+    echo "Enter user password to change shell"
     chsh -s /usr/bin/zsh 
     ;;
   f | fish)
     echo "Installing Oh-My-Fish"
     bash fish.sh
+    echo "Enter user password to change shell"
     chsh -s /usr/bin/fish
     ;;
   b | bash)
@@ -62,7 +63,6 @@ esac
 echo "set up Tmux Plugins"
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-
 #Configure git user
 git_user () {
   echo -n "Would you like to configure your git name and email? (y/n) => "; read -r answer
@@ -76,7 +76,7 @@ git_user () {
 
 #install spacevim & neovim
 echo "Installing Spacevim & Friends!"
-bash spacevim.sh
+bash ./spacevim.sh
 
 #install fonts for terminal
 fonts () {
@@ -93,8 +93,8 @@ flat_timer () {
   systemctl --user enable --now flatpak-update.timer
 }
 
+# Functions
 git_user
-spacevim
 fonts
 if command -v flatpak &> /dev/null; then
   flat_timer
@@ -106,6 +106,7 @@ if [[ $answer == [Yy] ]]; then
   sudo apt install nfs-common
   sudo cp scripts/systemd/home-stev-server.mount /etc/systemd/system
   sudo systemctl daemon-reload
+  sudo systemctl enable --now home-stev-server.mount
 fi
 
 echo "*******************************"
