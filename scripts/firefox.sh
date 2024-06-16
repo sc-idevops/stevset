@@ -8,29 +8,24 @@ help() {
       exit 1
 }
 
-if [ -z "$*" ]; then help; fi
-
 #process flags
-while getopts 'efrp:h' opt; do
-  case "$opt" in
-    e)
+  case "$1" in
+    -e)
       echo "Installing Firefox ESR"
       sudo add-apt-repository ppa:mozillateam/ppa
       sudo apt-get update
-      sudo apt-get -y remove firefox
-      sudo snap remove firefox
       echo 'Unattended-Upgrade::Allowed-Origins:: "LP-PPA-mozillateam:${distro_codename}";' | sudo tee /etc/apt/apt.conf.d/51unattended-upgrades-firefox
       sudo apt-get -y install firefox-esr
       ;;
 
-    f)
+    -f)
       echo "Installing Flatpak Firefox"
       sudo apt-get -y install flatpak
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
       flatpak install flathub org.mozilla.firefox
       ;;
 
-    d)
+    -d)
       echo "Installing Firefox from Offical Mozilla Repo"
       #Create an APT keyring (if one doesn’t already exist):
       sudo install -d -m 0755 /etc/apt/keyrings
@@ -44,15 +39,16 @@ Pin-Priority: 1000
       sudo apt update && sudo apt install firefox
       ;;
 
-    p)
+    -p)
       echo "Purging snapd..."
       sudo apt-get autoremove snapd
       ;;
 
-    r)
+    -r)
       echo "Purging Firefox Snap"
       echo "Backing up Snap Profile"
-      cp -r ~/snap/firefox/current ~/mozilla_backup
+      mkdir ~/mozilla_backup
+      cp -r ~/snap/firefox/common/.mozilla ~/mozilla_backup
       sudo snap remove firefox
       ;;
 
@@ -60,7 +56,4 @@ Pin-Priority: 1000
       help
       ;;
   esac
-done
-shift "$(($OPTIND -1))"
-
  
