@@ -38,3 +38,4 @@ gallery-dl --sleep 4 --abort 3 https://twitter.com/Duke_Doberman
 gallery-dl --sleep 4 --abort 3 https://twitter.com/rubberbeefcake
 gallery-dl --sleep 4 --abort 3 https://twitter.com/AlienSymbol
 gallery-dl --sleep 4 --abort 3 https://twitter.com/Milesfuzz
+gallery-dl --sleep 4 --abort 3 https://x.com/yamasmut

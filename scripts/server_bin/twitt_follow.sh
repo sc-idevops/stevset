@@ -5,6 +5,6 @@ target=/home/stev/Pictures/gallery-dl/twitter/follow.txt
 #sed -ie 's/^.//' $target
 #loop through the list and download
 for i in `cat $target`; do
-  gallery-dl --sleep 4 --abort 3 "https://x.com/$i"
+  gallery-dl --sleep 4 --abort 3 "$i"
 done
 
