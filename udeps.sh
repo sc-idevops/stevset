@@ -37,7 +37,8 @@ sudo apt-get -my install \
   libfuse2 \
   make \
   neovim \
-  shellcheck
+  shellcheck \
+  lua5.2
 
 read -n1 -p $'Does this system need a ssh server?\n' REPLY
   if [[ $REPLY == [Yy] ]]; then
@@ -58,8 +59,8 @@ if [[ $release == jammy || $release == noble ]]; then
 fi
 
 #This section installs software outside apt
-dpkg_url https://github.com/dandavison/delta/releases/download/0.17.0/git-delta_0.17.0_amd64.deb
+dpkg_url https://github.com/dandavison/delta/releases/download/0.18.0/git-delta_0.18.0_amd64.deb
 dpkg_url https://github.com/bootandy/dust/releases/download/v1.0.0/du-dust_1.0.0-1_amd64.deb
 dpkg_url https://github.com/charmbracelet/glow/releases/download/v1.5.1/glow_1.5.1_amd64.deb
-dpkg_url https://github.com/ClementTsang/bottom/releases/download/0.9.6/bottom_0.9.6_amd64.deb
+dpkg_url https://github.com/ClementTsang/bottom/releases/download/0.10.2/bottom_0.10.2-1_amd64.deb
 
