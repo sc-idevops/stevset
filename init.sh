@@ -30,7 +30,7 @@ chmod 0700 ~/.ssh
 chmod -R 0600 ~/.ssh/*
 
 #setup shell
-stow home
+#stow home <-- what is this for??
 echo "Select which shell to configure and use: zsh/fish/bash"; read -r answer
 case $answer in
   z | zsh)

@@ -51,9 +51,10 @@ read -n1 -p $'\nDoes this system have a GUI?\n' REPLY
   fi
 
 #This section installs software outside apt
+dpkg_url https://github.com/dandavison/delta/releases/download/0.18.2/git-delta_0.18.2_amd64.deb
+dpkg_url https://github.com/bootandy/dust/releases/download/v1.1.1/du-dust_1.1.1-1_amd64.deb
+dpkg_url https://github.com/charmbracelet/glow/releases/download/v2.0.0/glow_2.0.0_amd64.deb
+dpkg_url https://github.com/ClementTsang/bottom/releases/download/0.10.2/bottom_0.10.2-1_amd64.deb
+
 dpkg_url https://github.com/sharkdp/bat/releases/download/v0.24.0/bat_0.24.0_amd64.deb
 dpkg_url https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.deb
-dpkg_url https://github.com/dandavison/delta/releases/download/0.17.0/git-delta_0.17.0_amd64.deb
-dpkg_url https://github.com/bootandy/dust/releases/download/v1.0.0/du-dust_1.0.0-1_amd64.deb
-dpkg_url https://github.com/charmbracelet/glow/releases/download/v1.5.1/glow_1.5.1_amd64.deb
-dpkg_url https://github.com/ClementTsang/bottom/releases/download/0.9.6/bottom_0.9.6_amd64.deb

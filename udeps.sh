@@ -12,7 +12,7 @@ function dpkg_url() {
 }
 
 # installing base dependencies
-sudo apt-get -my install \
+sudo apt -my install \
   git \
   vim \
   stow \
@@ -40,16 +40,6 @@ sudo apt-get -my install \
   shellcheck \
   lua5.2
 
-read -n1 -p $'Does this system need a ssh server?\n' REPLY
-  if [[ $REPLY == [Yy] ]]; then
-    sudo apt-get install openssh-server fail2ban
-  fi
-read -n1 -p $'\nDoes this system have a GUI?\n' REPLY
-  if [[ $REPLY == [Yy] ]]; then
-    sudo apt-get install synaptic flatpak
-    flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-  fi
-
 release=`lsb_release -cs`
 if [[ $release == jammy || $release == noble ]]; then
   sudo apt install \
@@ -58,9 +48,19 @@ if [[ $release == jammy || $release == noble ]]; then
     btop
 fi
 
+read -n1 -p $'Does this system need a ssh server?\n' REPLY
+  if [[ $REPLY == [Yy] ]]; then
+    sudo apt install openssh-server fail2ban
+  fi
+read -n1 -p $'\nDoes this system have a GUI?\n' REPLY
+  if [[ $REPLY == [Yy] ]]; then
+    sudo apt install synaptic flatpak
+    flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+  fi
+
 #This section installs software outside apt
-dpkg_url https://github.com/dandavison/delta/releases/download/0.18.0/git-delta_0.18.0_amd64.deb
-dpkg_url https://github.com/bootandy/dust/releases/download/v1.0.0/du-dust_1.0.0-1_amd64.deb
-dpkg_url https://github.com/charmbracelet/glow/releases/download/v1.5.1/glow_1.5.1_amd64.deb
+dpkg_url https://github.com/dandavison/delta/releases/download/0.18.2/git-delta_0.18.2_amd64.deb
+dpkg_url https://github.com/bootandy/dust/releases/download/v1.1.1/du-dust_1.1.1-1_amd64.deb
+dpkg_url https://github.com/charmbracelet/glow/releases/download/v2.0.0/glow_2.0.0_amd64.deb
 dpkg_url https://github.com/ClementTsang/bottom/releases/download/0.10.2/bottom_0.10.2-1_amd64.deb
 
