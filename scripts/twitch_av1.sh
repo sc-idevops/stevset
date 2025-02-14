@@ -2,8 +2,9 @@
 #this script assumes its being run in the working directory
 
 #test to see if its already been encoded to av1 or else it converts it
-format=$(ffprobe -v error -select_streams v:0 -show_entries stream=codec_name -of default=nokey=1:noprint_wrappers=1 "$1")
-echo "Format of file $1 is    $format"
+format=$(ffprobe -v error -select_streams v:0 -show_entries stream=codec_name -of default=nokey=1:noprint_wrappers=1 $1)
+#rate=1M
+echo "Format of file $1 is  ---> $format"
 
 if [ "$format" != "av1" ]
 then
@@ -12,9 +13,10 @@ then
     -n \
     -vaapi_device /dev/dri/renderD128 \
     -c:v av1_qsv \
-    -crf 30 \
-    -preset 3 \
+    -crf 35 \
+    -preset 4 \
     -g 150 \
     -c:a aac \
-    "/config/${1%.mp4}.mkv"
+    -movflags faststart \
+    "/config/${1}_converted.mp4"
 fi
