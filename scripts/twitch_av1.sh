@@ -17,7 +17,7 @@ then
     -global_quality $rate \
     -preset 4 \
     -g 150 \
-    -c:a aac \
+    -c:a copy \
     -movflags faststart \
     "/config/${1}_converted.mp4"
 fi
