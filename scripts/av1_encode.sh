@@ -18,6 +18,6 @@ then
     -look_ahead 1 -look_ahead_depth 100 \
     -preset 3 \
     -g 150 \
-    -c:a libopus \
+    -c:a aac \
     "/config/${1%.*}_converted.mkv"
 fi
