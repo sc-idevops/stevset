@@ -53,6 +53,7 @@ Pin-Priority: -1
       echo "Backing up Snap Profile"
       mkdir ~/mozilla_backup
       cp -r ~/snap/firefox/common/.mozilla ~/mozilla_backup
+      sudo systemctl disable --now var-snap-firefox-common-host\\x2dhunspell.mount
       sudo snap remove firefox
       ;;
 
