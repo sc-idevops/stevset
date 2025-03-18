@@ -4,7 +4,7 @@
 #test to see if its already been encoded to av1 or else it converts it
 format=$(ffprobe -v error -select_streams v:0 -show_entries stream=codec_name -of default=nokey=1:noprint_wrappers=1 $1)
 rate=29
-echo "Format of file $1 is  ---> $format"
+echo -e "\033[0;36m >> Format of file $1 is  ---> $format \033[0m"
 
 if [ "$format" != "av1" ]
 then
