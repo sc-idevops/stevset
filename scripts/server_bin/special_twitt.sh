@@ -3,7 +3,6 @@ echo ">>> Updating Retweets"
 gallery-dl --abort 3 --sleep 4 -o retweets=true "https://twitter.com/stefenauris"
 gallery-dl --abort 3 --sleep 4 -o retweets=true "https://twitter.com/DaybreakHero"
 echo ">>> Downloading Special Pics in no particular order..."
-gallery-dl --sleep 4 --abort 3 https://twitter.com/TheBaddestRam
 gallery-dl --sleep 4 --abort 3 https://twitter.com/Metal_AnimalMan
 gallery-dl --sleep 4 --abort 3 https://twitter.com/wolf_ezo
 gallery-dl --sleep 4 --abort 3 https://twitter.com/_maxsmall
@@ -40,3 +39,7 @@ gallery-dl --sleep 4 --abort 3 https://twitter.com/AlienSymbol
 gallery-dl --sleep 4 --abort 3 https://twitter.com/Milesfuzz
 gallery-dl --sleep 4 --abort 3 https://x.com/yamasmut
 gallery-dl --sleep 4 --abort 3 https://x.com/lucthelab
+gallery-dl --sleep 4 --abort 3 https://x.com/HYDROKIINESIS
+gallery-dl --sleep 4 --abort 3 https://x.com/puppanic
+gallery-dl --sleep 4 --abort 3 https://x.com/t_kobs
+gallery-dl --sleep 4 --abort 3 https://x.com/PupBuday
