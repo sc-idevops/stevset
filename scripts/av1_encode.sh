@@ -14,6 +14,7 @@ then
     -n \
     -i "/config/$1" \
     -c:v av1_qsv \
+    -strict 1 \
     -global_quality $rate \
     -look_ahead 1 -look_ahead_depth 100 \
     -preset 3 \
