@@ -3,17 +3,16 @@
 # installing base dependencies
 sudo pacman -Sy --needed \
   git \
+  vim \
   stow \
   etckeeper \
   tmux \
   zsh \
-  vim \
   powerline\
   htop \
   mc \
   curl \
   nnn \
-  ack \
   fzf \
   ripgrep \
   grc \
@@ -22,7 +21,10 @@ sudo pacman -Sy --needed \
   ripgrep \
   exa \
   bat \
-  emacs
+  trash-cli \
+  bat \
+  duf \
+  dust
 
 read -n1 -p $'Does this system need a ssh server?\n' REPLY
 	if [[ $REPLY == [Yy] ]]; then 
