@@ -82,8 +82,8 @@ bash ./spacevim.sh
 fonts () {
   echo "installing fonts"
   mkdir ~/.fonts
-  wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/SourceCodePro.tar.xz -O - | tar -xJf - -C ~/.fonts
-  wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/UbuntuMono.tar.xz -O - | tar -xJf - -C ~/.fonts
+  wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/SourceCodePro.tar.xz -O - | tar -xJf - -C ~/.fonts
+  wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/UbuntuMono.tar.xz -O - | tar -xJf - -C ~/.fonts
 }
 
 flat_timer () {
