@@ -36,7 +36,6 @@ sudo apt -my install \
   nala \
   libfuse2 \
   make \
-  neovim \
   shellcheck \
   lua5.2
 
