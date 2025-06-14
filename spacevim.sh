@@ -1,5 +1,8 @@
 #!/bin/bash
-echo "Installing Spacevim!"
+echo "Setting up Vim Sensible"
+trash ~/.vim/
+mkdir -p ~/.vim/pack/tpope/start
+git clone https://tpope.io/vim/sensible.git ~/.vim/pack/tpope/start
 
 echo "Install Neovim"
 mkdir -v ~/bin
