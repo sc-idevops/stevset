@@ -74,9 +74,9 @@ git_user () {
   fi
 }
 
-#install spacevim & neovim
-echo "Installing Spacevim & Friends!"
-bash ./spacevim.sh
+#install neovim & nvchad
+echo "Installing neovim & Friends!"
+bash ./nvchad.sh
 
 #install fonts for terminal
 fonts () {

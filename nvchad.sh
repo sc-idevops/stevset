@@ -6,9 +6,11 @@ git clone https://tpope.io/vim/sensible.git ~/.vim/pack/tpope/start
 
 echo "Install Neovim"
 mkdir -v ~/bin
-trash ~/bin/nvim 
-curl -L https://github.com/neovim/neovim/releases/download/v0.11.2/nvim-linux-x86_64.appimage -o ~/bin/nvim
-chmod u+x ~/bin/nvim
+if [[ -f "/usr/bin/neovim" ]]; then
+  trash ~/bin/nvim 
+  curl -L https://github.com/neovim/neovim/releases/download/v0.11.2/nvim-linux-x86_64.appimage -o ~/bin/nvim
+  chmod u+x ~/bin/nvim
+fi 
 
 echo "Install NvChad"
 # https://nvchad.com/docs/quickstart/install
