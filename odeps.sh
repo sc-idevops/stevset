@@ -4,12 +4,13 @@
 echo "installing base dependencies"
 sudo zypper install \
     git \
+    vim \
     stow \
     etckeeper \
     tmux \
     zsh \
-    vim \
     powerline\
+    fd \
     htop \
     mc \
     curl \
@@ -19,11 +20,16 @@ sudo zypper install \
     ripgrep \
     grc \
     ncdu \
-    bat 
+    bat \
+    trash-cli \
+    lua54 \
+    duf \
+    dust \
+    neovim
 
 read -n1 -p $'Does this system need ssh access?\n' REPLY
 	if [[ $REPLY == [Yy] ]]; then 
-		sudo zypper install openssh-server
+		sudo zypper install openssh-server fail2ban
 	fi
 read -n1 -p $'\nDoes this system have a GUI?\n' REPLY
 	if [[ $REPLY == [Yy] ]]; then 
