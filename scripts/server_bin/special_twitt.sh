@@ -52,3 +52,4 @@ gallery-dl --sleep 4 --abort 3 https://x.com/DoggoStahl
 gallery-dl --sleep 4 --abort 3 https://x.com/AidanEnormouse
 gallery-dl --sleep 4 --abort 3 https://x.com/SmileyBots
 gallery-dl --sleep 4 --abort 3 https://x.com/Aquafighter_Dai
+gallery-dl --sleep 4 --abort 3 https://x.com/acethefurri
