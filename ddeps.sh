@@ -31,7 +31,6 @@ sudo apt-get -my install \
   grc \
   fd-find \
   ncdu \
-  exa \
   trash-cli \
   bat \
   nala \
@@ -55,6 +54,3 @@ dpkg_url https://github.com/dandavison/delta/releases/download/0.18.2/git-delta_
 dpkg_url https://github.com/bootandy/dust/releases/download/v1.1.2/du-dust_1.1.2-1_amd64.deb
 dpkg_url https://github.com/charmbracelet/glow/releases/download/v2.1.0/glow_2.1.0_amd64.deb
 dpkg_url https://github.com/ClementTsang/bottom/releases/download/0.10.2/bottom_0.10.2-1_amd64.deb
-
-dpkg_url https://github.com/sharkdp/bat/releases/download/v0.25.0/bat_0.25.0_amd64.deb
-dpkg_url https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.deb
