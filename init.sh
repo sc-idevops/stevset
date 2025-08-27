@@ -76,7 +76,7 @@ git_user () {
 
 #install neovim & nvchad
 echo "Installing neovim & Friends!"
-bash ./nvchad.sh
+bash ./lazyvim.sh
 
 #install fonts for terminal
 fonts () {
