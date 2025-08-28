@@ -12,32 +12,32 @@ function dpkg_url() {
 }
 
 # installing base dependencies
-sudo apt-get -my install \
-  git \
-  vim \
-  stow \
-  etckeeper \
-  tmux \
-  zsh \
-  powerline\
-  htop \
-  mc \
-  curl \
-  aptitude \
-  nnn \
+sudo apt -my install \
   ack \
-  fzf \
-  ripgrep \
-  grc \
-  fd-find \
-  ncdu \
-  trash-cli \
-  bat \
-  nala \
+  aptitude \
+  curl \
   duf \
-  tree \
+  etckeeper \
+  fzf \
+  git \
+  grc \
+  htop \
+  lua5.1 \
+  luarocks \
   make \
-  wget
+  mc \
+  nala \
+  ncdu \
+  nnn \
+  powerline\
+  ripgrep \
+  stow \
+  tmux \
+  trash-cli \
+  tree \
+  vim \
+  wget \
+  zsh
 
 read -n1 -p $'\nDoes this system need a ssh server?\n' REPLY
   if [[ $REPLY == [Yy] ]]; then
@@ -51,6 +51,19 @@ read -n1 -p $'\nDoes this system have a GUI?\n' REPLY
 
 #This section installs software outside apt
 dpkg_url https://github.com/dandavison/delta/releases/download/0.18.2/git-delta_0.18.2_amd64.deb
-dpkg_url https://github.com/bootandy/dust/releases/download/v1.1.2/du-dust_1.1.2-1_amd64.deb
-dpkg_url https://github.com/charmbracelet/glow/releases/download/v2.1.0/glow_2.1.0_amd64.deb
-dpkg_url https://github.com/ClementTsang/bottom/releases/download/0.10.2/bottom_0.10.2-1_amd64.deb
+git config --global core.pager delta
+git config --global interactive.diffFilter 'delta --color-only'
+git config --global delta.navigate true
+git config --global merge.conflictStyle zdiff3
+dpkg_url https://github.com/bootandy/dust/releases/download/v1.2.3/du-dust_1.2.3-1_amd64.deb
+dpkg_url https://github.com/charmbracelet/glow/releases/download/v2.1.1/glow_2.1.1_amd64.deb
+dpkg_url https://github.com/ClementTsang/bottom/releases/download/0.11.1/bottom_0.11.1-1_amd64.deb
+dpkg_url https://github.com/sharkdp/bat/releases/download/v0.25.0/bat_0.25.0_amd64.tmp_deb
+dpkg_url https://github.com/sharkdp/fd/releases/download/v10.3.0/fd_10.3.0_amd64.deb
+
+echo "Install lazygit"
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | \grep -Po '"tag_name": *"v\K[^"]*')
+curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/download/v${LAZYGIT_VERSION}/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+tar xf lazygit.tar.gz lazygit
+sudo install lazygit -D -t /usr/local/bin/
+trash lazygit lazygit.tar.gz
