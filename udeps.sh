@@ -19,31 +19,32 @@ function dpkg_url() {
 
 # installing base dependencies
 sudo apt -my install \
-  git \
-  vim \
-  stow \
-  etckeeper \
-  tmux \
-  zsh \
-  powerline htop \
-  mc \
-  curl \
-  aptitude \
-  nnn \
   ack \
+  aptitude \
+  curl \
+  etckeeper \
   fzf \
-  ripgrep \
+  git \
   grc \
-  fd-find \
-  ncdu \
-  tree \
-  trash-cli \
-  nala \
+  htop \
   libfuse2 \
-  make \
-  shellcheck \
   lua5.1 \
-  luarocks
+  luarocks \
+  make \
+  mc \
+  nala \
+  ncdu \
+  nnn \
+  powerline \
+  ripgrep \
+  shellcheck \
+  stow \
+  tmux \
+  trash-cli \
+  tree \
+  vim \
+  wget \
+  zsh
 
 release=$(lsb_release -cs)
 if [[ $release == jammy || $release == noble ]]; then
