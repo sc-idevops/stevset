@@ -25,8 +25,9 @@ My exploration of emacs begins with spacemacs, combining the power of both vim a
 ### Prezto
 A lighter version of the popular oh-my-zsh, this provided a stable and tested place to start making my own shell modifications.
 
-### vim-plug
-A lighter, self installing, parallel downloading plugin manager for vim.
+### lazyvim
+a handy and optimized vim "distribution" with batteries included
+learn more at [https://lazyvim-ambitious-devs.phillips.codes/course/chapter-1/](https://lazyvim-ambitious-devs.phillips.codes/course/chapter-1/)
 
 ## Powerline
 Nifty modern looking effect for zsh, vim, and tmux!
