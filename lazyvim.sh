@@ -6,14 +6,16 @@ git clone https://tpope.io/vim/sensible.git ~/.vim/pack/tpope/start
 
 echo "Install Neovim"
 mkdir -v ~/bin
-if [[ -f "/usr/bin/neovim" ]]; then
-	trash ~/bin/nvim
-	curl -L https://github.com/neovim/neovim/releases/download/v0.11.2/nvim-linux-x86_64.appimage -o ~/bin/nvim
-	chmod u+x ~/bin/nvim
+if [[ ! -f "/usr/bin/neovim" ]]; then
+  trash ~/bin/nvim
+  curl -L https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage -o ~/bin/nvim
+  chmod u+x ~/bin/nvim
+  curl -L https://github.com/neovide/neovide/releases/latest/download/neovide.AppImage -o ~/bin/neovide
+  chmod u+x ~/bin/neovide
 fi
 
 echo "Install Lazyvim"
-# https://nvchad.com/docs/quickstart/install
+# https://www.lazyvim.org/installation
 trash ~/.config/nvim/
 trash ~/.local/state/nvim/
 trash ~/.local/share/nvim/
