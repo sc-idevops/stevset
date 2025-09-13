@@ -26,6 +26,4 @@ chmod u+x ~/bin/neovide
 
 echo "Install Lazyvim"
 # https://www.lazyvim.org/installation
-if [ ! -d "~/.config/nvim" ]; then
-  git clone https://github.com/LazyVim/starter ~/.config/nvim
-fi
+ln -s $HOME/stevset/nvim ~/.config/nvim
