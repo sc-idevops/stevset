@@ -8,3 +8,4 @@ tmux/t-theme/
 scripts/server_bin/adb
 scripts/server_bin/Archipelago_0.4.2_linux-x86_64.AppImage
 scripts/server_bin/nvim
+scripts/server_bin/neovide
