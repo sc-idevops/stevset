@@ -12,3 +12,7 @@ setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
 	  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
   done
+
+#override keybindings
+sed -i '/history-incremental-search-backward/s/^/# /' $HOME/.zprezto/contrib/zsh-vi-mode/zsh-vi-mode.zsh
+sed -i '/history-incremental-search-forward/s/^/# /' $HOME/.zprezto/contrib/zsh-vi-mode/zsh-vi-mode.zsh
