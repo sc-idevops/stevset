@@ -30,8 +30,10 @@ sudo apt -my install \
   libfuse2 \
   lua5.1 \
   luarocks \
+  mailutils \
   make \
   mc \
+  mutt \
   nala \
   ncdu \
   nnn \
