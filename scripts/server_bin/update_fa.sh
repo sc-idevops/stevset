@@ -5,7 +5,7 @@ cd $HOME/gallery-dl/furaffinity
 
 for i in */; do
   echo ">> $i"
-  (gallery-dl --abort 3 --sleep 0-2 https://www.furaffinity.net/user/$i || echo "$i" >>~/fa_error.log) &
+  (gallery-dl --abort 5 --sleep 0-2 https://www.furaffinity.net/user/$i || echo "$i" >>~/fa_error.log) &
   if [[ $(jobs -r -p | wc -l) -ge $N ]]; then
     wait -n
   fi

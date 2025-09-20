@@ -2,7 +2,7 @@
 echo ">>> Updating Retweets"
 gallery-dl --abort 3 --sleep 4 -o retweets=true "https://x.com/stefenauris"
 gallery-dl --abort 3 --sleep 4 -o retweets=true "https://x.com/DaybreakHero"
-echo ">>> Downloading Special Pics in no particular order..."
+echo ">>> Downloading Special Pics in alphabetical order..."
 array=(
   acethefurri
   AFoxyGent
@@ -22,6 +22,7 @@ array=(
   growstav
   himbohyena
   HYDROKIINESIS
+  JosephBuffWuff
   Joshontwt
   K1ngYeen
   lobogriswrestle
@@ -46,6 +47,7 @@ array=(
   TehBasco
   The_Huggernaut
   theonlyinleb
+  the_generalguy
   ThunderMaxy
   TJwolfPupAD
   t_kobs
