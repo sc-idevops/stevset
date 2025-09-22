@@ -8,6 +8,9 @@ Debian)
 Ubuntu)
   bash udeps.sh
   ;;
+Bazzite)
+  bash baz_deps.sh
+  ;;
 o)
   bash odeps.sh
   ;;
