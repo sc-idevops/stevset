@@ -21,7 +21,9 @@ function dpkg_url() {
 sudo apt -my install \
   ack \
   aptitude \
+  btop \
   curl \
+  duf \
   etckeeper \
   fzf \
   git \
@@ -45,15 +47,10 @@ sudo apt -my install \
   trash-cli \
   tree \
   vim \
+  wl-clipboard \
   wget \
+  xclip \
   zsh
-
-release=$(lsb_release -cs)
-if [[ $release == jammy || $release == noble ]]; then
-  sudo apt install \
-    duf \
-    btop
-fi
 
 read -n1 -p $'Does this system need a ssh server?\n' REPLY
 if [[ $REPLY == [Yy] ]]; then

@@ -43,7 +43,9 @@ sudo apt -my install \
   trash-cli \
   tree \
   vim \
+  wl-clipboard \
   wget \
+  xclip \
   zsh
 
 read -n1 -p $'\nDoes this system need a ssh server?\n' REPLY
