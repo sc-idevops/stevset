@@ -58,6 +58,7 @@ fi
 read -n1 -p $'Does this system need a ssh server?\n' REPLY
 if [[ $REPLY == [Yy] ]]; then
   sudo apt install openssh-server fail2ban
+  trash ~/.zshrc_prelocal
 fi
 read -n1 -p $'\nDoes this system have a GUI?\n' REPLY
 if [[ $REPLY == [Yy] ]]; then
