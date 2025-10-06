@@ -38,7 +38,8 @@ sudo apt -my install \
   nala \
   ncdu \
   nnn \
-  powerline ripgrep \
+  powerline \
+  ripgrep \
   stow \
   tmux \
   trash-cli \
