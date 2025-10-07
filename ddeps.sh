@@ -83,3 +83,14 @@ if [[ $REPLY == [Yy] ]]; then
   sudo install lazygit -D -t /usr/local/bin/
   trash lazygit lazygit.tar.gz
 fi
+
+#script to link to stevserver over LAN. Note: the username in the filename and file have to match yours.
+#TODO: automate adapting to username
+echo -n "Will you need to connect to stev-server?"
+read -r answer
+if [[ $answer == [Yy] ]]; then
+  sudo apt install nfs-common
+  sudo cp scripts/systemd/home-stev-server.mount /etc/systemd/system
+  sudo systemctl daemon-reload
+  sudo systemctl enable --now home-stev-server.mount
+fi
