@@ -1,23 +1,23 @@
 #!/bin/bash
 #install pre-req.
-distro=$(lsb_release -is)
-case $distro in
-Debian)
+. /etc/os-release
+case $ID in
+debian)
   bash ddeps.sh
   ;;
-Ubuntu)
+ubuntu | "linux mint")
   bash udeps.sh
   ;;
 Bazzite)
   bash baz_deps.sh
   ;;
-o)
+opensuse-leap | opensuse-tumbleweed)
   bash odeps.sh
   ;;
-a)
+arch)
   bash adeps.sh
   ;;
-f)
+fedora)
   bash fdeps.sh
   ;;
 *)
@@ -52,8 +52,8 @@ bash ./lazyvim.sh -c
 
 flat_timer() {
   #this copies and activates a systemd service to enable automatic flatpak updates
-  mkdir -pv $HOME/.config/systemd/user/
-  cp ./scripts/systemd/flatpak* $HOME/.config/systemd/user/
+  mkdir -pv "$HOME/.config/systemd/user/"
+  cp ./scripts/systemd/flatpak* "$HOME/.config/systemd/user/"
   systemctl --user enable --now flatpak-update.timer
 }
 
