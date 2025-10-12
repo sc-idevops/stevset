@@ -1,24 +1,68 @@
 #!/bin/bash
 #install pre-req.
+<<<<<<< HEAD
 . /etc/os-release
 case $ID in
 debian)
   bash ddeps.sh
+||||||| a25d199
+distro=$(lsb_release -is)
+case $distro in
+Debian)
+  bash ddeps.sh
+=======
+distro=$(lsb_release -is)
+case $distro in
+Debian)
+  bash deps/ddeps.sh
+>>>>>>> master
   ;;
+<<<<<<< HEAD
 ubuntu | "linux mint")
   bash udeps.sh
+||||||| a25d199
+Ubuntu)
+  bash udeps.sh
+=======
+Ubuntu)
+  bash deps/udeps.sh
+>>>>>>> master
   ;;
 Bazzite)
-  bash baz_deps.sh
+  bash deps/baz_deps.sh
   ;;
+<<<<<<< HEAD
 opensuse-leap | opensuse-tumbleweed)
   bash odeps.sh
+||||||| a25d199
+o)
+  bash odeps.sh
+=======
+o)
+  bash deps/odeps.sh
+>>>>>>> master
   ;;
+<<<<<<< HEAD
 arch)
   bash adeps.sh
+||||||| a25d199
+a)
+  bash adeps.sh
+=======
+a)
+  bash deps/adeps.sh
+>>>>>>> master
   ;;
+<<<<<<< HEAD
 fedora)
   bash fdeps.sh
+||||||| a25d199
+f)
+  bash fdeps.sh
+=======
+f)
+  bash deps/fdeps.sh
+>>>>>>> master
   ;;
 *)
   echo "Skipping installation of dependencies!"
@@ -66,17 +110,6 @@ wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/SourceC
 wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/UbuntuMono.tar.xz -O - | tar -xJf - -C ~/.fonts
 if command -v flatpak &>/dev/null; then
   flat_timer
-fi
-
-#script to link to stevserver over LAN. Note: the username in the filename and file have to match yours.
-#TODO: automate adapting to username
-echo -n "Will you need to connect to stev-server?"
-read -r answer
-if [[ $answer == [Yy] ]]; then
-  sudo apt install nfs-common
-  sudo cp scripts/systemd/home-stev-server.mount /etc/systemd/system
-  sudo systemctl daemon-reload
-  sudo systemctl enable --now home-stev-server.mount
 fi
 
 echo "*******************************"
