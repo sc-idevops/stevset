@@ -2,23 +2,23 @@
 #install pre-req.
 . /etc/os-release
 case $ID in
-debian)
-  bash ddeps.sh
+Debian)
+  bash deps/ddeps.sh
   ;;
 ubuntu | "linux mint")
-  bash udeps.sh
+  bash deps/udeps.sh
   ;;
 Bazzite)
-  bash baz_deps.sh
+  bash deps/baz_deps.sh
   ;;
 opensuse-leap | opensuse-tumbleweed)
-  bash odeps.sh
+  bash deps/odeps.sh
   ;;
 arch)
-  bash adeps.sh
+  bash deps/adeps.sh
   ;;
 fedora)
-  bash fdeps.sh
+  bash deps/fdeps.sh
   ;;
 *)
   echo "Skipping installation of dependencies!"
@@ -66,17 +66,6 @@ wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/SourceC
 wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/UbuntuMono.tar.xz -O - | tar -xJf - -C ~/.fonts
 if command -v flatpak &>/dev/null; then
   flat_timer
-fi
-
-#script to link to stevserver over LAN. Note: the username in the filename and file have to match yours.
-#TODO: automate adapting to username
-echo -n "Will you need to connect to stev-server?"
-read -r answer
-if [[ $answer == [Yy] ]]; then
-  sudo apt install nfs-common
-  sudo cp scripts/systemd/home-stev-server.mount /etc/systemd/system
-  sudo systemctl daemon-reload
-  sudo systemctl enable --now home-stev-server.mount
 fi
 
 echo "*******************************"
