@@ -8,7 +8,7 @@ Debian)
 ubuntu | "linux mint")
   bash deps/udeps.sh
   ;;
-Bazzite)
+Bazzite | auroa)
   bash deps/baz_deps.sh
   ;;
 opensuse-leap | opensuse-tumbleweed)
@@ -17,7 +17,7 @@ opensuse-leap | opensuse-tumbleweed)
 arch)
   bash deps/adeps.sh
   ;;
-fedora)
+fedora | rocky | almalinux)
   bash deps/fdeps.sh
   ;;
 *)
