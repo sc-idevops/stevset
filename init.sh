@@ -3,22 +3,22 @@
 distro=$(lsb_release -is)
 case $distro in
 Debian)
-  bash ddeps.sh
+  bash deps/ddeps.sh
   ;;
 Ubuntu)
-  bash udeps.sh
+  bash deps/udeps.sh
   ;;
 Bazzite)
-  bash baz_deps.sh
+  bash deps/baz_deps.sh
   ;;
 o)
-  bash odeps.sh
+  bash deps/odeps.sh
   ;;
 a)
-  bash adeps.sh
+  bash deps/adeps.sh
   ;;
 f)
-  bash fdeps.sh
+  bash deps/fdeps.sh
   ;;
 *)
   echo "Skipping installation of dependencies!"

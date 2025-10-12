@@ -5,7 +5,7 @@ Wants=network-online.target
 
 [Mount]
 What=192.168.1.147:/home/stev
-Where=/home/mstev/server
+Where=/home/stev/server
 Type=nfs
 Options=auto,nofail,noatime
 

@@ -21,15 +21,14 @@ function dpkg_url() {
 sudo apt -my install \
   ack \
   aptitude \
-  btop \
   curl \
   duf \
   etckeeper \
   fzf \
   git \
+  git-delta \
   grc \
   htop \
-  libfuse2 \
   lua5.1 \
   luarocks \
   mailutils \
@@ -41,7 +40,6 @@ sudo apt -my install \
   nnn \
   powerline \
   ripgrep \
-  shellcheck \
   stow \
   tmux \
   trash-cli \
@@ -52,25 +50,26 @@ sudo apt -my install \
   xclip \
   zsh
 
-read -n1 -p $'Does this system need a ssh server?\n' REPLY
+read -n1 -p $'\nDoes this system need a ssh server?\n' REPLY
 if [[ $REPLY == [Yy] ]]; then
-  sudo apt install openssh-server fail2ban
+  sudo apt-get install openssh-server fail2ban
   trash ~/.zshrc_prelocal
 fi
 read -n1 -p $'\nDoes this system have a GUI?\n' REPLY
 if [[ $REPLY == [Yy] ]]; then
-  sudo apt install synaptic flatpak
+  sudo apt-get install synaptic flatpak
   flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 fi
+
+#setup git-delta
+git config --global core.pager delta
+git config --global interactive.diffFilter 'delta --color-only'
+git config --global delta.navigate true
+git config --global merge.conflictStyle zdiff3
 
 #This section installs software outside apt
 read -n1 -p $'\nDownload external packages?\n' REPLY
 if [[ $REPLY == [Yy] ]]; then
-  dpkg_url https://github.com/dandavison/delta/releases/download/0.18.2/git-delta_0.18.2_amd64.deb
-  git config --global core.pager delta
-  git config --global interactive.diffFilter 'delta --color-only'
-  git config --global delta.navigate true
-  git config --global merge.conflictStyle zdiff3
   dpkg_url https://github.com/bootandy/dust/releases/download/v1.2.3/du-dust_1.2.3-1_amd64.deb
   dpkg_url https://github.com/charmbracelet/glow/releases/download/v2.1.1/glow_2.1.1_amd64.deb
   dpkg_url https://github.com/ClementTsang/bottom/releases/download/0.11.1/bottom_0.11.1-1_amd64.deb
@@ -86,12 +85,25 @@ if [[ $REPLY == [Yy] ]]; then
 fi
 
 #script to link to stevserver over LAN. Note: the username in the filename and file have to match yours.
-#TODO: automate adapting to username
 echo -n "Will you need to connect to stev-server?"
 read -r answer
 if [[ $answer == [Yy] ]]; then
   sudo apt install nfs-common
-  sudo cp scripts/systemd/home-stev-server.mount /etc/systemd/system
+  sudo cat >/etc/systemd/system/home-$USER-server.mount <<EOF
+[Unit]
+Description=Automatically Mount Stev-Server NFS Share
+After=network-online.target
+Wants=network-online.target
+
+[Mount]
+What=192.168.1.147:/home/stev
+Where=/home/$USER/server
+Type=nfs
+Options=auto,nofail,noatime
+
+[Install]
+WantedBy=remote-fs.target
+EOF
   sudo systemctl daemon-reload
-  sudo systemctl enable --now home-stev-server.mount
+  sudo systemctl enable --now home-$USER-server.mount
 fi
