@@ -19,8 +19,7 @@ sudo dnf install \
   lua \
   mc \
   ncdu \
-  powerline\
-  pipx \
+  powerline pipx \
   ripgrep \
   tmux \
   tree \
@@ -29,8 +28,6 @@ sudo dnf install \
   zsh
 
 pipx install trash-cli
-
-
 
 read -n1 -p $'Does this system need a ssh server?\n' REPLY
 if [[ $REPLY == [Yy] ]]; then
@@ -44,12 +41,11 @@ if [[ $REPLY == [Yy] ]]; then
 fi
 
 echo "Install lazygit"
-  LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | \grep -Po '"tag_name": *"v\K[^"]*')
-  curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/download/v${LAZYGIT_VERSION}/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
-  tar xf lazygit.tar.gz lazygit
-  sudo install lazygit -D -t /usr/local/bin/
-  trash lazygit lazygit.tar.gz
-fi
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | \grep -Po '"tag_name": *"v\K[^"]*')
+curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/download/v${LAZYGIT_VERSION}/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+tar xf lazygit.tar.gz lazygit
+sudo install lazygit -D -t /usr/local/bin/
+trash lazygit lazygit.tar.gz
 
 #script to link to stevserver over LAN. Note: the username in the filename and file have to match yours.
 echo -n "Will you need to connect to stev-server?"
