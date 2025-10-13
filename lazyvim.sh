@@ -5,26 +5,28 @@ while getopts ":c" option; do
   case $option in
   c)
     echo "Clearing configurations"
-    trash ~/.vim/
+    trash -f ~/.vim/
     mkdir -p ~/.vim/pack/tpope/start
     git clone https://tpope.io/vim/sensible.git ~/.vim/pack/tpope/start
-    trash ~/.config/nvim/
-    trash ~/.local/state/nvim/
-    trash ~/.local/share/nvim/
-    trash ~/.cache/nvim
+    trash -f ~/.config/nvim/
+    trash -f ~/.local/state/nvim/
+    trash -f ~/.local/share/nvim/
+    trash -f ~/.cache/nvim
     ;;
   esac
 done
 
-echo "Install/Update Neovim & Neovide"
+echo "   >>> Install/Update Neovim & Neovide"
 mkdir -v ~/bin
-trash ~/bin/nvim
+trash -f ~/bin/nvim
 curl -L https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage -o ~/bin/nvim
 chmod u+x ~/bin/nvim
+
+trash -f ~/bin/neovide
 curl -L https://github.com/neovide/neovide/releases/latest/download/neovide.AppImage -o ~/bin/neovide
 chmod u+x ~/bin/neovide
 
-echo "Install Lazyvim"
+echo "   >>> Install Lazyvim"
 # https://www.lazyvim.org/installation
 ln -s $HOME/stevset/nvim ~/.config/nvim
 
