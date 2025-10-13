@@ -1,7 +1,12 @@
 #!/bin/bash
 #These are the programs I expect to find on any install
+
+#enable extra repos
 sudo dnf config-manager --set-enabled crb
 sudo dnf install epel-release
+
+#install stow since its not in the repos for whatever reason
+sudo dnf install https://dl.fedoraproject.org/pub/epel/9/Everything/aarch64/Packages/s/stow-2.4.0-1.el9.noarch.rpm
 
 echo "installing base dependencies"
 sudo dnf install \
@@ -17,7 +22,6 @@ sudo dnf install \
   powerline\
   pipx \
   ripgrep \
-  stow \
   tmux \
   tree \
   vim \
