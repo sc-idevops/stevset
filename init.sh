@@ -2,7 +2,7 @@
 #install pre-req.
 . /etc/os-release
 case $ID in
-Debian)
+debian)
   bash deps/ddeps.sh
   ;;
 ubuntu | "linux mint")
