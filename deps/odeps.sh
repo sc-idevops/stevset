@@ -61,7 +61,7 @@ echo -n "Will you need to connect to stev-server?"
 read -r answer
 if [[ $answer == [Yy] ]]; then
   sudo zypper in nfs-client
-  sudo cat >/etc/systemd/system/home-$USER-server.mount <<EOF
+  cat <<EOF | sudo tee -a /etc/systemd/system/home-$USER-server.mount
 [Unit]
 Description=Automatically Mount Stev-Server NFS Share
 After=network-online.target

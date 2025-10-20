@@ -45,6 +45,7 @@ sudo apt -my install \
   stow \
   tmux \
   trash-cli \
+  tree-sitter-cli \
   tree \
   vim \
   wl-clipboard \
@@ -74,7 +75,7 @@ if [[ $REPLY == [Yy] ]]; then
   dpkg_url https://github.com/bootandy/dust/releases/download/v1.2.3/du-dust_1.2.3-1_amd64.deb
   dpkg_url https://github.com/charmbracelet/glow/releases/download/v2.1.1/glow_2.1.1_amd64.deb
   dpkg_url https://github.com/ClementTsang/bottom/releases/download/0.11.1/bottom_0.11.1-1_amd64.deb
-  dpkg_url https://github.com/sharkdp/bat/releases/download/v0.25.0/bat_0.25.0_amd64.tmp_deb
+  dpkg_url https://github.com/sharkdp/bat/releases/download/v0.26.0/bat_0.26.0_amd64.tmp_deb
   dpkg_url https://github.com/sharkdp/fd/releases/download/v10.3.0/fd_10.3.0_amd64.deb
 
   echo "Install lazygit"
@@ -90,7 +91,7 @@ echo -n "Will you need to connect to stev-server?"
 read -r answer
 if [[ $answer == [Yy] ]]; then
   sudo apt install nfs-common
-  sudo cat >/etc/systemd/system/home-$USER-server.mount <<EOF
+  cat <<EOF | sudo tee -a /etc/systemd/system/home-$USER-server.mount
 [Unit]
 Description=Automatically Mount Stev-Server NFS Share
 After=network-online.target
