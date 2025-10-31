@@ -4,7 +4,6 @@ gallery-dl --abort 3 --sleep 4 -o retweets=true "https://x.com/stefenauris"
 gallery-dl --abort 3 --sleep 4 -o retweets=true "https://x.com/DaybreakHero"
 echo ">>> Downloading Special Pics in alphabetical order..."
 array=(
-  acethefurri
   AFoxyGent
   AgonyLight
   AidanEnormouse
@@ -45,11 +44,9 @@ array=(
   SmileyBots
   SwiftLPRD
   TehBasco
-  The_Huggernaut
   theonlyinleb
   the_generalguy
   ThunderMaxy
-  TJwolfPupAD
   t_kobs
   Tworld99
   VectorShen
@@ -62,5 +59,5 @@ array=(
   yamasmut
 )
 for i in "${array[@]}"; do
-  gallery-dl --sleep 4 --abort 3 https://x.com/"$i"
+  gallery-dl --sleep 4 --abort 3 https://x.com/"$i" || echo "  >>>  Issue downloading $i" | tee ~/special_error.txt
 done
