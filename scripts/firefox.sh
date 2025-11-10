@@ -16,6 +16,7 @@ case "$1" in
   sudo apt-get update
   echo 'Unattended-Upgrade::Allowed-Origins:: "LP-PPA-mozillateam:${distro_codename}";' | sudo tee /etc/apt/apt.conf.d/51unattended-upgrades-firefox
   sudo apt-get -y install firefox-esr
+  sudo snap remove firefox
   ;;
 
 -f)
@@ -41,6 +42,7 @@ Pin: release o=Ubuntu
 Pin-Priority: -1
       ' | sudo tee /etc/apt/preferences.d/mozilla
   sudo apt update && sudo apt install firefox
+  sudo snap remove firefox
   ;;
 
 -p)
