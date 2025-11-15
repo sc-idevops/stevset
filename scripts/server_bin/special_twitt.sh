@@ -40,6 +40,7 @@ array=(
   RingerShep
   ronnoyeen
   rubberbeefcake
+  Sasquatch_Gains
   sciopup
   SmileyBots
   SwiftLPRD
@@ -47,6 +48,7 @@ array=(
   theonlyinleb
   the_generalguy
   ThunderMaxy
+  Tonalite_Tony
   t_kobs
   Tworld99
   VectorShen
