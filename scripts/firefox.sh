@@ -8,23 +8,13 @@ help() {
   exit 1
 }
 
-#process flags
-case "$1" in
--e)
-  echo "Installing Firefox ESR"
-  sudo add-apt-repository ppa:mozillateam/ppa
-  sudo apt-get update
-  echo 'Unattended-Upgrade::Allowed-Origins:: "LP-PPA-mozillateam:${distro_codename}";' | sudo tee /etc/apt/apt.conf.d/51unattended-upgrades-firefox
-  sudo apt-get -y install firefox-esr
-  sudo snap remove firefox
-  ;;
-
--f)
-  echo "Installing Flatpak Firefox"
+install_flatpak() {
   sudo apt-get -y install flatpak
   flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-  flatpak install flathub org.mozilla.firefox
-  ;;
+}
+
+#process flags
+case "$1" in
 
 -d)
   echo "Installing Firefox from Offical Mozilla Repo"
@@ -45,6 +35,29 @@ Pin-Priority: -1
   sudo snap remove firefox
   ;;
 
+-e)
+  echo "Installing Firefox ESR"
+  sudo add-apt-repository ppa:mozillateam/ppa
+  sudo apt-get update
+  echo 'Unattended-Upgrade::Allowed-Origins:: "LP-PPA-mozillateam:${distro_codename}";' | sudo tee /etc/apt/apt.conf.d/51unattended-upgrades-firefox
+  sudo apt-get -y install firefox-esr
+  sudo snap remove firefox
+  ;;
+
+-f)
+  echo "Installing Flatpak Firefox"
+  install_flatpak
+  flatpak install flathub org.mozilla.firefox
+  sudo snap remove firefox
+  ;;
+
+-l)
+  echo "Install Librewolf"
+  sudo apt install extrepo -y && sudo extrepo enable librewolf
+  sudo apt update && sudo apt install librewolf -y
+  sudo snap remove firefox
+  ;;
+
 -p)
   echo "Purging snapd..."
   sudo apt-get autoremove snapd
@@ -58,11 +71,14 @@ Pin-Priority: -1
   sudo systemctl disable --now var-snap-firefox-common-host\\x2dhunspell.mount
   sudo snap remove firefox
   ;;
--l)
-  echo "Install Librewolf"
-  sudo apt install extrepo -y && sudo extrepo enable librewolf
-  sudo apt update && sudo apt install librewolf -y
+
+-w)
+  echo "Installing Flatpak Waterfox"
+  install_flatpak
+  flatpak install flathub net.waterfox.waterfox
+  sudo snap remove firefox
   ;;
+
 *)
   help
   ;;
