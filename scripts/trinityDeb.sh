@@ -29,6 +29,7 @@ wget https://mirror.math.princeton.edu/pub/mxlinux/mx/repo/pool/main/m/mx25-arch
 wget http://mirror.ppa.trinitydesktop.org/trinity/deb/trinity-keyring.deb
 
 sudo apt install -y ./mx25-archive-keyring_2025.03_all.deb ./trinity-keyring.deb
+rm ./mx25-archive-keyring_2025.03_all.deb ./trinity-keyring.deb
 
 sudo apt update && sudo apt install aptitude
 

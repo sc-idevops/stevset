@@ -24,4 +24,6 @@ Signed-By: /usr/share/keyrings/mx-25-archive-keyring.gpg
 "
  | sudo tee > /etc/apt/sources.list.d/mx.sources
 
+rm ./mx25-archive-keyring_2025.03_all.deb
+
 sudo apt update && sudo apt install mx-apps-kde desktop-defaults-mx-kde
