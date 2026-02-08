@@ -8,7 +8,6 @@ while getopts ":c" option; do
     trash -f ~/.vim/
     mkdir -p ~/.vim/pack/tpope/start
     git clone https://tpope.io/vim/sensible.git ~/.vim/pack/tpope/start
-    trash -f ~/.config/nvim/
     trash -f ~/.local/state/nvim/
     trash -f ~/.local/share/nvim/
     trash -f ~/.cache/nvim
