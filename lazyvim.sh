@@ -29,6 +29,9 @@ echo "   >>> Install Lazyvim"
 # https://www.lazyvim.org/installation
 ln -s $HOME/stevset/nvim ~/.config/nvim
 
+# Install Dependency without recommendations
+sudo apt --no-install-recommends install tree-sitter-cli
+
 #set as editor for root
 CUSTOM_NVIM_PATH=$HOME/bin/nvim
 # Set the above with the correct path, then run the rest of the commands:
