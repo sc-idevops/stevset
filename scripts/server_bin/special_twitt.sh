@@ -12,6 +12,7 @@ array=(
   Aquafighter_Dai
   BakedBaxxie
   Calilum_
+  charsayhi
   cheetah_paws
   DanielsWolf1
   DoggoStahl
@@ -42,6 +43,7 @@ array=(
   rubberbeefcake
   Sasquatch_Gains
   sciopup
+  SinhoTiger
   SmileyBots
   SwiftLPRD
   TehBasco
