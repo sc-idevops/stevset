@@ -1,15 +1,15 @@
 #!/bin/bash
-#this script assumes its being run in the working directory
+#called by the following: find . -type f -name "*-video.mp4" -path "./*/2025-*" -exec sh -c 'twitch_720.sh "$1"' _ {} \;
 
-#test to see if its already been encoded to av1 or else it converts it
-rate=30
+#test to see if its height is greater than 720p
+rate=29
 format=$(ffprobe -v error -select_streams v:0 -show_entries stream=height -of csv=p=0 "$1")
-output_file="${1}_converted.mkv"
+output_file="${1}_converted.mp4"
 echo -e "\033[0;36m >> Height of file $1 is  ---> $format \033[0m"
 
 if [ "$format" -gt 720 ]; then
-  docker run --rm --device=/dev/dri:/dev/dri -v "$(pwd)":/config linuxserver/ffmpeg \
-    -hide_banner \
+  docker run -it --rm --device=/dev/dri:/dev/dri -v "$(pwd)":/config linuxserver/ffmpeg \
+    -hide_banner -loglevel warning -v quiet -stats \
     -hwaccel qsv -hwaccel_output_format qsv -qsv_device /dev/dri/renderD128 \
     -n \
     -i "/config/$1" \
@@ -20,5 +20,6 @@ if [ "$format" -gt 720 ]; then
     -preset 4 \
     -g 150 \
     -c:a copy \
-    "/config/$output_file" #    -hide_banner -loglevel warning -v quiet -stats \
+    -movflags faststart \
+    "/config/$output_file"
 fi

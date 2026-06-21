@@ -6,9 +6,8 @@ format=$(ffprobe -v error -select_streams v:0 -show_entries stream=codec_name -o
 rate=26
 echo -e "\033[0;36m >> Format of file $1 is  ---> $format \033[0m"
 
-if [ "$format" != "av1" ]
-then
-  docker run -it --rm --device=/dev/dri:/dev/dri -v "$(pwd)":/config linuxserver/ffmpeg \
+if [ "$format" != "av1" ]; then
+  docker run --rm --device=/dev/dri:/dev/dri -v "$(pwd)":/config linuxserver/ffmpeg \
     -hide_banner -loglevel warning -v quiet -stats \
     -hwaccel qsv -hwaccel_output_format qsv -qsv_device /dev/dri/renderD128 \
     -n \
@@ -17,8 +16,10 @@ then
     -strict 1 \
     -global_quality $rate \
     -look_ahead 1 -look_ahead_depth 100 \
-    -preset 3 \
+    -preset 4 \
     -g 150 \
     -c:a aac \
+    -c:s copy \
+    -c:d copy \
     "/config/${1%.*}_converted.mkv"
 fi

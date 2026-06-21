@@ -24,4 +24,4 @@ while IFS= read -r -d '' file; do
   if [[ $codec != "av1" ]]; then
     echo "$file" >>"$output_file"
   fi
-done < <(find "$search_dir" -type f -print0)
+done < <(find "$search_dir" -type f -print0 -mtime -24)
