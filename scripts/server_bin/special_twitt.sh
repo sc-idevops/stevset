@@ -4,7 +4,7 @@ gallery-dl --abort 3 --sleep 4 -o retweets=true "https://x.com/stefenauris"
 gallery-dl --abort 3 --sleep 4 -o retweets=true "https://x.com/DaybreakHero"
 echo ">>> Downloading Special Pics in alphabetical order..."
 array=(
-  AFoxyGent
+  AFoxyChee
   AgonyLight
   AidanEnormouse
   AlienSymbol
@@ -16,12 +16,12 @@ array=(
   cheetah_paws
   DanielsWolf1
   DoggoStahl
+  Doncheco01
   Duke_Doberman
   FrayeVfraye
   FullPurp
   growstav
   himbohyena
-  HYDROKIINESIS
   JosephBuffWuff
   Joshontwt
   K1ngYeen
