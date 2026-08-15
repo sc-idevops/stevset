@@ -1,6 +1,6 @@
 #!/bin/bash
 echo ">>> Updating Retweets"
-gallery-dl --abort 3 --sleep 4 -o retweets=true "https://x.com/stefenauris"
+gallery-dl --abort 3 --sleep 4 -o retweets=true "https://x.com/stefen_auris"
 gallery-dl --abort 3 --sleep 4 -o retweets=true "https://x.com/DaybreakHero"
 echo ">>> Downloading Special Pics in alphabetical order..."
 array=(

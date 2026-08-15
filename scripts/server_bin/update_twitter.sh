@@ -2,7 +2,7 @@
 rm ~/twit_error.txt
 cd $HOME/gallery-dl/twitter
 echo ">>>> Begin Downloads"
-gallery-dl --abort 3 --sleep 2-3 -o retweets=true "https://twitter.com/stefenauris"
+gallery-dl --abort 3 --sleep 2-3 -o retweets=true "https://twitter.com/stefen_auris"
 gallery-dl --abort 3 --sleep 2-3 -o retweets=true "https://twitter.com/DaybreakHero"
 for i in */; do
   echo ">> $i"
