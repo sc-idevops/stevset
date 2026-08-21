@@ -64,6 +64,9 @@ echo "  > installing fonts"
 mkdir ~/.fonts
 wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/SourceCodePro.tar.xz -O - | tar -xJf - -C ~/.fonts
 wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/UbuntuMono.tar.xz -O - | tar -xJf - -C ~/.fonts
+wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/GeistMono.tar.xz -O - | tar -xJf - -C ~/.fonts
+wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Hack.tar.xz -O - | tar -xJf - -C ~/.fonts
+
 if command -v flatpak &>/dev/null; then
   flat_timer
 fi
