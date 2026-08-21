@@ -62,8 +62,8 @@ git config --global user.name "steveokard"
 git config --global user.email "steveokard@gmail.com"
 echo "  > installing fonts"
 mkdir ~/.fonts
-wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.0/SourceCodePro.tar.xz -O - | tar -xJf - -C ~/.fonts
-wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.0/UbuntuMono.tar.xz -O - | tar -xJf - -C ~/.fonts
+wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/SourceCodePro.tar.xz -O - | tar -xJf - -C ~/.fonts
+wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/UbuntuMono.tar.xz -O - | tar -xJf - -C ~/.fonts
 if command -v flatpak &>/dev/null; then
   flat_timer
 fi
