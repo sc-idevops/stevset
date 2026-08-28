@@ -17,7 +17,7 @@ if [ "$format" != "av1" ]; then
     -global_quality $rate \
     -preset 4 \
     -g 150 \
-    -c:a aac \
+    -c:a copy \
     -c:s copy \
     -c:d copy \
     "/config/${1%.*}_converted.mkv"
