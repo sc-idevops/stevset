@@ -27,11 +27,12 @@ chmod u+x ~/bin/neovide
 
 echo "   >>> Install Lazyvim"
 # https://www.lazyvim.org/installation
-if [[ ! -f ~/.config/nvim ]]; then
+if [[ ! -d ~/.config/nvim ]]; then
   ln -s $HOME/stevset/nvim ~/.config/nvim
 fi
 
 # Install Dependency without recommendations
+echo "Install Dependency"
 sudo apt --no-install-recommends install tree-sitter-cli
 
 #set as editor for root
