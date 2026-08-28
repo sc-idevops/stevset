@@ -5,7 +5,7 @@ echo ">>>> Begin Downloads"
 #gallery-dl --abort 3 -o retweets=true "https://twitter.com/stefenauris"
 #gallery-dl --abort 3 -o retweets=true "https://twitter.com/DaybreakHero"
 for i in */; do
-  echo ">> $i"
+  echo -e "\033[0;36m >> Downloading $i \033[0m"
   date
   gallery-dl -u steveokard@gmail.com -p `cat ~/.gallery-dl/bsky-secret.txt` --sleep 1-3 --abort 3 "https://bsky.app/profile/${i/\/}" || echo "$i" >> ~/bsky_error.txt
   echo "    << waiting"
