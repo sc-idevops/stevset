@@ -44,7 +44,6 @@ sudo apt -my install \
   tmux \
   trash-cli \
   tree \
-  tree-sitter-cli \
   vim \
   wl-clipboard \
   wget \

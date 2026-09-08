@@ -17,11 +17,11 @@ done
 
 echo "   >>> Install/Update Neovim & Neovide"
 mkdir -v ~/bin
-trash -f ~/bin/nvim
+rm ~/bin/nvim
 curl -L https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage -o ~/bin/nvim
 chmod u+x ~/bin/nvim
 
-trash -f ~/bin/neovide
+rm ~/bin/neovide
 curl -L https://github.com/neovide/neovide/releases/latest/download/neovide.AppImage -o ~/bin/neovide
 chmod u+x ~/bin/neovide
 
@@ -30,10 +30,6 @@ echo "   >>> Install Lazyvim"
 if [[ ! -d ~/.config/nvim ]]; then
   ln -s $HOME/stevset/nvim ~/.config/nvim
 fi
-
-# Install Dependency without recommendations
-echo "Install Dependency"
-sudo apt --no-install-recommends install tree-sitter-cli
 
 #set as editor for root
 CUSTOM_NVIM_PATH=$HOME/bin/nvim

@@ -45,7 +45,6 @@ sudo apt -my install \
   stow \
   tmux \
   trash-cli \
-  tree-sitter-cli \
   tree \
   vim \
   wl-clipboard \
