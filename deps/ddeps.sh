@@ -45,19 +45,17 @@ sudo apt -my install \
   trash-cli \
   tree \
   vim \
-  wl-clipboard \
   wget \
-  xclip \
   zsh
 
 read -n1 -p $'\nDoes this system need a ssh server?\n' REPLY
 if [[ $REPLY == [Yy] ]]; then
-  sudo apt-get install openssh-server fail2ban
+  sudo apt install openssh-server fail2ban
   trash ~/.zshrc_prelocal
 fi
 read -n1 -p $'\nDoes this system have a GUI?\n' REPLY
 if [[ $REPLY == [Yy] ]]; then
-  sudo apt-get install synaptic flatpak
+  sudo apt install synaptic flatpak wl-clipboard xclip
   flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 fi
 
@@ -81,7 +79,7 @@ if [[ $REPLY == [Yy] ]]; then
   curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/download/v${LAZYGIT_VERSION}/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
   tar xf lazygit.tar.gz lazygit
   sudo install lazygit -D -t /usr/local/bin/
-  trash lazygit lazygit.tar.gz
+  rm lazygit lazygit.tar.gz
 fi
 
 #script to link to stevserver over LAN. Note: the username in the filename and file have to match yours.
