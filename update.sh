@@ -16,4 +16,4 @@ function dpkg_url() {
     } # commands above failed, remove tmp file anyway
 }
 
-dpkg_url https://github.com/sharkdp/bat/releases/download/v0.26.1/bat_0.26.1_amd64.deb
+sudo apt autoremove tree-sitter-cli
