@@ -29,6 +29,7 @@ if [[ ! -d ~/.config/nvim ]]; then
 fi
 
 #set as editor for root
+echo "   >>> Setting as Custom Editor via update-alternatives"
 CUSTOM_NVIM_PATH=$HOME/bin/nvim
 # Set the above with the correct path, then run the rest of the commands:
 set -u

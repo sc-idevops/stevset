@@ -1,5 +1,6 @@
 #!/bin/bash
 #install pre-req.
+echo "Installing dependencies"
 . /etc/os-release
 case $ID in
 debian)
