@@ -4,10 +4,9 @@
 # Version: 0.2.2
 
 # Unique Bash version check
-if ((BASH_VERSINFO[0] < 4))
-then 
-  echo "sensible.bash: Looks like you're running an older version of Bash." 
-  echo "sensible.bash: You need at least bash-4.0 or some options will not work correctly." 
+if ((BASH_VERSINFO[0] < 4)); then
+  echo "sensible.bash: Looks like you're running an older version of Bash."
+  echo "sensible.bash: You need at least bash-4.0 or some options will not work correctly."
   echo "sensible.bash: Keep your software up-to-date!"
 fi
 
@@ -28,10 +27,10 @@ PROMPT_DIRTRIM=2
 bind Space:magic-space
 
 # Turn on recursive globbing (enables ** to recurse all directories)
-shopt -s globstar 2> /dev/null
+shopt -s globstar 2>/dev/null
 
 # Case-insensitive globbing (used in pathname expansion)
-shopt -s nocaseglob;
+shopt -s nocaseglob
 
 ## SMARTER TAB-COMPLETION (Readline bindings) ##
 
@@ -46,6 +45,22 @@ bind "set show-all-if-ambiguous on"
 
 # Immediately add a trailing slash when autocompleting symlinks to directories
 bind "set mark-symlinked-directories on"
+
+# use menucomplete
+# Source - https://stackoverflow.com/a/7179810
+# Posted by sth, modified by community. See post 'Timeline' for change history
+# Retrieved 2026-09-09, License - CC BY-SA 3.0
+
+bind TAB:menu-complete
+# And Shift-Tab should cycle backwards
+bind '"\e[Z": menu-complete-backward'
+
+# Display a list of the matching files
+bind "set show-all-if-ambiguous on"
+
+# Perform partial (common) completion on the first Tab press, only start
+# cycling full results on the second Tab press (from bash version 5)
+bind "set menu-complete-display-prefix on"
 
 ## SANE HISTORY DEFAULTS ##
 
@@ -79,15 +94,17 @@ bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 bind '"\e[C": forward-char'
 bind '"\e[D": backward-char'
-
+# Keep Ctrl-Left and Ctrl-Right working when the above are used
+bind '"\e[1;5C":forward-word'
+bind '"\e[1;5D":backward-word'
 ## BETTER DIRECTORY NAVIGATION ##
 
 # Prepend cd to directory names automatically
-shopt -s autocd 2> /dev/null
+shopt -s autocd 2>/dev/null
 # Correct spelling errors during tab-completion
-shopt -s dirspell 2> /dev/null
+shopt -s dirspell 2>/dev/null
 # Correct spelling errors in arguments supplied to cd
-shopt -s cdspell 2> /dev/null
+shopt -s cdspell 2>/dev/null
 
 # This defines where cd looks for targets
 # Add the directories you want to have fast access to, separated by colon
@@ -103,4 +120,3 @@ shopt -s cdable_vars
 # export projects="$HOME/projects"
 # export documents="$HOME/Documents"
 # export dropbox="$HOME/Dropbox"
-
