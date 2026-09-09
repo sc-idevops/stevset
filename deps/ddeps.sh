@@ -68,11 +68,12 @@ git config --global merge.conflictStyle zdiff3
 #This section installs software outside apt
 read -n1 -p $'\nDownload external packages?\n' REPLY
 if [[ $REPLY == [Yy] ]]; then
-  dpkg_url https://github.com/bootandy/dust/releases/download/v1.2.4/du-dust_1.2.4-1_amd64.deb
-  dpkg_url https://github.com/charmbracelet/glow/releases/download/v2.1.1/glow_2.1.1_amd64.deb
-  dpkg_url https://github.com/ClementTsang/bottom/releases/download/0.12.3/bottom_0.12.3-1_amd64.deb
+  dpkg_url https://github.com/bootandy/dust/releases/download/v1.2.5/du-dust_1.2.5-1_amd64.deb
+  dpkg_url https://github.com/charmbracelet/glow/releases/download/v3.0.0/glow_3.0.0_amd64.deb
+  dpkg_url https://github.com/ClementTsang/bottom/releases/download/0.14.9/bottom_0.14.9-1_amd64.deb
   dpkg_url https://github.com/sharkdp/bat/releases/download/v0.26.1/bat_0.26.1_amd64.deb
-  dpkg_url https://github.com/sharkdp/fd/releases/download/v10.3.0/fd_10.3.0_amd64.deb
+  dpkg_url https://github.com/sharkdp/fd/releases/download/v10.5.0/fd_10.5.0_amd64.deb
+  dpkg_url https://github.com/junegunn/fzf/releases/download/v0.74.3/fzf_0.74.3_amd64.deb
 
   echo "Install lazygit"
   LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | \grep -Po '"tag_name": *"v\K[^"]*')
