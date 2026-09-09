@@ -17,18 +17,15 @@ done
 
 echo "   >>> Install/Update Neovim & Neovide"
 mkdir -v ~/bin
-rm ~/bin/nvim
+rm ~/bin/nvim ~/bin/neovide
 curl -L https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage -o ~/bin/nvim
-chmod u+x ~/bin/nvim
-
-rm ~/bin/neovide
 curl -L https://github.com/neovide/neovide/releases/latest/download/neovide.AppImage -o ~/bin/neovide
-chmod u+x ~/bin/neovide
+chmod +x ~/bin/nvim ~/bin/neovide
 
 echo "   >>> Install Lazyvim"
 # https://www.lazyvim.org/installation
 if [[ ! -d ~/.config/nvim ]]; then
-  ln -s $HOME/stevset/nvim ~/.config/nvim
+  ln -s $HOME/stevset/nvim $HOME/.config/nvim
 fi
 
 #set as editor for root
