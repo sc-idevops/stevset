@@ -25,7 +25,8 @@ sudo pacman -Sy --needed \
   neovim \
   neovide \
   nnn \
-  powerline ripgrep \
+  powerline \
+  ripgrep \
   stow \
   tmux \
   trash-cli \
@@ -50,7 +51,7 @@ git config --global interactive.diffFilter 'delta --color-only'
 git config --global delta.navigate true
 git config --global merge.conflictStyle zdiff3
 
-#script to link to stevserver over LAN. Note: the username in the filename and file have to match yours.
+#script to link to stevserver over LAN.
 echo -n "Will you need to connect to stev-server?"
 read -r answer
 if [[ $answer == [Yy] ]]; then

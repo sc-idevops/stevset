@@ -19,7 +19,8 @@ sudo dnf install \
   lua \
   mc \
   ncdu \
-  powerline pipx \
+  powerline \
+  pipx \
   ripgrep \
   tmux \
   tree \
