@@ -16,4 +16,4 @@ function dpkg_url() {
     } # commands above failed, remove tmp file anyway
 }
 
-sudo apt autoremove tree-sitter-cli
+dpkg_url http://ftp.us.debian.org/debian/pool/main/t/tmux/tmux_3.5a-2~bpo12+1_amd64.deb
