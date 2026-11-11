@@ -70,6 +70,7 @@ wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Hack.ta
 
 if command -v flatpak &>/dev/null; then
   flat_timer
+  flatpak override --user --filesystem=/home/$(whoami)/server
 fi
 
 echo "*******************************"
